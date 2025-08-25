@@ -1,0 +1,83 @@
+{
+  "2025-07-31": {
+    "nume_eveniment": "Eveniment special 31",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-1": {
+    "nume_eveniment": "Eveniment special 1",
+    "ora": "13:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-2": {
+    "nume_eveniment": "Eveniment special 2",
+    "ora": "16:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-04": {
+    "nume_eveniment": "Eveniment special 3",
+    "ora": "10:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-05": {
+    "nume_eveniment": "Eveniment special 2",
+    "ora": "11:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-06": {
+    "nume_eveniment": "Eveniment special 3",
+    "ora": "12:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-07": {
+    "nume_eveniment": "Eveniment special 4",
+    "ora": "13:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-08": {
+    "nume_eveniment": "Eveniment special 5",
+    "ora": "14:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-12": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-13": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-14": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-15": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-16": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-19": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  
+  "2025-08-22": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-08-30": {
+    "nume_eveniment": "Eveniment special 7",
+    "ora": "16:00",
+    "adresa": "Strada Foișorului 119"
+  }
+}

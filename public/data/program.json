@@ -1,0 +1,55 @@
+
+{
+  "duminică": {
+    "data": "3 august",
+    "activitati": [
+      { "nume": "Utrenia", "ora": "7:30" },
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+    ]
+  },
+  "luni": {
+    "data": "4 august",
+    "activitati": [
+      { "nume": "Dumnezeiasca Liturghie", "ora": "6:00" },
+      { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
+    ]
+  },
+  "marți": {
+    "data": "5 august",
+    "activitati": [
+      { "nume": "Dumnezeiasca Liturghie", "ora": "6:00" },
+      { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
+    ]
+  },
+  "miercuri": {
+    "data": "6 august",
+    "activitati": [
+      { "nume": "Utrenia", "ora": "7:30" },
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" },
+      { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
+    ]
+  },
+  "joi": {
+    "data": "7 august",
+    "activitati": [
+      { "nume": "Dumnezeiasca Liturghie", "ora": "6:00" },
+      { "nume": "Taina Spovedaniei", "ora": "7:30" },
+      { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
+    ]
+  },
+  "vineri": {
+    "data": "8 august",
+    "activitati": [
+      { "nume": "Dumnezeiasca Liturghie", "ora": "6:00" },
+      { "nume": "Taina Spovedaniei", "ora": "7:30" },
+      { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
+    ]
+  },
+  "sâmbătă": {
+    "data": "9 august",
+    "activitati": [
+      { "nume": "Dumnezeiasca Liturghie", "ora": "8:00" },
+      { "nume": "Pomenirea celor adormiți", "ora": "" }
+    ]
+  }
+}

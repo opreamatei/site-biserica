@@ -1,0 +1,340 @@
+{
+  "2025-08-01": {
+    "zi": 1,
+    "zi_saptamana": "V",
+    "sfinți": [
+      "Scoaterea Sfintei Cruci",
+      "Sfinții 7 Mucenici Macabei, cu mama lor Solomoni și dascălul lor Eleazar"
+    ],
+    "tip": "Începutul Postului Adormirii Maicii Domnului",
+    "dezlegări": []
+  },
+  "2025-08-02": {
+    "zi": 2,
+    "zi_saptamana": "S",
+    "sfinți": [
+      "Aducerea moaștelor Sfântului Întâi Mucenic și Arhidiacon Ștefan",
+      "Binecredinciosul Împărat Justinian cel Mare",
+      "Dreptul Gamaliel"
+
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-03": {
+    "zi": 3,
+    "zi_saptamana": "D",
+    "sfinți": [
+      "✝) Sfântul Cuvios Mărturisitor Iraclie din Basarabia",
+      "Sfânta Salomeea, mironosița",
+      "Sfânta Cuvioasă Teodora din Tesalonic",
+      "Sfântul Cuvios Faust",
+      "Sfântul Cuvios Dalmat",
+      "Sfântul Cuvios Isaachie",
+      "✝) Duminica a 8-a după Rusalii (Înmulțirea pâinilor)"
+
+    ],
+    "tip": "Duminică",
+    "dezlegări": []
+  },
+  "2025-08-04": {
+    "zi": 4,
+    "zi_saptamana": "L",
+    "sfinți": [
+      "Sfinții 7 tineri din Efes",
+      "Sfântul Mucenic Tatuil",
+      "Aducerea moaștelor Sfintei Mucenițe Evdochia"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-05": {
+    "zi": 5,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfântul Cuvios Ioan Iacob de la Neamț",
+      "Înainte-prăznuirea Schimbării la Față a Domnului",
+      "Sfânta Nona, mama Sfântului Grigorie Teologul",
+      "Sfântul Ierarh Fabian, episcopul Romei",
+      "Sfântul Mucenic Evsignie"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-06": {
+    "zi": 6,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "(✝) Schimbarea la Față a Domnului"
+    ],
+    "tip": "Praznic",
+    "dezlegări": ["pește"]
+  },
+  "2025-08-07": {
+    "zi": 7,
+    "zi_saptamana": "J",
+    "sfinți": [
+      "✝) Sfântul Cuvios Pafnutie – Pârvu Zugravul",
+      "✝) Sfânta Cuvioasă Teodora de la Sihla",
+      "După-prăznuirea Schimbării la Față a Domnului",
+      "Sfântul Antonie de la Optina",
+      "Sfântul Cuvios Nicanor",
+      "Sfânta Irina, Împărăteasa",
+      "Sfântul Sfinţit Mucenic Narcis, Patriarhul Ierusalimului",
+      "Sfântul Cuvios Mucenic Dometie Persul",
+      "Cinstirea Sfintei Icoane a Maicii Domnului de la Valaam"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },  "2025-08-08": {
+    "zi": 8,
+    "zi_saptamana": "V",
+    "sfinți": [
+      "✝) Sfântul Preot Mucenic Alexandru din Basarabia",
+      "Sfântul Ierarh Calinic al Edessei"
+    ],
+    "tip": "Zi de post",
+    "dezlegări": []
+  }, 
+  "2025-08-09": {
+    "zi": 9,
+    "zi_saptamana": "S",
+    "sfinți": [
+      "Sfântul Apostol Matia",
+      "Sfântul Cuvios Antonie de la Valaam"
+    ],
+    "tip": "Zi de post",
+    "dezlegări": []
+  },
+  "2025-08-10": {
+    "zi": 10,
+    "zi_saptamana": "D",
+    "sfinți": [
+      "✝) Sfântul Mucenic Constantin Brâncoveanu, domnitorul Țării Românești",
+      "Sfântul Arhidiacon Laurențiu",
+      "✝) Duminica a 9-a după Rusalii (Umblarea pe mare)"
+    ],
+    "tip": "Duminică",
+    "dezlegări": []
+  },
+  "2025-08-11": {
+    "zi": 11,
+    "zi_saptamana": "L",
+    "sfinți": [
+      "Sfânta Muceniță Susana și cei împreună cu dânsa"
+    ],
+    "tip": "Zi de post",
+    "dezlegări": []
+  },
+  "2025-08-12": {
+    "zi": 12,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "Sfântul Mucenic Fotie și Anichit",
+      "Sfântul Cuvios Palamon"
+    ],
+    "tip": "Zi de post",
+    "dezlegări": []
+  },
+  "2025-08-13": {
+    "zi": 13,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Aducerea moaștelor Sfântului Maxim Mărturisitorul",
+      "Sfântul Cuvios Dositei"
+    ],
+    "tip": "Zi de post",
+    "dezlegări": []
+  },
+  "2025-08-14": {
+    "zi": 14,
+    "zi_saptamana": "J",
+    "sfinți": [
+      "✝) Înainte-prăznuirea Adormirii Maicii Domnului",
+      "✝) Sfântul Proroc Miheia",
+      "Sfântul Cuvios Marchel"
+    ],
+    "tip": "Ajunul Praznicului",
+    "dezlegări": []
+  },
+  "2025-08-15": {
+    "zi": 15,
+    "zi_saptamana": "V",
+    "sfinți": [
+      "✝) Adormirea Maicii Domnului"
+    ],
+    "tip": "Praznic împărătesc",
+    "dezlegări": ["pește"]
+  },
+  "2025-08-16": {
+    "zi": 16,
+    "zi_saptamana": "S",
+    "sfinți": [
+      "✝) Odovania (încheierea) Praznicului Adormirii Maicii Domnului",
+      "Sfinții Mucenici Diomid și Lavrentie",
+      "Sfântul Cuvios Gerasim"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-17": {
+    "zi": 17,
+    "zi_saptamana": "D",
+    "sfinți": [
+      "✝) Duminica a 10-a după Rusalii (Vindecarea lunaticului)",
+      "Sfântul Mucenic Miron",
+      "Sfântul Cuvios Alipie",
+      "Sfântul Ierarh Ioan de la Rila"
+    ],
+    "tip": "Duminică",
+    "dezlegări": []
+  },
+  "2025-08-18": {
+    "zi": 18,
+    "zi_saptamana": "L",
+    "sfinți": [
+      "Sfântul Mucenic Flor",
+      "Sfântul Mucenic Lavru",
+      "Sfântul Ioan, episcopul Edesei"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-19": {
+    "zi": 19,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfântul Mucenic Andrei Stratilat și cei 2593 de ostași împreună cu el"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-20": {
+    "zi": 20,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfântul Proroc Samuel",
+      "Sfântul Mucenic Luchian"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-21": {
+    "zi": 21,
+    "zi_saptamana": "J",
+    "sfinți": [
+      "Sfântul Apostol Tadeu",
+      "Sfântul Mucenic Vasa și cei împreună cu ea",
+      "Sfântul Cuvios Avramie"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-22": {
+    "zi": 22,
+    "zi_saptamana": "V",
+    "sfinți": [
+      "Sfântul Mucenic Agatonic",
+      "Sfântul Cuvios Teodor",
+      "Sfântul Antim"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-23": {
+    "zi": 23,
+    "zi_saptamana": "S",
+    "sfinți": [
+      "✝) Aducerea moaștelor Sfântului Sfințit Mucenic Irineu, Episcopul de Lyon",
+      "Sfântul Lup",
+      "Sfântul Ierarh Irineu"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-24": {
+    "zi": 24,
+    "zi_saptamana": "D",
+    "sfinți": [
+      "✝) Duminica a 11-a după Rusalii (Pilda datornicului nemilostiv)",
+      "Sfântul Evanghelist Matei (mutarea moaștelor)",
+      "Sfântul Sfințit Mucenic Eutihie"
+    ],
+    "tip": "Duminică",
+    "dezlegări": []
+  },
+  "2025-08-25": {
+    "zi": 25,
+    "zi_saptamana": "L",
+    "sfinți": [
+      "Sfântul Apostol Titius",
+      "Sfântul Mucenic Vartolomeu",
+      "Sfântul Cuvios Ioan"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-26": {
+    "zi": 26,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfântul Mucenic Adrian și soția sa Natalia"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-27": {
+    "zi": 27,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfântul Cuvios Pimen cel Mare",
+      "Sfântul Foca"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-28": {
+    "zi": 28,
+    "zi_saptamana": "J",
+    "sfinți": [
+      "✝) Sfântul Ierarh Moise, Arhiepiscopul Novgorodului",
+      "Sfântul Moise Etiopianul"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-29": {
+    "zi": 29,
+    "zi_saptamana": "V",
+    "sfinți": [
+      "✝) Tăierea Capului Sfântului Proroc Ioan Botezătorul"
+    ],
+    "tip": "Zi de post aspru",
+    "dezlegări": []
+  },
+  "2025-08-30": {
+    "zi": 30,
+    "zi_saptamana": "S",
+    "sfinți": [
+      "✝) Sfântul Ierarh Alexandru, Patriarhul Constantinopolului",
+      "Sfântul Ioan, Patriarhul Constantinopolului",
+      "Sfântul Pavel cel Nou"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-08-31": {
+    "zi": 31,
+    "zi_saptamana": "D",
+    "sfinți": [
+      "✝) Duminica a 12-a după Rusalii (Tânărul bogat)",
+      "Punerea în raclă a Brâului Maicii Domnului"
+    ],
+    "tip": "Duminică",
+    "dezlegări": []
+  }
+}
+
+
+
+

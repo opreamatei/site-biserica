@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Cateheza I – Introducere",
+    "description": "Despre începuturile vieții duhovnicești.",
+    "audioUrl": "/audio/cateheza-1.mp3"
+  },
+  {
+    "id": 2,
+    "title": "Cateheza II – Rugăciunea",
+    "description": "Importanța rugăciunii personale.",
+    "audioUrl": "/audio/cateheza-2.mp3"
+  }
+]

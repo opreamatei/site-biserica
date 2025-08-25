@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans: 'Byzantin', sans-serif;
+}
+
+@font-face {
+  font-family: 'Byzantin';
+  src: url('/fonts/BYZANTIN.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #C59D30;
+    --foreground: #171717;
+  }
+}
+@layer components{
+  .underline-custom {
+  position: relative; 
+  display: inline-block;
+}
+  .underline-custom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;               /* align at bottom of text */
+  left: 20%;               /* start at 20% of the text width */
+  width: 90%;              /* span 60% of the text width */
+  height: 2px;             /* thickness of underline */
+  background-color: black;   /* underline color */
+}
+
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    clip-path: inset(100% 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0)
+  }
+}
+  .block {
+    animation: appear linear;
+    animation-timeline: view();
+    
+  }
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}

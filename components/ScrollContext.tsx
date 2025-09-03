@@ -2,6 +2,8 @@
 
 import { createContext, useContext, useRef } from "react";
 import { useScroll } from "framer-motion";
+import Image from "next/image";
+
 
 interface ScrollContextValue {
   scrollYProgress: any;
@@ -17,7 +19,9 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ScrollContext.Provider value={{ scrollYProgress }}>
-      <div ref={ref}>{children}</div>
+      <div className="bg-c59d30" ref={ref}>
+        {children}
+      </div>
     </ScrollContext.Provider>
   );
 };

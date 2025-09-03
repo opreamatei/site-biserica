@@ -1,74 +1,95 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import { LINKS } from "@/app/constants";
+
+const NAVBAR_PT = 2;
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const links = [
-    { label: 'Program Liturgic', path: 'Program-Liturgic' },
-    { label: 'Evenimente', path: 'Evenimente' },
-    { label: 'Calendar', path: 'Calendar' },
-    { label: 'Prezentare Biserică', path: 'About' },
-    { label: 'Cateheze', path: 'Cateheze' },
-    { label: 'Contact', path: 'Contact' },
-  ];
-
   useEffect(() => {
     if (open) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     }
 
     // Clean up just in case
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     };
   }, [open]);
 
   return (
-    <div className="max-w-[100vw] max-h-screen">
-      {/* Menu Button */}
-      <button
-        onClick={() => setOpen(!open)}
-        className="fixed top-6 right-4 w-8 h-8 z-50 flex items-center justify-center"
-        aria-label="Toggle menu"
+    <>
+      <div
+        className={`max-w-[100vw] w-full max-h-[20vh] top-0 left-0 h-21 z-15 ${
+          !open
+            ? "bg-[#02021fd5] shadow-xl backdrop-blur-xl "
+            : "bg-[#b1967d00] h-30"
+        } transition-all duration-300 fixed`}
       >
-        <span
-          className={`absolute w-8 h-0.5 bg-white/60 transition-transform duration-300 ease-in-out ${open ? 'rotate-45 translate-y-0' : '-translate-y-1.5'
+        {/* Menu Button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className={`absolute right-4 h-full aspect-square max-w-8 z-50 flex items-center justify-center transition-all duration-300 ${
+            open ? "pb-10" : ""
+          }`}
+          aria-label="Toggle menu"
+        >
+          
+          <span
+            className={`absolute w-full max-w-8 h-0.5 ${
+              !open ? "bg-white/60" : "bg-white/60"
+            } transition-all duration-300 ease-in-out ${
+              open ? "rotate-45 translate-y-0" : "-translate-y-1.5"
             }`}
-        />
-        <span
-          className={`absolute w-8 h-0.5 bg-white/60 transition-transform duration-300 ease-in-out ${open ? '-rotate-45 translate-y-0' : 'translate-y-1.5'
+          />
+          <span
+            className={`absolute w-full max-w-8 h-0.5 bg-black/60 ${
+              !open ? "bg-white/60" : "bg-white/60"
+            } transition-all duration-300 ease-in-out ${
+              open ? "-rotate-45 translate-y-0" : "translate-y-1.5"
             }`}
-        />
-      </button>
+          />
+        </button>
 
-      <div className="fixed inset-x-0 top-0 z-40 flex items-center bg-[#000E29] justify-between px-4 py-1 max-w-screen shadow-md">
-        <div className="w-full flex justify-center">
-          <Link href="/">
-            <Image src="/logo alb.jpg" alt="logo" width={80} height={80} />
-          </Link>
+        <div
+          className={`inset-x-0 absolute top-0 left-1/2 transition-all duration-300 -translate-x-1/2 h-full ${
+            open ? "" : "pt-2"
+          }`}
+        >
+          <div className="w-full flex justify-center h-4/5">
+            <Link
+              href="/"
+              className={`relative aspect-square h-full transition-all duration-300 ${
+                open
+                  ? "invert-100 translate-y-5"
+                  : "invert-100"
+              }`}
+            >
+              <Image src="/logo_negru_1.webp" alt="logo" fill />
+            </Link>
+          </div>
         </div>
-
       </div>
 
       <AnimatePresence>
         {open && (
           <motion.div
             key="overlay"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="fixed inset-0 z-40 bg-gray/70 backdrop-blur-md flex flex-col"
+            initial={{ opacity: 0, paddingTop: 20 }}
+            animate={{ opacity: 1, paddingTop: 0 }}
+            exit={{ opacity: 0, paddingTop: -20 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="fixed inset-0 z-10  top-0 left-0 w-screen h-screen bg-black/40 backdrop-blur-xl flex flex-col"
           >
-            <nav className="flex flex-col items-end justify-center h-full px-10 gap-10 text-right text-white/80">
-              {links.map(({ label, path }, index) => (
+            <nav className="flex flex-col items-end justify-center h-full p-10 gap-10 text-right text-white/80">
+              {LINKS.map(({ label, path }, index) => (
                 <motion.div
                   key={label}
                   initial={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -76,14 +97,14 @@ export default function Navbar() {
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   transition={{
                     duration: 0.4,
-                    ease: 'easeInOut',
+                    ease: "easeInOut",
                     delay: index * 0.07,
                   }}
                 >
                   <Link
                     href={`/${path}`}
                     onClick={() => setOpen(false)}
-                    className="text-2xl md:text-3xl lg:text-4xl hover:underline"
+                    className="text-2xl md:text-3xl lg:text-4xl hover:underline text-shadow-white/5 text-shadow-lg"
                   >
                     {label}
                   </Link>
@@ -93,6 +114,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 }

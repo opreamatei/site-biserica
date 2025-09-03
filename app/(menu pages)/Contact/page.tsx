@@ -3,12 +3,10 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { MapPin, Phone, Mail } from 'lucide-react'
-import Navbar from '@/components/Navbar'
 
 const page = () => {
   return (
     <>
-    <Navbar />
     <motion.div
       initial={{ scale: 0.95, borderRadius: '30px', opacity: 0 }}
       animate={{ scale: 1, borderRadius: '0px', opacity: 1 }}

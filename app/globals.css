@@ -19,6 +19,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-body: var(--font-merriweather)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -62,4 +63,14 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+@layer base {
+  h3, h4, h5, h6, p, a, span, div {
+    @apply font-body;
+  }
+  h1, h2 {
+    @apply font-[Byzantin]
+  }
+
 }

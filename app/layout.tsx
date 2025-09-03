@@ -2,6 +2,18 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ScrollProvider } from "@/components/ScrollContext";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import LogoLoader from "@/components/Logoloader";
+import { Merriweather } from "next/font/google";
+import Footer from "@/components/Footer";
+
+const merriweather = Merriweather({
+  weight: ["400", "700", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-merriweather",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,10 +38,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${merriweather.variable} ${geistSans.variable} ${geistMono.variable} antialiased max-w-screen overflow-x-hidden`}
       >
         <ScrollProvider>
-          {children}
+          <LogoLoader>
+            <main>
+              <Navbar />
+            </main>
+            {children}
+          <Footer />
+          </LogoLoader>
         </ScrollProvider>
       </body>
     </html>

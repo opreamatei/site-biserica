@@ -1,96 +1,189 @@
-'use client';
+"use client";
 import React, { useRef, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
-import { useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const VERTEX_SHADER = `
-    void main() {
-        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-    }
+  void main() {
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
 `;
 
 const BACKGROUND_SHADER = `
-    uniform float scroll;
-    uniform vec2 size;
+#define cloud
+const float timeScale = 12.0;
+const float cloudScale = 1.5;
+const float skyCover = .5; 
+const float softness = 0.05;
+const float brightness = 0.5;
+const int noiseOctaves = 8;
+const float curlStrain = 3.0;
 
-    #define S(a,b,t) smoothstep(a,b,t)
+uniform float time;     // seconds
+uniform vec2 size;      // canvas pixel size
 
-    mat2 Rot(float a)
-    {
-        float s = sin(a);
-        float c = cos(a);
-        return mat2(c, -s, s, c);
+//#define turbulence
+//#define marble
+//#define granite
+
+float hash21(vec2 p)
+{
+	float h = dot(p,vec2(127.1,311.7));
+	
+    return  -1.+2.*fract(sin(h)*43758.5453123);
+}
+
+vec2 hash22(vec2 p)
+{
+    p = p*mat2(127.1,311.7,269.5,183.3);
+	p = -1.0 + 2.0 * fract(sin(p)*43758.5453123);
+	return sin(p*6.283);
+}
+
+float perlin_noise(vec2 p)
+{
+	vec2 pi = floor(p);
+    vec2 pf = p-pi;
+    vec2 w = pf*pf*(3.-2.*pf);
+    
+    float f00 = dot(hash22(pi+vec2(.0,.0)),pf-vec2(.0,.0));
+    float f01 = dot(hash22(pi+vec2(.0,1.)),pf-vec2(.0,1.));
+    float f10 = dot(hash22(pi+vec2(1.0,0.)),pf-vec2(1.0,0.));
+    float f11 = dot(hash22(pi+vec2(1.0,1.)),pf-vec2(1.0,1.));
+    
+    float xm1 = mix(f00,f10,w.x);
+    float xm2 = mix(f01,f11,w.x);
+    
+    float ym = mix(xm1,xm2,w.y); 
+    return ym;
+   
+}
+
+float noise_sum(vec2 p){
+    p *= 4.;
+	float a = 1., r = 0., s=0.;
+    
+    for (int i=0; i<5; i++) {
+      r += a*perlin_noise(p); s+= a; p *= 2.; a*=.5;
     }
+    
+    return r/s;///(.1*3.);
+}
 
-    vec2 hash( vec2 p )
-    {
-        p = vec2( dot(p,vec2(2127.1,81.17)), dot(p,vec2(1269.5,283.37)) );
-        return fract(sin(p)*43758.5453);
+float noise_sum_abs(vec2 p)
+{	
+    p *= 4.;
+	float a = 1., r = 0., s=0.;
+    
+    for (int i=0; i<5; i++) {
+      r += a*abs(perlin_noise(p)); s+= a; p *= 2.; a*=.5;
     }
+    
+    return (r/s-.135)/(.06*3.);
+}
 
-    float noise( in vec2 p )
+float noise_sum_abs_sin(vec2 p)
+{	
+    p *= 7.0/4.0;
+    float f = noise_sum_abs(p);
+    f = sin(f * 1.5 + p.x * 4.0);
+    
+    return f *f;
+}
+
+float noise_one_octave(vec2 p){
+    float r = 0.0;
+	r += 0.125*abs(perlin_noise(p*30.));
+    return r;
+}
+
+float noise(vec2 p){
+
+	#ifdef marble
+    	return noise_sum_abs_sin(p);
+    #elif defined turbulence
+    	return noise_sum_abs(p);
+    #elif defined granite
+    	return noise_one_octave(p);
+    #elif defined cloud
+    	return noise_sum(p);
+    #endif
+}
+
+float sat(float num)
+{
+    return clamp(num,0.0,1.0);
+}
+
+
+
+vec2 rotate(vec2 uv)
+{
+    uv = uv + noise(uv*0.2)*0.005;
+    float rot = curlStrain;
+    float sinRot=sin(rot);
+    float cosRot=cos(rot);
+    mat2 rotMat = mat2(cosRot,-sinRot,sinRot,cosRot);
+    return uv * rotMat;
+}
+
+float fbm (vec2 uv)
+{
+    float rot = 1.57;
+    float sinRot=sin(rot);
+    float cosRot=cos(rot);
+    float f = 0.0;
+    float total = 0.0;
+    float mul = 0.5;
+    mat2 rotMat = mat2(cosRot,-sinRot,sinRot,cosRot);
+    
+    for(int i = 0;i < noiseOctaves;i++)
     {
-        vec2 i = floor( p );
-        vec2 f = fract( p );
-        
-        vec2 u = f*f*(3.0-2.0*f);
-
-        float n = mix( mix( dot( -1.0+2.0*hash( i + vec2(0.0,0.0) ), f - vec2(0.0,0.0) ), 
-                            dot( -1.0+2.0*hash( i + vec2(1.0,0.0) ), f - vec2(1.0,0.0) ), u.x),
-                    mix( dot( -1.0+2.0*hash( i + vec2(0.0,1.0) ), f - vec2(0.0,1.0) ), 
-                            dot( -1.0+2.0*hash( i + vec2(1.0,1.0) ), f - vec2(1.0,1.0) ), u.x), u.y);
-        return 0.5 + 0.5*n;
+        f += noise(uv+time*0.00015*timeScale*(1.0-mul))*mul;
+        total += mul;
+        uv *= 3.0;
+        uv=rotate(uv);
+        mul *= 0.5;
     }
+    return f/total;
+}
 
-    void main()
-    {
-        vec2 uv = gl_FragCoord.xy / size.xy;
-        float ratio = size.x / size.y;
+void main(  )
+{
+    vec2 uv = gl_FragCoord.xy/(40000.0*cloudScale);
+    
 
-        vec2 tuv = uv;
-        tuv -= 0.5;
+    float cover = skyCover + .5;
+    
+    float bright = brightness*6.;
+    
+    float color1 = fbm(uv-0.5+time*0.00004*timeScale);
+    float color2 = fbm(uv-10.5+time*0.00002*timeScale);
+    
+    float clouds1 = smoothstep(1.0-cover,min((1.0-cover)+softness*2.0,1.0),color1);
+    float clouds2 = smoothstep(1.0-cover,min((1.0-cover)+softness,1.0),color2);
+    
+    float cloudsFormComb = sat(clouds1+clouds2);
+    
+    vec4 skyCol = vec4(0.6,0.8,1.0,1.0);
+    float cloudCol = sat(sat(1.0-pow(color1,1.0)*0.2)*bright);
+    vec4 clouds1Color = vec4(cloudCol,cloudCol,cloudCol,1.0);
+    vec4 clouds2Color = mix(clouds1Color,skyCol,0.25);
+    vec4 cloudColComb = mix(clouds1Color,clouds2Color,sat(clouds2-clouds1));
+    
+	 gl_FragColor = mix(skyCol,cloudColComb,cloudsFormComb);
+}`;
 
-        float degree = noise(vec2(scroll * 0.1, tuv.x * tuv.y));
-
-        tuv.y *= 1. / ratio;
-        tuv *= Rot(radians((degree - 0.5) * 720. + 180.));
-        tuv.y *= ratio;
-
-        float frequency = 5.;
-        float amplitude = 30.;
-        float speed = scroll * 2.;
-        tuv.x += sin(tuv.y * frequency + speed) / amplitude;
-        tuv.y += sin(tuv.x * frequency * 1.5 + speed) / (amplitude * 0.5);
-
-        vec3 colorYellow = vec3(0.957, 0.804, 0.623) / 2.;
-        vec3 colorDeepBlue = vec3(0.192, 0.484, 0.933) / 2.;
-        vec3 layer1 = mix(colorYellow, colorDeepBlue, S(-.3, .2, (tuv * Rot(radians(-5.))).x));
-
-        vec3 colorRed = vec3(0.910, 0.110, 0.1) / 3.;
-        vec3 colorBlue = vec3(0.350, 0.71, 0.953) / 7.;
-        vec3 layer2 = mix(colorRed, colorBlue, S(-.3, .6, (tuv * Rot(radians(-5.))).x));
-
-        vec3 finalComp = mix(layer1, layer2, S(.5, -.3, tuv.y));
-        vec3 col = finalComp;
-
-        float dist = 1. - length((uv - 0.5) * vec2(ratio, 1.0));
-        float fade = smoothstep(0.0, 1.0, dist) * 1.2;
-        col *= fade;
-
-        gl_FragColor = vec4(col, 1.0);
-    }
-`;
-
-function BackgroundShader({ scrollRef }) {
+function BackgroundShader() {
   const { viewport, size } = useThree();
   const uniforms = useRef({
-    scroll: new THREE.Uniform(0),
-    size: new THREE.Uniform(new THREE.Vector2(size.width, size.height)), // pixels
+    time: new THREE.Uniform(0),
+    size: new THREE.Uniform(new THREE.Vector2(size.width, size.height)),
   });
 
-  useFrame(() => {
-    uniforms.current.scroll.value = scrollRef.current;
+  useFrame((state) => {
+    uniforms.current.time.value = state.clock.getElapsedTime();
   });
 
   useEffect(() => {
@@ -99,7 +192,6 @@ function BackgroundShader({ scrollRef }) {
 
   return (
     <mesh>
-      {/* world units for geometry */}
       <planeGeometry args={[viewport.width, viewport.height]} />
       <shaderMaterial
         uniforms={uniforms.current}
@@ -110,38 +202,36 @@ function BackgroundShader({ scrollRef }) {
   );
 }
 
-export default function Background3({ opacity = 1, x = 0, y = 0 }) {
-  const { scrollYProgress } = useScroll();
-  const scroll = useTransform(scrollYProgress, [0, 1], [0, 10]);
-  const scrollRef = useRef(0);
-
-  useEffect(() => {
-    return scroll.on("change", (v) => {
-      scrollRef.current = v;
-    });
-  }, [scroll]);
-
+export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
   return (
-    <div
-      style={{
-        marginLeft: `${x}px`,
-        marginTop: `${y}px`,
-        opacity,
-      }}
-    >
-      <Canvas
-        orthographic
-        camera={{ zoom: 100, position: [0, 0, 10] }}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100vw",
-          height: "100vh",
-        }}
+    <>
+      <div
+        style={{ marginLeft: `${x}px`, marginTop: `${y}px`, opacity }}
+        className="absolute -z-2"
       >
-        <BackgroundShader scrollRef={scrollRef} />
-      </Canvas>
-    </div>
+        <Canvas
+          orthographic
+          camera={{ zoom: 100, position: [0, 0, 10] }}
+          style={{ top: 0, left: 0, width: "100vw", height: "120vh" }}
+          className=""
+        >
+          <BackgroundShader />
+        </Canvas>
+      </div>
+      <div className="h-[80vh] w-screen text-black text-lg z-2 overflow-hidden">
+        <div className="mx-auto container flex flex-col justify-center items-center mt-20 ">
+          <h1 className="relative text-5xl">DONATE</h1>
+          <h3 className="relative">un subtitlu aici</h3>
+        </div>
+        <div className="relative mt-[-5vh] -z-1 lg:mt-[30vh] h-4/5 w-4/5 mx-auto">
+          <Image
+            src="/assets/imagine biserica.png"
+            alt="imagine-biserica"
+            className="object-contain"
+            fill
+          ></Image>
+        </div>
+      </div>
+    </>
   );
 }

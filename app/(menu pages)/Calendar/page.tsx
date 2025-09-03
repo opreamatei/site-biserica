@@ -100,7 +100,6 @@ export default function Programliturgic() {
 
   return (
     <>
-    <Navbar />
     <motion.div
       initial={{ scale: 0.98, borderRadius: '16px', opacity: 0 }}
       animate={{ scale: 1, borderRadius: '0px', opacity: 1 }}
@@ -109,6 +108,7 @@ export default function Programliturgic() {
       className="min-h-screen bg-[#020202] px-6 py-12 pt-[100px] text-white"
 
     >
+      <div className="max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6">
         <button
           onClick={() => changeMonth(-1)}
@@ -160,6 +160,7 @@ export default function Programliturgic() {
           </div>
         );
       })}
+      </div>
     </motion.div>
     </>
   );

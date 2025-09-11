@@ -8,7 +8,7 @@ const M = motion;
 
 /** ---- KNOBS ---- */
 const SCALE = 1.25;
-const BG_SCROLL = -2500; // was -4000, now moves faster
+const BG_SCROLL = -2500;
 const FADE = 0.05; // slightly longer fade for smoother transitions
 
 export default function Scene() {

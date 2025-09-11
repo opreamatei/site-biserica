@@ -1,55 +1,53 @@
-
-{
+ {
   "duminică": {
-    "data": "3 august",
+    "data": "7 septembrie",
     "activitati": [
       { "nume": "Utrenia", "ora": "7:30" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" },
+      { "nume": "Priveghere (Vecernia, Litia, Utrenia)", "ora": "18:00" }
     ]
   },
   "luni": {
-    "data": "4 august",
+    "data": "8 septembrie",
     "activitati": [
-      { "nume": "Dumnezeiasca Liturghie", "ora": "6:00" },
-      { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
+      { "nume": "Acatistul Nașterii Maicii Domnului", "ora": "8:00" },
+      { "nume": "Dumnezeiasca Liturghie (Hramul bisericii)", "ora": "" }
     ]
   },
   "marți": {
-    "data": "5 august",
+    "data": "9 septembrie",
     "activitati": [
       { "nume": "Dumnezeiasca Liturghie", "ora": "6:00" },
+      { "nume": "Taina Spovedaniei", "ora": "7:30" },
       { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
     ]
   },
   "miercuri": {
-    "data": "6 august",
+    "data": "10 septembrie",
     "activitati": [
-      { "nume": "Utrenia", "ora": "7:30" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" },
-      { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
+      { "nume": "Biserica este deschisă între orele", "ora": "10:00 - 17:00" }
     ]
   },
   "joi": {
-    "data": "7 august",
+    "data": "11 septembrie",
     "activitati": [
-      { "nume": "Dumnezeiasca Liturghie", "ora": "6:00" },
-      { "nume": "Taina Spovedaniei", "ora": "7:30" },
-      { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
+      { "nume": "Taina Spovedaniei", "ora": "18:00" }
     ]
   },
   "vineri": {
-    "data": "8 august",
+    "data": "12 septembrie",
     "activitati": [
-      { "nume": "Dumnezeiasca Liturghie", "ora": "6:00" },
-      { "nume": "Taina Spovedaniei", "ora": "7:30" },
-      { "nume": "Biserica este deschisă până la orele", "ora": "14:00" }
+      { "nume": "Biserica este deschisă", "ora": "10:00" },
+      { "nume": "Acatistul Maicii Domnului", "ora": "18:00" }
     ]
   },
   "sâmbătă": {
-    "data": "9 august",
+    "data": "13 septembrie",
     "activitati": [
       { "nume": "Dumnezeiasca Liturghie", "ora": "8:00" },
       { "nume": "Pomenirea celor adormiți", "ora": "" }
     ]
   }
 }
+
+

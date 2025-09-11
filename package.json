@@ -19,6 +19,7 @@
     "next": "15.3.3",
     "react": "^19.1.1",
     "react-dom": "^19.0.0",
+    "site-biserica": "github:NitaCristianu/site-biserica",
     "three": "^0.179.1"
   },
   "devDependencies": {

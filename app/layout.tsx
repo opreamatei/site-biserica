@@ -46,7 +46,6 @@ export default function RootLayout({
               <Navbar />
             </main>
             {children}
-          <Footer />
           </LogoLoader>
         </ScrollProvider>
       </body>

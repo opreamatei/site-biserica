@@ -1,5 +1,6 @@
 "use client";
 
+import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import Background from "@/components/spec/background";
 import { motion } from "framer-motion";
@@ -37,16 +38,16 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="bg-black">
+    <div className="bg-[#0A0004]">
       <motion.div
         initial={{ scale: 0.95, borderRadius: "30px", opacity: 0 }}
         animate={{ scale: 1, borderRadius: "0px", opacity: 1 }}
         exit={{ scale: 0.95, borderRadius: "30px", opacity: 0 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
-        className="min-h-screen w-screen  px-6 py-12 text-white relative "
+        className="relative min-h-screen w-full px-6 py-12 text-white overflow-hidden"
       >
-        <div className="absolute h-470 mask-b-from-0 inset-0 isolate w-full opacity-20 z-6">
-          <div className="relative h-450">
+        <div className="absolute  mask-b-from-0 inset-0 isolate w-full opacity-20 z-6">
+          <div className="relative w-full h-full">
             <Image
               fill
               className="z-4 object-cover absolute mix-blend-overlay"
@@ -62,7 +63,7 @@ export default function Page() {
           </div>
         </div>
 
-        <h1 className="relative z-2 flex justify-center text-center text-4xl md:text-7xl mt-[100px] mb-12 underline decoration-2 underline-offset-8">
+        <h1 className="relative z-2 flex justify-center text-center text-4xl md:text-7xl mt-[100px] mb-15 underline decoration-2 underline-offset-8">
           Program liturgic
         </h1>
 
@@ -74,7 +75,7 @@ export default function Page() {
                   zi.zi_saptamana.slice(1)}
               </span>
               <span>, {zi.data}</span>
-              <ul className="space-y-1 ml-4 mb-6 mt-2 ">
+              <ul className="space-y-1 ml-4 mb-6 mt-6 ">
                 {zi.activitati.map((act, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <span className=" w-[60px]">{act.ora}</span>

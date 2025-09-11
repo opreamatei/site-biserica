@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '@/components/Navbar';
+import Image from 'next/image';
 
 type LocalDay = {
   zi: number;
@@ -105,9 +105,25 @@ export default function Programliturgic() {
       animate={{ scale: 1, borderRadius: '0px', opacity: 1 }}
       exit={{ scale: 0.98, borderRadius: '16px', opacity: 0 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="min-h-screen bg-[#020202] px-6 py-12 pt-[100px] text-white"
+      className="min-h-screen bg-[#0A0004] px-6 py-12 pt-[100px] text-white"
 
     >
+      <div className="absolute h-full mask-b-from-0 inset-0 isolate w-full opacity-20 z-6">
+                <div className="relative h-full">
+                  <Image
+                    fill
+                    className="z-4 object-cover absolute mix-blend-overlay"
+                    alt="background"
+                    src={"/background/concrete_wall_003_rough_8k.jpg"}
+                  />
+                  <Image
+                    className="z-2 blur-md  bg-black-800 object-cover"
+                    src={"/assets/fundal-program.png"}
+                    alt="program-background"
+                    fill
+                  />
+                </div>
+              </div>
       <div className="max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6">
         <button

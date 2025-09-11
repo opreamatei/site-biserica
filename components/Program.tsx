@@ -1,9 +1,8 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
-import { motion, useInView } from "framer-motion";
-import Link from "next/link";
-import VerticalParallax from "./Parallax";
+import { useRouter } from "next/navigation";
 import IconFrame from "./gen/IconFrame";
+import Loader from "./Loader";
 
 type Activitate = {
   nume: string;
@@ -23,12 +22,17 @@ const normalize = (str: string) =>
 
 const Program = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const router = useRouter();
+
+  // Loader state
+  const [loading, setLoading] = useState(false);
 
   const [ziAzi, setZiAzi] = useState<Zi | null>(null);
 
+  // Fetch today's program
   useEffect(() => {
     const getProgram = async () => {
+      setLoading(true); // show loader while fetching
       try {
         const res = await fetch("/data/program.json");
         const data = await res.json();
@@ -51,28 +55,39 @@ const Program = () => {
         setZiAzi(ziAziData);
       } catch (e) {
         console.error("Eroare la încărcarea programului:", e);
+      } finally {
+        setLoading(false); 
       }
     };
 
     getProgram();
   }, []);
 
+  const handleNavigation = async () => {
+    setLoading(true);
+
+    //  artificial delay for demo purposes
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log('loadingbar!!');
+    router.push("/Program-Liturgic");
+  };
+
   const ziAfisata = ziAzi;
 
   return (
     <>
-      <div className="z-2 px-4  mb-2 flex flex-col items-center gap-6">
+      <Loader isLoading={loading} />
+
+      <div className="z-2 px-4 mb-2 flex flex-col items-center gap-6">
         <div className="w-full max-w-3xl p-4 md:p-6 flex flex-col sm:flex-row md:items-center sm:items-start justify-center gap-4">
-          {/* Left side: Date */}
-          <h3 className="text-6xl md:text-8xl font-bold text-gray text-center sm:text-left sm:flex-1 text-[#2b220a] ">
-            {/* {ziAfisata?.data || "..."} */}
+       
+          <h3 className="text-6xl md:text-8xl font-bold text-gray text-center sm:text-left sm:flex-1 text-[#2b220a]">
             Astăzi
           </h3>
 
-          {/* Divider: Responsive Orientation */}
+          {/* Divider */}
           <span className="bg-[#2c2209] w-full h-[1.4px] sm:w-[1.4px] sm:h-[60px] md:h-[140px]"></span>
 
-          {/* Right side: Activities */}
           <div className="text-sm md:text-base mt-4 text-gray sm:flex-1 text-center sm:text-left">
             {ziAfisata?.activitati.some(
               (act) => !act.ora && normalize(act.nume).includes("inchisă")
@@ -82,7 +97,7 @@ const Program = () => {
               <div className="flex flex-col space-y-3">
                 {ziAfisata?.activitati.map((act, i) => (
                   <div key={i} className="flex">
-                    <p className=" text-left text-lg text-[#2b220a] ">
+                    <p className="text-left text-lg text-[#2b220a]">
                       {act.ora ? (
                         <span className="font-bold absolute max-w-10">
                           {act.ora}
@@ -93,7 +108,7 @@ const Program = () => {
                         </span>
                       )}
                     </p>
-                    <span className="text-lg  text-[#302508] pl-14 w-full text-left">
+                    <span className="text-lg text-[#302508] pl-14 w-full text-left">
                       {act.nume}
                     </span>
                   </div>
@@ -103,13 +118,13 @@ const Program = () => {
           </div>
         </div>
 
-        <IconFrame
-          bgColor="bg-[#2c2209]"
-          textColor="text-white/50"
-        >
-          <Link href={"Program-Liturgic"} className="text-base z-2 p-2 px-5">
-            {"Vezi programul săptămânii"}
-          </Link>
+        <IconFrame bgColor="bg-[#2c2209]" textColor="text-white/50">
+          <button
+            onClick={handleNavigation}
+            className="text-base z-2 p-2 px-5"
+          >
+            Vezi programul săptămânii
+          </button>
         </IconFrame>
       </div>
     </>

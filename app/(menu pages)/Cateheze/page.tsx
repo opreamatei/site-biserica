@@ -2,15 +2,14 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
+
 type Cateheza = {
   id: number;
   title: string;
   description: string;
   audioUrl: string;
 };
-import bgimg from "../../../public/assets/fundal-program.png";
 
 const CatehezePage = () => {
   const [cateheze, setCateheze] = useState<Cateheza[]>([]);
@@ -30,30 +29,30 @@ const CatehezePage = () => {
   }, []);
 
   return (
-  <div >
-      <div className="absolute h-300 w-screen mask-b-from-0 inset-0 isolate opacity-100 -z-1">
-        <div className="relative h-450">
-          <Image
-            fill
-            className="z-4 object-cover absolute mix-blend-overlay"
-            alt="background"
-            src={"/background/concrete_wall_003_rough_8k.jpg"}
-          />
-          <Image
-            className="z-4 blur-md scale-110 bg-black-800 object-cover"
-            src={"/assets/fundal-program.png"}
-            alt="program-background"
-            fill
-          />
-        </div>
-      </div>
+    <div className="bg-[#0A0004]">
       <motion.div
         initial={{ scale: 0.95, borderRadius: "30px", opacity: 0 }}
         animate={{ scale: 1, borderRadius: "0px", opacity: 1 }}
         exit={{ scale: 0.95, borderRadius: "30px", opacity: 0 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
-        className="min-h-screen px-6 py-12 text-white max-w-4xl mx-auto"
+        className="min-h-screen w-screen px-6 py-12 text-white relative "
       >
+        <div className="absolute h-full mask-b-from-0 inset-0 isolate w-full opacity-20 z-6">
+          <div className="relative h-full">
+            <Image
+              fill
+              className="z-4 object-cover absolute mix-blend-overlay"
+              alt="background"
+              src={"/background/concrete_wall_003_rough_8k.jpg"}
+            />
+            <Image
+              className="z-2 blur-md  bg-black-800 object-cover"
+              src={"/assets/fundal-program.png"}
+              alt="program-background"
+              fill
+            />
+          </div>
+        </div>
         <h1 className="text-4xl font-bold flex justify-center text-white mt-[80px] mb-12">
           Cateheze
         </h1>
@@ -75,7 +74,7 @@ const CatehezePage = () => {
           >
             <h2 className="text-xl font-semibold">{item.title}</h2>
             <p className="mt-2 text-white/60">{item.description}</p>
-            <audio controls className="mt-4 w-full ">
+            <audio controls className="w-full mt-4 max-w-md bg-gray-100 rounded-xl shadow-lg border border-gray-300">
               <source src={item.audioUrl} type="audio/mpeg" />
               Browserul tău nu suportă audio.
             </audio>

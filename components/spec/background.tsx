@@ -1,8 +1,10 @@
 "use client";
+
 import { useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
 import { motion } from "framer-motion";
+import VerticalParallax from "../Parallax";
 
 export default function Background({
   classname,
@@ -18,15 +20,14 @@ export default function Background({
   );
 
   return (
-    <div
-      className={"-z-2 absolute h-[520vh] w-full overflow-hidden " + classname}
-      id="background-diffuse"
-    >
+    <div className="relative w-full">
+      {/* BACKGROUND: always behind */}
       <motion.div
-        className="relative h-full"
-        style={{
-          y: y, // atentie, vorbimd e o textura mare, vom misca imaginea cu transform (y in framer motion) in loc de top deoearece asta va utiliza gpu ul care este mai eficient.
-        }}
+        className={
+          "absolute inset-0 -z-20 h-[500vh] w-full overflow-hidden " + classname
+        }
+        id="background-diffuse"
+        style={{ y }}
       >
         <Image
           fill
@@ -35,9 +36,7 @@ export default function Background({
           src={"/background/concrete_wall_003_diff_8k.jpg"}
         />
         <motion.div
-          style={{
-            opacity: sparkle,
-          }}
+          style={{ opacity: sparkle }}
           className="absolute inset-0 pointer-events-none mix-blend-color-burn"
         >
           <Image
@@ -47,9 +46,11 @@ export default function Background({
             src={"/background/concrete_wall_003_disp_8k.png"}
           />
         </motion.div>
-        <div className="bg-c59d30 h-full z-2 absolute"></div>
-        {children}
+        <div className="bg-c59d30 h-full absolute" />
       </motion.div>
+
+      {/* PARALLAX + CONTENT */}
+      <VerticalParallax>{children}</VerticalParallax>
     </div>
   );
 }

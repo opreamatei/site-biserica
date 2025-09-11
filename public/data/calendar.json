@@ -332,9 +332,379 @@
     ],
     "tip": "Duminică",
     "dezlegări": []
+  },
+
+  "2025-09-01": {
+    "zi": 1,
+    "zi_saptamana": "L",
+    "sfinți": [
+      "✝) Sfântul Cuvios Dionisie Exiguul",
+      "Începutul anului bisericesc (Indictionul)",
+      "Sfântul Simeon Stâlpnicul",
+      "Sfânta Marta, mama Sfântului Simeon Stâlpnicul",
+      "Ap. I Timotei 2, 1-7",
+      "Ev. Luca 4, 16-22"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-02": {
+    "zi": 2,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "Sfântul Mucenic Mamant",
+      "Sfântul Ioan Postitorul, Patriarhul Constantinopolului",
+      "Sfântul Antonie, Arhiepiscopul Novgorodului",
+      "Ap. Galateni 4, 28-31; 5, 1-10",
+      "Ev. Marcu 6, 54-56; 7, 1-8"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-03": {
+    "zi": 3,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfântul Antim, Episcopul Nicomidiei",
+      "Sfântul Cuvios Teoctist",
+      "Ap. Galateni 5, 11-21",
+      "Ev. Marcu 7, 5-16"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-04": {
+    "zi": 4,
+    "zi_saptamana": "J",
+    "sfinți": [
+      "✝) Sfântul Sfințit Mucenic Vavila, Episcopul Antiohiei",
+      "Sfinții Mucenici Urban, Prilid, Epoloniu și 11 femei",
+      "Sfântul Cuvios Moise Mărturisitorul",
+      "Ap. Galateni 6, 1-10",
+      "Ev. Marcu 7, 17-23"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-05": {
+    "zi": 5,
+    "zi_saptamana": "V",
+    "sfinți": [
+      "✝) Sfântul Proroc Zaharia, tatăl Sfântului Ioan Botezătorul",
+      "Sfântul Mucenic Urban",
+      "Ap. Efeseni 1, 16-23",
+      "Ev. Marcu 7, 24-30"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-06": {
+    "zi": 6,
+    "zi_saptamana": "S",
+    "sfinți": [
+      "✝) Minunea Sfântului Arhanghel Mihail în Colose",
+      "Sfântul Mucenic Eudoxie",
+      "Sfântul Cuvios Arsenie",
+      "Ap. I Corinteni 1, 26-31; 2, 1-5",
+      "Ev. Matei 20, 29-34"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-07": {
+    "zi": 7,
+    "zi_saptamana": "D",
+    "sfinți": [
+      "✝) Duminica a 12-a după Rusalii",
+      "Înainte-prăznuirea Nașterii Maicii Domnului",
+      "Sfântul Mucenic Sozont",
+      "Ap. I Corinteni 15, 1-11",
+      "Ev. Matei 19, 16-26",
+      "glas 3, voscr. 6"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-08": {
+    "zi": 8,
+    "zi_saptamana": "L",
+    "sfinți": [
+      "✝) Nașterea Maicii Domnului",
+      "Ap. Filipeni 2, 5-11",
+      "Ev. Luca 10, 38-42; 11, 27-28"
+    ],
+    "tip": "Praznic împărătesc",
+    "dezlegări": ["dezlegare la pește"]
+  },
+  "2025-09-09": {
+    "zi": 9,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfinții și Drepții Părinți Ioachim și Ana",
+      "Sfântul Cuvios Onufrie de la Vorona",
+      "Ap. Efeseni 5, 25-33; 6, 1-4",
+      "Ev. Luca 11, 29-33"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-10": {
+    "zi": 10,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "Sfântul Mucenic Minodora, Mitrodora și Nimfodora",
+      "Sfântul Pulcherie, împăratul",
+      "Ap. Efeseni 6, 18-24",
+      "Ev. Luca 11, 34-41"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-11": {
+    "zi": 11,
+    "zi_saptamana": "J",
+    "sfinți": [
+      "✝) Sfânta Cuvioasă Teodora din Alexandria",
+      "Sfântul Ierarh Eufrosin",
+      "Ap. Filipeni 1, 1-7",
+      "Ev. Luca 11, 42-46"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-12": {
+    "zi": 12,
+    "zi_saptamana": "V",
+    "sfinți": [
+      "✝) Sfântul Sfințit Mucenic Autonom",
+      "Sfântul Cuvios Atanasie din Creta",
+      "Ap. Filipeni 1, 8-14",
+      "Ev. Luca 11, 47-54"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-13": {
+    "zi": 13,
+    "zi_saptamana": "S",
+    "sfinți": [
+      "✝) Înainte-prăznuirea Înălțării Sfintei Cruci",
+      "Pomenirea mutării moaștelor Sfântului Ioan Gură de Aur",
+      "Sfântul Cuvios Corneliu",
+      "Ap. I Corinteni 2, 6-9",
+      "Ev. Matei 10, 37-42"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-14": {
+    "zi": 14,
+    "zi_saptamana": "D",
+    "sfinți": [
+      "✝) Înălțarea Sfintei Cruci",
+      "Ap. I Corinteni 1, 18-24",
+      "Ev. Ioan 19, 6-11; 13-20; 25-28; 31-35"
+    ],
+    "tip": "Praznic împărătesc",
+    "dezlegări": []
+  },
+  "2025-09-15": {
+    "zi": 15,
+    "zi_saptamana": "L",
+    "sfinți": [
+      "✝) Sfântul Ierarh Iosif cel Nou de la Partoș, Mitropolitul Banatului",
+      "Sfântul Mare Mucenic Nichita Gotul",
+      "Ap. Filipeni 1, 27-30; 2, 1-4",
+      "Ev. Luca 12, 13-15; 22-31"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-16": {
+    "zi": 16,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfântul Mare Mucenic Eufrem cel Nou din Nea Makri",
+      "Sfântul Sfințit Mucenic Lucia",
+      "Sfântul Mucenic Ludmila, ducesa Cehiei",
+      "Ap. Filipeni 2, 5-11",
+      "Ev. Luca 12, 32-40"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-17": {
+    "zi": 17,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfânta Muceniță Sofia și fiicele sale: Pistis, Elpis și Agapis",
+      "Sfântul Mucenic Agatocleu",
+      "Ap. Filipeni 2, 12-16",
+      "Ev. Luca 12, 42-48"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-18": {
+    "zi": 18,
+    "zi_saptamana": "J",
+    "sfinți": [
+      "Sfântul Mucenic Eumenie, Episcopul Gortinei",
+      "Ap. Filipeni 2, 17-23",
+      "Ev. Luca 12, 49-59"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-19": {
+    "zi": 19,
+    "zi_saptamana": "V",
+    "sfinți": [
+      "✝) Sfântul Ierarh Ioan de Kronstadt",
+      "Sfântul Mucenic Trofim și Dorimedont",
+      "Sfântul Chiriac de la Tazlau",
+      "Ap. Filipeni 2, 24-30",
+      "Ev. Luca 13, 1-9"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-20": {
+    "zi": 20,
+    "zi_saptamana": "S",
+    "sfinți": [
+      "✝) Sfântul Mare Mucenic Eustatie și soția sa Teopista cu fiii lor Agapie și Teopist",
+      "Sfântul Mucenic Hilarion",
+      "Ap. I Corinteni 4, 17-21; 5, 1-5",
+      "Ev. Matei 24, 1-13"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-21": {
+    "zi": 21,
+    "zi_saptamana": "D",
+    "sfinți": [
+      "✝) Duminica a 17-a după Rusalii",
+      "Sfântul Apostol Codrat",
+      "Ap. II Corinteni 6, 1-10",
+      "Ev. Luca 5, 1-11",
+      "glas 8, voscr. 1"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-22": {
+    "zi": 22,
+    "zi_saptamana": "L",
+    "sfinți": [
+      "✝) Sfântul Sfințit Mucenic Foca, Episcopul Sinopiei",
+      "Sfântul Prooroc Iona",
+      "Sfântul Cuvios Cosma",
+      "Ap. Filipeni 3, 1-8",
+      "Ev. Luca 13, 31-35"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-23": {
+    "zi": 23,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Zămislirea Sfântului Ioan Botezătorul",
+      "Sfântul Cuvios Ioan de la Prislop",
+      "Ap. Galateni 4, 22-31",
+      "Ev. Luca 1, 5-25"
+    ],
+    "tip": "Sărbătoare",
+    "dezlegări": []
+  },
+  "2025-09-24": {
+    "zi": 24,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfânta Mare Muceniță Tecla, întocmai cu Apostolii",
+      "Ap. Filipeni 3, 8-19",
+      "Ev. Luca 14, 25-35"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-25": {
+    "zi": 25,
+    "zi_saptamana": "J",
+    "sfinți": [
+      "Sfântul Cuvios Eufrosin Cărbunarul",
+      "Sfântul Sfințit Mucenic Autonom",
+      "Ap. Filipeni 4, 1-9",
+      "Ev. Luca 14, 1-11"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-26": {
+    "zi": 26,
+    "zi_saptamana": "V",
+    "sfinți": [
+      "✝) Mutarea moaștelor Sfântului Ioan Gură de Aur",
+      "Sfântul Cuvios Nil",
+      "Ap. Evrei 7, 26-28; 8, 1-2",
+      "Ev. Ioan 10, 9-16"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-27": {
+    "zi": 27,
+    "zi_saptamana": "S",
+    "sfinți": [
+      "✝) Înălțarea Sfintei Cruci (odovania praznicului)",
+      "Sfântul Mucenic Calistrat",
+      "Ap. I Corinteni 10, 23-28",
+      "Ev. Luca 4, 31-36"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-28": {
+    "zi": 28,
+    "zi_saptamana": "D",
+    "sfinți": [
+      "✝) Duminica a 18-a după Rusalii",
+      "Sfântul Cuvios Hariton Mărturisitorul",
+      "Ap. II Corinteni 9, 6-11",
+      "Ev. Luca 6, 31-36",
+      "glas 1, voscr. 2"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-29": {
+    "zi": 29,
+    "zi_saptamana": "L",
+    "sfinți": [
+      "✝) Sfânta Cuvioasă Parascheva din Iconiu",
+      "Sfântul Mucenic Trofim din Palestina",
+      "Sfântul Cuvios Chiriac de la Bisericani",
+      "Ap. Coloseni 1, 1-2; 7-11",
+      "Ev. Luca 6, 37-45"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
+  },
+  "2025-09-30": {
+    "zi": 30,
+    "zi_saptamana": "M",
+    "sfinți": [
+      "✝) Sfântul Ierarh Grigorie Luminătorul, Arhiepiscopul Armeniei",
+      "Sfântul Mucenic Mardon",
+      "Ap. Coloseni 1, 18-23",
+      "Ev. Luca 6, 46-49; 7, 1"
+    ],
+    "tip": "Zi obișnuită",
+    "dezlegări": []
   }
 }
-
 
 
 

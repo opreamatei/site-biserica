@@ -120,11 +120,14 @@ const Events = () => {
         <p className=" mt-6 text-white/50">Nu există evenimente disponibile.</p>
       )}
 
-      <IconFrame bgColor="bg-[#55302f]" textColor="text-white/50">
-        <Link href={"Evenimente"} className="text-base z-2 p-2 px-5">
-          {"Vezi toate evenimentele"}
-        </Link>
-      </IconFrame>
+      <div className="mt-10">
+
+        <IconFrame bgColor="bg-[#55302f]" textColor="text-white/50">
+          <Link href={"Evenimente"} className="text-base z-2 p-2 px-5">
+            {"Vezi toate evenimentele"}
+          </Link>
+        </IconFrame>
+      </div>
     </div>
   );
 };

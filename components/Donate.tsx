@@ -205,7 +205,7 @@ function BackgroundShader() {
 export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
   return (
     <>
-      <div
+      {/* <div
         style={{ marginLeft: `${x}px`, marginTop: `${y}px`, opacity }}
         className="absolute -z-2"
       >
@@ -217,7 +217,7 @@ export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
         >
           <BackgroundShader />
         </Canvas>
-      </div>
+      </div> */}
       <div className="h-[80vh] w-screen text-black text-lg z-2 overflow-hidden">
         <div className="mx-auto container flex flex-col justify-center items-center mt-20 ">
           <h1 className="relative text-5xl">DONATE</h1>

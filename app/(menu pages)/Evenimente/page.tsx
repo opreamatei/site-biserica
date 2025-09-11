@@ -41,10 +41,10 @@ const EvenimentePage = () => {
 
   return (
     <>
-      <div className="text-white p-8 min-h-[70vh] bg-black">
+      <div className="text-white p-8 min-h-screen bg-[#0A0004] ">
         <h1 className="text-2xl font-bold mb-6">Evenimente viitoare</h1>
-        <div className="absolute h-full mask-b-from-0 inset-0 isolate w-full opacity-20 z-6">
-          <div className="relative h-full">
+        <div className="absolute mask-b-from-0 inset-0 isolate w-full opacity-20 z-6">
+          <div className="relative h-full overflow-x-hidden">
             <Image
               fill
               className="z-4 object-cover absolute mix-blend-overlay"

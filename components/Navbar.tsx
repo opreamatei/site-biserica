@@ -43,18 +43,18 @@ export default function Navbar() {
         >
           
           <Image
-        src="/icons/val2.png"
+        src="/icons/val2.webp"
         alt="top"
         width={300}
         height={100}
         className={`absolute object-contain scale-600 w-full h-0.5 transition-all duration-300 ease-in-out ${
           open ? "rotate-45 translate-y-0" : "-translate-y-1.5"
-        }`}
+        } `}
       />
 
       {/* Bottom image */}
       <Image
-        src="/icons/val1.png"
+        src="/icons/val1.webp"
         alt="bottom"
         width={300}
         height={100}

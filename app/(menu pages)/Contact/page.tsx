@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { MapPin, Mail } from 'lucide-react'
 
 const page = () => {
   return (
@@ -21,7 +21,7 @@ const page = () => {
       <div className="max-w-3xl mx-auto space-y-10">
 
         <div className="flex items-start gap-4">
-          <Phone className="w-6 h-6 mt-1 text-[#c95d43]" />
+          <img src="./icons/phone.svg" alt="Phone" className="w-7 h-7 mt-1" />
           <div>
             <p className="text-lg font-medium text-white/90">Telefon</p>
             <a href="tel:+40712345678" className="text-white/70 hover:underline">

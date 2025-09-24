@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ChevronDown, MousePointerClick, ScrollTextIcon } from "lucide-react";
+
 
 const Quote = () => {
   const ref = React.useRef(null);
@@ -44,15 +44,21 @@ const Quote = () => {
         >
           <motion.h1
             style={{ scale: scale2, opacity: fadetext }}
-            className="  text-4xl lg:text-6xl text-shadow-lg text-shadow-black/20  "
+            className="text-4xl lg:text-6xl text-shadow-lg text-shadow-black/20"
           >
             <span className="text-[#c95d43]">„</span>
             Quote of the day
             <span className="text-[#c95d43]">”</span>
           </motion.h1>
-          <motion.div style={{opacity : hint_fade}} className="m-3 flex justify-center gap-2">
-            <p>Swipe down</p>
-            <ChevronDown/>
+          <motion.div style={{ opacity: hint_fade }} className="m-3 flex justify-center gap-2">
+            <p>Glisează în jos</p>
+            <Image
+              src="/icons/ScrollDownArrows.gif"
+              alt="Scroll down"
+              width={30}
+              height={20}
+              unoptimized
+            />
           </motion.div>
         </div>
       </div>

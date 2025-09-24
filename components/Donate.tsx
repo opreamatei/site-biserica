@@ -220,7 +220,7 @@ export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
       </div> */}
       <div className="h-[80vh] w-screen text-black text-lg z-2 overflow-hidden">
         <div className="mx-auto container flex flex-col justify-center items-center mt-20 ">
-          <h1 className="relative text-5xl">DONATE</h1>
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-[Byzantin] first-letter:text-7xl md:first-letter:text-9xl first-letter:text-[#c95d43] ">DONATE</h1>
           <h3 className="relative">un subtitlu aici</h3>
         </div>
         <div className="relative mt-[-5vh] -z-1 lg:mt-[30vh] h-4/5 w-4/5 mx-auto">

@@ -82,7 +82,10 @@ const Events = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative font-bold text-white/70"
       >
-        <h1 className="text-2xl lg:text-5xl">Evenimente următoare</h1>
+        <h1 className="text-2xl lg:text-5xl">
+          <span className="text-4xl lg:text-6xl font-[Byzantin] text-[#693c3a]">E</span>venimente{" "}
+          <span className="text-4xl lg:text-6xl font-[Byzantin] text-[#693c3a]">U</span>rmătoare
+        </h1>
       </motion.div>
 
       {eveniment ? (
@@ -120,14 +123,20 @@ const Events = () => {
         <p className=" mt-6 text-white/50">Nu există evenimente disponibile.</p>
       )}
 
-      <div className="mt-10">
 
-        <IconFrame bgColor="bg-[#55302f]" textColor="text-white/50">
-          <Link href={"Evenimente"} className="text-base z-2 p-2 px-5">
-            {"Vezi toate evenimentele"}
-          </Link>
-        </IconFrame>
-      </div>
+      <IconFrame bgColor="bg-[#55302f]" textColor="text-white/50">
+        <Link href={"Evenimente"} className="text-base z-2 p-2 px-5">
+          {"Vezi toate evenimentele"}
+        </Link>
+      </IconFrame>
+       <div className="relative w-full h-15 -mb-3 absolute -bottom-40 transform translate-y-1/2 z-10">
+          <Image
+            src={"/patterns/top-bar.png"}
+            alt="top-bar-pattern"
+            className="object-cover "
+            fill
+          />
+        </div>
     </div>
   );
 };

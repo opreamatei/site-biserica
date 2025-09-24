@@ -11,6 +11,7 @@ import HeroSection from "@/components/HeroSection";
 import Background from "@/components/spec/background";
 
 export default function Home() {
+
   return (
     <>
       <Background classname="top-[50vh] opacity-30" />
@@ -18,7 +19,7 @@ export default function Home() {
       <Program />
       <Events />
       <ThreeCardCarousel />
-      <Sfzi />
+      <Sfzi  />
       <Donate />
       <Footer />
     </>

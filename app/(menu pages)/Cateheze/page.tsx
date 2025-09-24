@@ -62,11 +62,11 @@ const CatehezePage = () => {
         {cateheze.map((item) => (
           <div
             key={item.id}
-            className="mb-6 p-4 border-[#2b220a] border-4 rounded-lg shadow-sm  text-white/90"
+            className="mb-6 p-4 border-[#2b220a] border-4 rounded-lg shadow-sm text-white/90"
             style={{
               backgroundImage: `
           linear-gradient(to bottom, transparent 0%, #1a1a1a 100%),
-          linear-gradient(to top, transparent 50%, #1a1a1a 100%),
+          linear-gradient(to top, transparent 0%, #1a1a1a 100%),
           url(/assets/fundal-program.png)
         `,
               backgroundColor: "black",

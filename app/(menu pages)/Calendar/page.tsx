@@ -128,9 +128,9 @@ export default function Programliturgic() {
       <div className="flex justify-between items-center mb-6">
         <button
           onClick={() => changeMonth(-1)}
-          className="text-[#c95d43] hover:underline"
+          className="text-gray-300 hover:underline"
         >
-          ← luna anterioară
+          luna anterioară ←
         </button>
 
         <h1 className="text-[30px] font-bold text-center">
@@ -139,7 +139,7 @@ export default function Programliturgic() {
 
         <button
           onClick={() => changeMonth(1)}
-          className="text-[#c95d43] hover:underline"
+          className="text-gray-300 hover:underline"
         >
           luna următoare →
         </button>

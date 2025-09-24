@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
+
+
 
 const Footer = () => {
   return (
@@ -17,7 +19,8 @@ const Footer = () => {
       </div>
       <div className="max-w-3xl mx-auto flex md:flex-row flex-col gap-10 px-10">
         <div className="flex justify-start items-center gap-4">
-          <Phone className="w-6 h-6 mt-1 text-[#c95d43]" />
+
+          <img src="./icons/phone.svg" alt="Phone" className="w-7 h-7 mt-1" />
           <div>
             <p className="text-lg font-medium text-white/90">Telefon</p>
             <a
@@ -30,7 +33,7 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-start items-center gap-4">
-          <MapPin className="w-6 h-6 mt-1 text-[#c95d43]" />
+          <img src="./icons/map.svg" alt="map pin" className="w-7 h-7 mt-1" />
           <div>
             <p className="text-lg font-medium text-white/90">Adresă</p>
             <p className="text-white/70">
@@ -48,7 +51,7 @@ const Footer = () => {
         </div>
 
         <div className="flex  justify-start items-center gap-4">
-          <Mail className="w-6 h-6 mt-1 text-[#c95d43]" />
+          <img src="./icons/mail.svg" alt="email" className="w-7 h-7 mt-1" />
           <div>
             <p className="text-lg font-medium text-white/90">Email</p>
             <a

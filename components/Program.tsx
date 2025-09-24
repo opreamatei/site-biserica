@@ -81,9 +81,9 @@ const Program = () => {
       <div className="z-2 px-4 mb-2 flex flex-col items-center gap-6">
         <div className="w-full max-w-3xl p-4 md:p-6 flex flex-col sm:flex-row md:items-center sm:items-start justify-center gap-4">
        
-          <h3 className="text-6xl md:text-8xl font-bold text-gray text-center sm:text-left sm:flex-1 text-[#2b220a]">
+          <h1 className="text-5xl md:text-7xl font-bold text-gray text-center sm:text-left sm:flex-1 first-letter:text-7xl md:first-letter:text-9xl first-letter:text-[#A05A3A] text-[#2b220a]">
             Astăzi
-          </h3>
+          </h1>
 
           {/* Divider */}
           <span className="bg-[#2c2209] w-full h-[1.4px] sm:w-[1.4px] sm:h-[60px] md:h-[140px]"></span>

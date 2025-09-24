@@ -79,5 +79,26 @@
     "nume_eveniment": "Eveniment special 7",
     "ora": "16:00",
     "adresa": "Strada Foișorului 119"
+  },
+  "2025-09-19": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  
+  "2025-09-22": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-09-30": {
+    "nume_eveniment": "Eveniment special 7",
+    "ora": "16:00",
+    "adresa": "Strada Foișorului 119"
+  },
+  "2025-10-16": {
+    "nume_eveniment": "Eveniment special 6",
+    "ora": "15:00",
+    "adresa": "Strada Foișorului 119"
   }
 }

@@ -46,7 +46,7 @@ export default function Background({
             src={"/background/concrete_wall_003_disp_8k.png"}
           />
         </motion.div>
-        <div className="bg-c59d30 h-full absolute" />
+        <div className="h-full absolute" />
       </motion.div>
 
       {/* PARALLAX + CONTENT */}

@@ -42,60 +42,61 @@ const Sfzi = () => {
 
   return (
     <>
-    <div className="mt-16 md:mt-20 px-4 mb-20">
-      <div className="flex justify-center">
-        <div className=" max-w-2xl flex flex-col justify-center min-w-min w-3/4">
-          {/* Title */}
-          <motion.h1
-            ref={ref}
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-6xl text-center md:text-8xl font-normal text-[#2b220a] relative inline-block text-nowrap"
-          >
-            Sfinții zilei
-            <span className="absolute bottom-0 left-0 w-full h-[2px] "></span>
-          </motion.h1>
+      <div className="mt-16 md:mt-20 mb-20" >
+        <div className="flex justify-center">
+          <div className="w-full flex flex-col justify-center min-w-min w-3/4">
 
-          {/* Saints list */}
-          <div className="my-6 mb-10 text-sm sm:text-base md:text-lg text-black space-y-6">
-            {sfinti.map((nume, i) => (
-              <div key={i} className="flex items-center gap-2 justify-center">
-                <span className="text-[#2b220a] text-center">{nume}</span>
-               
+            {/* Image background section */}
+            <section className="relative rounded-xl overflow-hidden">
+              {/* Background image */}
+              <img
+                src="/assets/Sfinti.jpg"
+                alt="Sfinti"
+                className="object-cover w-full h-auto"
+              />
+
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-black/40" />
+
+              {/* Content overlay */}
+              <div className="absolute inset-0 flex flex-col justify-center items-center p-6 space-y-6 text-center">
+                {/* Title */}
+                <motion.h1
+                  ref={ref}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="text-5xl sm:text-6xl md:text-8xl font-normal text-white drop-shadow-lg">
+
+                  <span className="text-6xl sm:text-7xl md:text-9xl font-[Byzantin] text-[#c95d43]">S</span>finții{" "}
+                  <span className="text-6xl sm:text-7xl md:text-9xl font-[Byzantin] text-[#c95d43]">Z</span>ilei
+                </motion.h1>
+
+                {/* Saints list */}
+                <div className="flex flex-col space-y-2 text-white text-lg sm:text-xl drop-shadow-md">
+                  {sfinti.map((nume, i) => (
+                    <span key={i}>{nume}</span>
+                  ))}
+                </div>
+
+                {/* Button */}
+                <div className="mt-6">
+                  <IconFrame bgColor="bg-[#3a2e10]" textColor="text-white/80">
+                    <Link
+                      href="/Calendar"
+                      className="h-10 flex items-center p-4 justify-center"
+                    >
+                      Vezi calendarul lunii
+                    </Link>
+                  </IconFrame>
+                </div>
               </div>
-            ))}
+            </section>
           </div>
-
-          <div className="w-full md:w-min min-w-1/2 mx-auto ">
-            <IconFrame bgColor="bg-[#3a2e10]" textColor="text-white/50">
-              <Link
-                href="/Calendar"
-                className="h-10 flex items-center justify-center text-nowrap"
-              >
-                <p className="">Vezi calendarul lunii</p>
-              </Link>
-            </IconFrame>
-          </div>
-          {/* Button */}
-          {/* <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: "easeIn" }}
-            className="mt-6 inline-block items-center text-xs sm:text-sm md:text-base leading-tight px-4 py-2 border border-[#c95d43] text-black font-normal cursor-pointer rounded-md hover:bg-gray-100 hover:text-black transition"
-          ></motion.div> */}
         </div>
       </div>
-    </div>
-    <div className="relative w-full h-15 -mb-3 z-2">
-      <Image
-        src={'/patterns/top-bar.png'}
-        alt="top-bar-pattern"
-        className="object-cover"
-            fill
-      />
 
-    </div>
+      
     </>
   );
 };

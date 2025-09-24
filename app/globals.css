@@ -36,7 +36,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-body: var(--font-sentient)
+  --font-body: var(--font-merriweather)
+  /* --font-body: var(--font-sentient) */
+
 }
 
 @media (prefers-color-scheme: dark) {

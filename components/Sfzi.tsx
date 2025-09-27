@@ -47,8 +47,8 @@ const Sfzi = () => {
           <div className="w-full flex flex-col justify-center min-w-min w-3/4">
 
             {/* Image background section */}
-            <section className="relative rounded-xl overflow-hidden">
-              {/* Background image */}
+            <section className="relative overflow-hidden">
+
               <img
                 src="/assets/Sfinti.jpg"
                 alt="Sfinti"
@@ -56,30 +56,28 @@ const Sfzi = () => {
               />
 
               {/* Dark overlay */}
-              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-black/65" />
 
               {/* Content overlay */}
               <div className="absolute inset-0 flex flex-col justify-center items-center p-6 space-y-6 text-center">
-                {/* Title */}
+
                 <motion.h1
                   ref={ref}
                   initial={{ opacity: 0, y: 50 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="text-5xl sm:text-6xl md:text-8xl font-normal text-white drop-shadow-lg">
+                  className="text-5xl sm:text-6xl md:text-8xl font-normal text-white drop-shadow-lg shadow-white">
 
                   <span className="text-6xl sm:text-7xl md:text-9xl font-[Byzantin] text-[#c95d43]">S</span>finții{" "}
                   <span className="text-6xl sm:text-7xl md:text-9xl font-[Byzantin] text-[#c95d43]">Z</span>ilei
                 </motion.h1>
 
-                {/* Saints list */}
-                <div className="flex flex-col space-y-2 text-white text-lg sm:text-xl drop-shadow-md">
+                <div className="flex flex-col space-y-2 text-white text-lg sm:text-xl drop-shadow-md shadow-white">
                   {sfinti.map((nume, i) => (
                     <span key={i}>{nume}</span>
                   ))}
                 </div>
 
-                {/* Button */}
                 <div className="mt-6">
                   <IconFrame bgColor="bg-[#3a2e10]" textColor="text-white/80">
                     <Link

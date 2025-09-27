@@ -27,24 +27,25 @@ export default function LogoLoader({ children }: LogoLoaderProps) {
   }
 
   return (
-    <div className={`relative min-h-screen  transition-colors duration-1000 `}>
+    <div className={`relative min-h-screen transition-colors duration-1000 `}>
       <AnimatePresence>
         {loading && (
           <motion.div
             key="loader"
-            className="fixed inset-0 z-50 flex items-center justify-center"
-            initial={{ y: -size.y, opacity: 0 }}
+            className="fixed h-[210vh] bg-[#0d0d1e] inset-0 z-50 flex items-center justify-center"
+            initial={{ y: -size.y, opacity: 1, scale : 2 }}
             animate={{
-              y: -size.y / 2 + 40, 
-              opacity: 1
+              y: -size.y , 
+              opacity: 1,
+              scale : 1
             }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, scale : .7 }}
             transition={{ duration: 1.2, ease: easeOutCirc }}
           >
             <motion.img
               src="/logo_negru_1.webp"
               alt="Logo"
-              className="w-20 h-20"
+              className="w-20 h-20 invert-100"
               initial={{ opacity: 0, scale: 1.7 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
@@ -55,13 +56,11 @@ export default function LogoLoader({ children }: LogoLoaderProps) {
       </AnimatePresence>
 
       {!loading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+        <div
+         
         >
           {children}
-        </motion.div>
+        </div>
       )}
     </div>
   );

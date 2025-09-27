@@ -59,11 +59,11 @@ const Events = () => {
   }, []);
 
   return (
-    <div className="relative grid place-items-center w-full my-30  pb-40 mx-auto">
+    <div className="relative grid place-items-center w-full my-30 pb-40 mx-auto">
       <div className="relative h-20 w-full -mt-4 mb-30 ">
         <Image
           src={"/patterns/pattern0.png"}
-          className="object-contain"
+          className="object-cover"
           alt="tipar"
           fill
         />
@@ -129,7 +129,7 @@ const Events = () => {
           {"Vezi toate evenimentele"}
         </Link>
       </IconFrame>
-       <div className="relative w-full h-15 -mb-3 absolute -bottom-40 transform translate-y-1/2 z-10">
+       <div className="relative w-full h-15 -mb-3 absolute -bottom-40 transform translate-y-1/2 z-5">
           <Image
             src={"/patterns/top-bar.png"}
             alt="top-bar-pattern"

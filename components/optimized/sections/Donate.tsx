@@ -32,6 +32,7 @@ export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
 
   // Popup state
   const [showPopup, setShowPopup] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
   const popOutElement = useRef<HTMLDivElement>(null);
 
   useEffect(()=>{
@@ -73,6 +74,14 @@ export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
 
     };
 }, [showPopup]);
+
+  const handleTouchStart = () => {
+    setIsPressed(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsPressed(false);
+  };
 
 
   const isMobile = useIsMobile(700);
@@ -175,13 +184,16 @@ export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
                   <motion.div
                     whileHover={{scale : 1.1}}
                     onTap={() => setShowPopup(true)}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
                   >
                     <IconFrame
                       bgColor="bg-[#786543]"
-                      textColor="text-[#ddd] text-sm w-fit px-2 md:max-w-60 mx-auto"
+                      textColor="text-[#ddd] text-sm w-fit px-2 md:max-w-60 mx-auto active:brightness-90
+"
                       >
                       <p
-                      className="py-1 z-2" 
+                      className={`py-1 px-2 p-2 z-2 transition-transform duration-150 inline-flex ${isPressed ? "scale-95" : "scale-100"}`} 
                       >
                         Detalii pentru donație
                       </p>

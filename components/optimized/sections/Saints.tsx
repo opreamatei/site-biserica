@@ -19,6 +19,16 @@ const Sfzi = () => {
   const [sfinti, setSfinti] = useState<string[]>([]);
   const [dezlegari, setDezlegari] = useState<{ text: string; icons: string[] } | null>(null);
 
+    const [isPressed, setIsPressed] = useState(false);
+
+  // Funcție pentru a simula efectul de apăsare
+  const handleTouchStart = () => {
+    setIsPressed(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsPressed(false);
+  };
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -137,8 +147,16 @@ const Sfzi = () => {
             </div>
           )}
 
-          <IconFrame bgColor="bg-[#3a2e10]" textColor="text-white/80">
-            <Link className="h-10 flex items-center p-4" href="/Calendar">
+          <IconFrame
+            bgColor="bg-[#9E442E]"
+            textColor="text-white/80 mt-8"
+          >
+            <Link
+              href="/Calendar"
+              className={`h-10 flex items-center p-4 transition duration-150 ${isPressed ? 'scale-95 opacity-60' : 'scale-100'}`}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
               Vezi calendarul lunii
             </Link>
           </IconFrame>

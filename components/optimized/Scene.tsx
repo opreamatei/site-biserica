@@ -381,7 +381,7 @@ export default function Scene() {
         }
       });
       if (quoteWrapper) {
-        gsap.set(quoteWrapper, { opacity: 0, scale: 1, transformOrigin: "50% 50%" });
+        gsap.set(quoteWrapper, { opacity: 1, scale: 1, transformOrigin: "50% 50%" });
       }
       if (quoteHint) {
         gsap.set(quoteHint, { opacity: 0 });
@@ -488,15 +488,7 @@ export default function Scene() {
             falconThreeOpacityPoints[3]
           )
         );
-        setQuoteOpacity(
-          segmentedOpacity(
-            progress,
-            quoteFadeInStart,
-            quoteFadeInEnd,
-            quoteFadeOutStart,
-            quoteFadeOutEnd
-          )
-        );
+        setQuoteOpacity(1);
         setQuoteScale(
           mapRangeClamped(
             progress,
@@ -676,24 +668,14 @@ export default function Scene() {
                 className="absolute inset-0 z-[1] pointer-events-none"
                 aria-hidden="true"
               >
-                <div
-                  className="
-                          absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2
-                          h-[55vh] w-[90vw] sm:w-[75vw] md:w-[60vw]
-                          rounded-[50%]
-                          bg-black/50
-                          md:bg-black/30
-                          blur-[55px]
-                          opacity-80"
-                />
-                <div className=" pointer-events-auto mx-auto max-w-3xl select-text px-4 text-center text-white/90 sm:max-w-2xl md:max-w-4xl md:px-6">
-                  <p className="text-shadow-black/30 text-shadow-lg text-xl font-medium leading-snug sm:text-2xl md:text-3xl lg:text-4xl">
+                <div className="pointer-events-auto mx-auto max-w-3xl select-text px-4 text-center bg-gradient-to-l from-[#C85C41] to-orange-400 bg-clip-text text-transparent sm:max-w-2xl md:max-w-4xl md:px-6">
+                  <p className=" text-shadow-lg text-xl font-medium leading-snug sm:text-2xl md:text-3xl lg:text-4xl">
                     <span className="pr-2 text-[#c95d43]/90">„</span>
                     {quote.text}
                     <span className="pl-2 text-[#c95d43]/90">”</span>
                   </p>
                   {quote.author ? (
-                    <p className="text-shadow-black/10 text-shadow-lg mt-4 text-sm uppercase tracking-wide text-[#c95d43]/80 md:text-base">
+                    <p className="text-shadow-black/10 text-shadow-lg mt-7 text-sm uppercase tracking-wide bg-gradient-to-l from-red-300 to-zinc-500 bg-clip-text text-transparent md:text-base">
                       - {quote.author}
                     </p>
                   ) : null}
@@ -701,7 +683,7 @@ export default function Scene() {
                     data-scene="quote-hint"
                     className="text-shadow-black/20 text-shadow-lg mt-20 flex items-center justify-center gap-2 text-xs text-white/80 animation-pulse animate-candleColor md:text-sm"
                   >
-                    <span className="text-[17px]">Glisează în jos</span>
+                    <span className="text-[2.5vh]">Glisează în jos</span>
                     <Image
                       src="/icons/curve-arrow-down.svg"
                       alt="Scroll down"

@@ -19,6 +19,7 @@ const Events = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const [eveniment, setEveniment] = useState<Eveniment | null>(null);
+  const [isPressed, setIsPressed] = useState(false);
 
   useEffect(() => {
     const fetchEvenimente = async () => {
@@ -46,6 +47,14 @@ const Events = () => {
 
     fetchEvenimente();
   }, []);
+
+  const handleTouchStart = () => {
+    setIsPressed(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsPressed(false);
+  };
 
   return (
     <div className="relative grid place-items-center w-full pb-40 mx-auto z-0">
@@ -105,7 +114,7 @@ const Events = () => {
             Urmatoare
           </span>
         </h1> */}
-        <h1 className="relative text-4xl lg:text-5xl -mt-10 leading-tight z-10 text-center inline-block byzantin text-white/70">
+        <h1 className="relative text-4xl lg:text-5xl leading-tight z-10 text-center inline-block byzantin text-white/70">
           Evenimente Urmatoare
         </h1>
 
@@ -156,9 +165,14 @@ const Events = () => {
       )}
 
       {/* Button */}
-      <div className="relative z-10 mt-10">
+      <div className="relative z-10 mt-[20%] md:mt-17">
         <IconFrame bgColor="bg-[#55302f]" textColor="text-white/50">
-          <Link href={"Evenimente"} className="text-base p-2 px-5">
+          <Link
+            href={"Evenimente"}
+            className={`text-base p-2 px-5 transition-transform duration-150 ${isPressed ? "scale-95 opacity-60" : "scale-100"}`}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             Vezi toate evenimentele
           </Link>
         </IconFrame>

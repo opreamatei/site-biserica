@@ -1,59 +1,59 @@
 {
   "duminică": {
-    "data": "14 decembrie",
+    "data": "21 decembrie",
     "activitati": [
       { "nume": "Utrenia", "ora": "8:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" }
     ]
   },
   "luni": {
-    "data": "15 decembrie",
+    "data": "22 decembrie",
     "activitati": [
       { "nume": "Ceasul I", "ora": "6:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" },
-      { "nume": "Paraclisul Mc. Trifon", "ora": "17:00" },
-      { "nume": "Rugăciuni pt. cei bolnavi", "ora": "" },
-      { "nume": "Taina Mărturisirii", "ora": "18:00" }
+      { "nume": "Taina Mărturisirii", "ora": "15:00" }
     ]
   },
   "marți": {
-    "data": "16 decembrie",
-    "activitati": [
-      { "nume": "Ceasul I", "ora": "6:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
-    ]
-  },
-  "miercuri": {
-    "data": "17 decembrie",
+    "data": "23 decembrie",
     "activitati": [
       { "nume": "Ceasul I", "ora": "6:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" },
-      { "nume": "Taina Mărturisirii", "ora": "17:00" }
+      { "nume": "Taina Mărturisirii", "ora": "15:00" }
+
+    ]
+  },
+  "miercuri": {
+    "data": "24 decembrie",
+    "activitati": [
+      { "nume": "Rânduiala Ceasurilor Împărătești", "ora": "12:00" },
+      { "nume": "Vecernia și Liturghia Sf. Vasile cel Mare", "ora": "" }
+
     ]
   },
   "joi": {
-    "data": "18 decembrie",
+    "data": "25 decembrie",
     "activitati": [
-      { "nume": "Ceasul I", "ora": "6:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      { "nume": "Utrenia", "ora": "8:00" },
+      { "nume": "Dumnezeiasca Liturghie cu toate ale praznicului", "ora": "" }
     ]
   },
   "vineri": {
-    "data": "19 decembrie",
+    "data": "26 decembrie",
     "activitati": [
-      { "nume": "Ceasul I", "ora": "6:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      { "nume": "Utrenia", "ora": "8:00" },
+      { "nume": "Dumnezeiasca Liturghie cu toate ale praznicului", "ora": "" }
     ]
   },
   "sâmbătă": {
-    "data": "20 decembrie",
+    "data": "27 decembrie",
     "activitati": [
-      { "nume": "Utrenia", "ora": "8:30" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      { "nume": "Utrenia", "ora": "8:00" },
+      { "nume": "Dumnezeiasca Liturghie cu toate ale praznicului", "ora": "" }
     ]
   },
   "Duminică": {
-    "data": "21 decembrie",
+    "data": "28 decembrie",
     "activitati": [
       { "nume": "Utrenia", "ora": "8:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" }

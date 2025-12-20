@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import useDebug from "../components/hooks/useDebug";
 
 type CardVariant = "Card1" | "Card2" | "Card3";
@@ -54,6 +54,7 @@ const variantClasses = {
 export default function CardSection() {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const debug = useDebug();
+  const [pressedIndex, setPressedIndex] = useState<number | null>(null);
 
   useLayoutEffect(() => {
     if (!rootRef.current) return;
@@ -155,10 +156,12 @@ export default function CardSection() {
               <div className="c-card__cta mt-4 flex items-center w-full justify-center">
                 <Link
                   href={card.btnHref}
-                  className="inline-flex items-center justify-center rounded-full 
+                  onTouchStart={() => setPressedIndex(idx)}
+                  onTouchEnd={() => setPressedIndex(null)}
+                  className={`inline-flex items-center justify-center rounded-full 
        border border-[#202330] px-5 py-3 text-sm text-nowrap 
        font-semibold uppercase tracking-[0.2em] text-[#202330] 
-       transition-colors duration-200 hover:bg-[#202330] hover:text-white"
+       transition-colors duration-200 hover:bg-[#202330] hover:text-white transition-transform duration-150 ${pressedIndex === idx ? "scale-85 opacity-60" : "scale-100"}`}
                 >
                   {card.btnTxt}
                 </Link>

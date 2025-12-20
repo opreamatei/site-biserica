@@ -62,6 +62,7 @@ const MOBILE_MEDIA_QUERY = "(max-width: 768px)";
 
 const AboutPage = () => {
   const [usePhoneImages, setUsePhoneImages] = useState(false);
+  const [pressedId, setPressedId] = useState<string | null>(null);
 
   useEffect(() => {
     if (typeof window != "undefined") {
@@ -99,11 +100,19 @@ const AboutPage = () => {
     };
   }, [showLongText]);
 
+  const handlePressStart = (id: string) => {
+    setPressedId(id);
+  };
+
+  const handlePressEnd = () => {
+    setPressedId(null);
+  };
+
   return (
 
     <div className="relative overflow-hidden bg-[#c59d30] pt-10 selection:bg-yellow-600 selection:text-black/90">
       <motion.div
-        className={`absolute inset-0 h-[300vh] w-full opacity-10 overflow-hidden`}
+        className="absolute inset-0 h-full w-full opacity-10 overflow-hidden"
         id="background-diffuse"
       >
         <Image
@@ -195,7 +204,9 @@ const AboutPage = () => {
         <div className="flex justify-center mt-20">
           <button
             onClick={() => setShowLongText(true)}
-            className="px-6 py-3 bg-[#2b220a] text-[#e7d9a0] rounded-full shadow-lg hover:opacity-80 transition cursor-pointer"
+            className={`px-6 py-3 bg-[#2b220a] text-[#e7d9a0] rounded-full shadow-lg hover:opacity-80 transition cursor-pointer transition-transform duration-150 ${pressedId === "about-more" ? "scale-95" : "scale-100"}`}
+            onTouchStart={() => handlePressStart("about-more")}
+            onTouchEnd={handlePressEnd}
           >
             Citește mai multe
           </button>
@@ -211,7 +222,9 @@ const AboutPage = () => {
 
               <button
                 onClick={() => setShowLongText(false)}
-                className="absolute top-3 right-3 w-6 h-6 flex items-center justify-center rounded-full hover:scale-110 transition"
+                className={`absolute top-3 right-3 w-6 h-6 flex items-center justify-center rounded-full hover:scale-110 transition transition-transform duration-150 ${pressedId === "about-close" ? "scale-95" : "scale-100"}`}
+                onTouchStart={() => handlePressStart("about-close")}
+                onTouchEnd={handlePressEnd}
               >
                 <Image
                   src="/icons/close-circle.svg"
@@ -491,7 +504,7 @@ const AboutPage = () => {
             </div>
           </div>
         )}
-
+        
         <Logo />
       </motion.div>
     </div>

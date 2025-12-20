@@ -26,6 +26,7 @@ const Program = () => {
 
   // Loader state
   const [loading, setLoading] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
 
   const [ziAzi, setZiAzi] = useState<Zi | null>(null);
 
@@ -69,13 +70,21 @@ const Program = () => {
     router.push("/Program-Liturgic");
   };
 
+  const handleTouchStart = () => {
+    setIsPressed(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsPressed(false);
+  };
+
   const ziAfisata = ziAzi;
 
   return (
     <>
       <Loader isLoading={loading} />
 
-      <div className="z-2 px-4 mb-2 flex flex-col items-center gap-6">
+      <div className="z-2 px-4 -mb-15 flex flex-col items-center gap-6 ">
         <div className="w-full max-w-3xl p-4 md:p-6 flex flex-col sm:flex-row md:items-center sm:items-start justify-center gap-4">
 
           <h1 className="font-bold text-gray text-center sm:text-left sm:flex-1 text-5xl md:text-7xl first-letter:text-7xl  md:first-letter:text-9xl first-letter:text-[#A03E18] text-[#2b220a]">
@@ -83,9 +92,9 @@ const Program = () => {
           </h1>
 
           {/* Divider */}
-          <span className="bg-[#2c2209] w-full h-[1.4px] sm:w-[1.4px] sm:h-[60px] md:h-[140px]"></span>
+          <span className="bg-[#2c2209] w-full h-[1.4px] sm:w-[1.4px] sm:h-[60px] md:h-[140px] "></span>
 
-          <div className="text-sm md:text-base mt-4 text-gray sm:flex-1 text-center sm:text-left">
+          <div className="text-sm md:text-base mt-4 text-gray sm:flex-1 text-center sm:text-left ">
             {ziAfisata?.activitati.some(
               (act) => !act.ora && normalize(act.nume).includes("inchisă")
             ) ? (
@@ -116,7 +125,9 @@ const Program = () => {
         <IconFrame bgColor="bg-[#2c2209]" textColor="text-white/50 " >
           <button
             onClick={handleNavigation}
-            className="text-base z-2 p-2 px-5 cursor-pointer"
+            className={`text-base z-2 p-2 px-5 cursor-pointer transition-transform duration-150 ${isPressed ? "scale-95 opacity-60" : "scale-100"}`}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
             Vezi programul săptămânii
           </button>

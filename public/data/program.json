@@ -21,7 +21,7 @@
   "miercuri": {
     "data": "31 decembrie",
     "activitati": [
-      { "nume": "Odovania praznicului Domnului", "ora": "17:00" },
+      { "nume": "Odovania praznicului Nașterii Domnului", "ora": "17:00" },
       { "nume": "Slujbă la cumpăna dintre ani", "ora": "" }
 
     ]
@@ -37,7 +37,7 @@
     "data": "2 ianuarie",
     "activitati": [
       { "nume": "Ceasul I", "ora": "6:00" },
-      { "nume": "Dumnezeiasca Liturghie cu toate ale praznicului", "ora": "" }
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
     ]
   },
   "sâmbătă": {

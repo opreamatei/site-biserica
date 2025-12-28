@@ -1467,14 +1467,14 @@
     "2026-01-02": {
       "zi": 2,
       "zi_saptamana": "V",
-      "sfinți": ["Sfântul Cuvios Serafim de Sarov", "Sfântul Mucenic Serghie", "Sfânta Iuliana din Lazarevo", "Sfântul Ierarh Silvestru, Episcopul Romei", "Sfântul Ghenadie din Corfu", "Înainte-prăznuirea Botezului Domnului"],
+      "sfinți": ["Sfântul Cuvios Serafim de Sarov", "Sfântul Ierarh Silvestru, Episcopul Romei", "Înainte-prăznuirea Botezului Domnului"],
       "tip": "",
-      "dezlegări": []
+      "dezlegări": ["harti"]
     },
     "2026-01-03": {
       "zi": 3,
       "zi_saptamana": "S",
-      "sfinți": ["Descoperirea moaștelor Sfântului Mucenic Efrem cel Nou", "Sfântul Proroc Maleahi", "Sfântul Mucenic Gordie", "Sfântul Mucenic Tit, episcopul Tomisului", "Sfânta Cuvioasă Genoveva, ocrotitoarea Parisului", "Sâmbăta înaintea Botezului Domnului"],
+      "sfinți": [ "Sfântul Proroc Maleahi", "Sfântul Mucenic Gordie"],
       "tip": "",
       "dezlegări": []
     },

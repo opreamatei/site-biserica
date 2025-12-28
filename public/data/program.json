@@ -9,13 +9,13 @@
   "luni": {
     "data": "29 decembrie",
     "activitati": [
-   
+    { "nume": "Biserica este închisă", "ora": "" }
     ]
   },
   "marți": {
     "data": "30 decembrie",
     "activitati": [
-
+    { "nume": "Biserica este închisă", "ora": "" }
     ]
   },
   "miercuri": {

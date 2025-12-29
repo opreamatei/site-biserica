@@ -22,7 +22,8 @@
     "data": "31 decembrie",
     "activitati": [
       { "nume": "Odovania praznicului Nașterii Domnului", "ora": "17:00" },
-      { "nume": "Slujbă la cumpăna dintre ani", "ora": "" }
+      { "nume": "Slujbă la cumpăna dintre ani", "ora": "" },
+      { "nume": "Priveghere", "ora": "" }
 
     ]
   },
@@ -30,7 +31,9 @@
     "data": "1 ianuarie",
     "activitati": [
       { "nume": "Acatistul Mântuitorului Iisus Hristos", "ora": "8:30" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" },
+      { "nume": "Te Deum", "ora": "" }
+
     ]
   },
   "vineri": {

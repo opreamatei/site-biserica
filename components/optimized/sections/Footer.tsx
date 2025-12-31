@@ -73,12 +73,22 @@ const Footer = () => {
             <img src="./icons/mail.svg" className="w-7 h-7 mt-1" />
             <div>
               <p className="text-xl font-medium text-white/90">Email</p>
+              <div className="flex flex-col gap-1 mt-1">
               <a
-                href="mailto:contact@biserica.ro"
-                className="text-[#c95d43] hover:underline"
+                href="mailto:contact@bisericafoisor.ro"
+                className="text-[#c95d43] lg:text-base text-md lg:text-xl hover:underline "
               >
+
+                contact@bisericafoisor.ro
+              </a>
+              <a
+                href="mailto:bisericafoisor@gmail.com"
+                className="text-[#c95d43] lg:text-base text-md lg:text-xl hover:underline "
+              >
+
                 bisericafoisor@gmail.com
               </a>
+            </div>
             </div>
           </div>
         </div>

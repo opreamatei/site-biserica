@@ -3,7 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import IconFrame from "../components/FrameButton";
 import Loader from "../utils/loader";
-
+import Image from "next/image";
 type Activitate = {
   nume: string;
   ora: string;
@@ -84,7 +84,7 @@ const Program = () => {
     <>
       <Loader isLoading={loading} />
 
-      <div className="z-2 px-4 -mb-15 flex flex-col items-center gap-6 ">
+      <div className="relative z-2 px-4 -mb-15 flex flex-col items-center gap-6">
         <div className="w-full max-w-3xl p-4 md:p-6 flex flex-col sm:flex-row md:items-center sm:items-start justify-center gap-4">
 
           <h1 className="font-bold text-gray text-center sm:text-left sm:flex-1 text-5xl md:text-7xl first-letter:text-7xl  md:first-letter:text-9xl first-letter:text-[#A03E18] text-[#2b220a]">
@@ -125,13 +125,24 @@ const Program = () => {
         <IconFrame bgColor="bg-[#2c2209]" textColor="text-white/50 " >
           <button
             onClick={handleNavigation}
-            className={`text-base z-2 p-2 px-5 cursor-pointer transition-transform duration-150 ${isPressed ? "scale-95 opacity-60" : "scale-100"}`}
+            className={`text-base z-2 p-2 px-5 cursor-pointer  transition-transform duration-150 ${isPressed ? "scale-95 opacity-60" : "scale-100"}`}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
             Vezi programul săptămânii
           </button>
         </IconFrame>
+        
+        {/* <div className="pointer-events-none absolute inset-x-0 top-full mt-24 sm:mt-22 md:mt-44 lg:mt-60 h-[60px] overflow-hidden z-20">
+          <div className="relative h-full w-full">
+            <Image
+              src="/patterns/top-bar.png"
+              alt="top-bar-pattern"
+              fill
+              className="object-cover object-center"
+            />
+          </div>
+        </div> */}
       </div>
     </>
   );

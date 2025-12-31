@@ -26,15 +26,15 @@ export default function Navbar() {
   return (
     <>
       <div
-        className={`max-w-[100vw] w-full top-0 left-0 h-[4.2rem] z-15 ${!open
-          ? "bg-[#02021fd5] shadow-xl backdrop-blur-xl"
-          : "bg-[#b1967d00] h-[6rem]"
+        className={`max-w-[100vw] w-full top-0 left-0 h-[4.2rem] ${!open
+          ? "bg-[#02021fd5] shadow-xl backdrop-blur-xl z-40"
+          : "bg-[#b1967d00] h-[6rem] z-[60]"
           } transition-all duration-300 fixed`}
       >
         {/* Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className={`absolute right-4 h-full aspect-square max-w-8 z-50 flex items-center justify-center transition-all duration-300 cursor-pointer select-none ${open ? "pt-5" : ""
+          className={`absolute right-6 h-full aspect-square max-w-8 z-[70] flex items-center justify-center transition-all duration-300 cursor-pointer select-none ${open ? "pt-5" : ""
             }`}
           aria-label="Toggle menu"
         >
@@ -80,7 +80,7 @@ export default function Navbar() {
             animate={{ opacity: 1, paddingTop: 0 }}
             exit={{ opacity: 0, paddingTop: -20 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="fixed inset-0 z-10 top-0 left-0 w-screen h-screen bg-black/40 backdrop-blur-xl flex flex-col justify-center select-none"
+            className="fixed inset-0 z-50 top-0 left-0 w-screen h-screen bg-black/40 backdrop-blur-xl flex flex-col justify-center select-none"
           >
             {/* Navigation links */}
             <nav className="flex flex-col items-end justify-center h-full p-10 gap-10 text-right text-white/80">

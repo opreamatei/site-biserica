@@ -90,7 +90,7 @@ export default function LogoLoader({ children }: LogoLoaderProps) {
       {loading && (
         <div
           ref={overlayRef}
-          className="fixed inset-0 z-50 flex h-screen items-center justify-center bg-[var(--background)]"
+          className="fixed inset-0 z-[65] flex h-screen items-center justify-center bg-[var(--background)]"
           style={{ willChange: "transform, opacity" }}
         >
           <img

@@ -174,12 +174,44 @@
     "title": "Instalarea Pr. Sorin",
     "date": "2025-11-30",
     "hour": "12:00",
-    "location": "Strada Foișorului 119"
+    "location": "Strada Foișorului 119",
+     "slides": [
+      {
+        "image": "/assets/instalarea pr. sorin/IMG_6815.jpg"
+      },
+      {
+        "image": "/assets/instalarea pr. sorin/IMG_6816.jpg"
+      },{
+        "image": "/assets/instalarea pr. sorin/IMG_6820.jpg"
+      },{
+        "image": "/assets/instalarea pr. sorin/IMG_6818.jpg"
+      }
+    ]
   },
   {
     "title": "Concert Colinde Tronos Junior",
     "date": "2025-12-21",
     "hour": "12:00",
-    "location": "Strada Foișorului 119"
+    "location": "Strada Foișorului 119",
+    "slides": [
+      {
+        "image": "/assets/concert colinde 2025/9cedf591ffce0641f654f8d0ede5e85c894b475f4502062e7cfc9355210e4844.jpg"
+      },
+      {
+        "image": "/assets/concert colinde 2025/1cd7320c549145676ba0a8e9dda681a32dbb81d56027bb8e8ea3588056134cd7.jpg"
+      },
+      {
+        "image": "/assets/concert colinde 2025/a5895501c4b90394a82d750c2d764649448a63eddeade728c9dada8821968089.jpg"
+      },
+      {
+        "image": "/assets/concert colinde 2025/e6e4ac570fad6c18a0b40dfdc0dba43c1a94947b5c3f879e1b6800f5233d8b4b.jpg"
+      },
+      {
+        "image": "/assets/concert colinde 2025/3e0237766c2e6baa3d1a3ff12910738838f630717ab71ace70951566c47cdc28.jpg"
+      },
+      {
+        "image": "/assets/concert colinde 2025/6bd4056e1741ed9c18227270d4dfd12f16f6a959695b26066677aaf97b4895a5.jpg"
+      }
+    ]
   }
 ]

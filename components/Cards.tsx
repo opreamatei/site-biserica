@@ -1,31 +1,46 @@
-"use client";
-
+﻿"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
 import useDebug from "../components/hooks/useDebug";
 
 type CardVariant = "Card1" | "Card2" | "Card3";
 
-type Card = {
+ type Card = {
   title: string;
-  desc: string;
+  desc: ReactNode;
   btnTxt: string;
   btnHref: string;
   imageSrc: string | null;
   variant: CardVariant;
 };
+type Eveniment = {
+  title: string;
+  date: string;
+  hour?: string;
+  location?: string;
+  adresa?: string;
+};
 
 const Cards: Card[] = [
+     {
+      title: "Evenimente Urmatoare",
+      desc: null,
+      btnTxt: "Află mai multe",
+      btnHref: "/Evenimente",
+      imageSrc: "/assets/mozaic.webp",
+      variant: "Card1",
+    },
   {
     title: "Scurta monografie",
     desc: "Prezentare succintă a Bisericii Foișorul Mavrocordaților",
     btnTxt: "Citește mai multe",
     btnHref: "/About",
     imageSrc: "/assets/imgpictura.png",
-    variant: "Card1",
+    variant: "Card2",
   },
   {
     title: "Cateheze",
@@ -33,16 +48,8 @@ const Cards: Card[] = [
     btnTxt: "Ascultă aici",
     btnHref: "/Cateheze",
     imageSrc: "/assets/imaginecard2.jpg",
-    variant: "Card2",
-  },
-  {
-    title: "Organizator spovedanie",
-    desc: "Aici poți afla când și dacă te mai poți înscrie pentru Taina Mărturisirii în ziua aleasă de tine",
-    btnTxt: "Află mai multe",
-    btnHref: "/Programator",
-    imageSrc: "/assets/pelican.webp",
     variant: "Card3",
-  },
+  }
 ];
 
 const variantClasses = {
@@ -55,6 +62,34 @@ export default function CardSection() {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const debug = useDebug();
   const [pressedIndex, setPressedIndex] = useState<number | null>(null);
+  const [eveniment, setEveniment] = useState<Eveniment | null>(null);
+
+ useEffect(() => {
+    const fetchEvenimente = async () => {
+      try {
+        const res = await fetch("/data/evenimente.json");
+        const data = await res.json();
+
+        const azi = new Date();
+        azi.setHours(0, 0, 0, 0);
+
+        const viitoare = data
+          .filter((ev: any) => new Date(ev.date) >= azi)
+          .sort(
+            (a: any, b: any) =>
+              new Date(a.date).getTime() - new Date(b.date).getTime()
+          );
+
+        if (viitoare.length > 0) {
+          setEveniment(viitoare[0]);
+        }
+      } catch (err) {
+        console.error("Eroare la citirea evenimentelor:", err);
+      }
+    };
+
+    fetchEvenimente();
+  }, []);
 
   useLayoutEffect(() => {
     if (!rootRef.current) return;
@@ -126,34 +161,94 @@ export default function CardSection() {
         {Cards.map((card, idx) => (
           <article
             key={card.title}
-            className="c-card relative flex flex-col overflow-hidden 
+             className="c-card relative flex flex-col overflow-hidden 
              border border-[#202330] rounded-xl text-[#202330] bg-[#E1D4B7]
              shadow-2xl shadow-black/40 w-full md:w-3/4! md:mx-auto!"
           >
-            <figure
-              className={`c-card__figure relative ${variantClasses[card.variant]}`}
-            >
-              {card.imageSrc && (
+            {card.imageSrc && (
+              <figure
+                className={`c-card__figure relative ${variantClasses[card.variant]}`}
+              >
                 <Image
                   src={card.imageSrc}
                   alt=""
                   fill
                   sizes="100vw"
-                // className = {idx == 1 ? "object-fit max-w-150 mx-auto object-top" : ""}
+                  // className = {idx == 1 ? "object-fit max-w-150 mx-auto object-top" : ""}
                 />
-              )}
-            </figure>
+              </figure>
+            )}
 
-            <div className="c-card__description flex flex-col justify-center gap-6 p-10 sm:p-12 lg:p-16 text-left">
-              <h2 className="c-card__title text-3xl font-semibold text-[#202330] md:text-[40px]">
-                {card.title}
+            <div
+              className={`c-card__description flex flex-col justify-center gap-6 p-10 sm:p-12 lg:p-16 ${idx === 0 ? "text-center items-center" : "text-left"}`}
+            >
+              <h2
+                className={`c-card__title text-3xl font-semibold text-[#202330] md:text-5xl ${idx === 0 ? "text-center" : "text-left"}`}
+              >
+                {idx === 0 ? (
+                  <>
+                    <span className="block byzantin">Evenimente</span>
+                    
+                    <span className="block byzantin">Viitoare</span>
+                  </>
+                ) : (
+                  card.title
+                )}
               </h2>
 
-              <p className="c-card__excerpt text-base leading-relaxed text-[#202330]/80 md:text-lg">
-                {card.desc}
-              </p>
+              {idx === 0 ? (
+                <div className="c-card__excerpt text-base leading-relaxed text-[#202330]/80 md:text-lg w-full">
+                  {eveniment ? (
+                    <div className="relative flex items-start gap-2 justify-center">
+                      <div>
+                        {/* <Image
+                          src="/icons/sculptura.png"
+                          alt="icon"
+                          width={40}
+                          height={30}
+                          className="mt-1 pointer-events-none"
+                        /> */}
+                      </div>
 
-              <div className="c-card__cta mt-4 flex items-center w-full justify-center">
+                      <div className="text-[#202330] text-left">
+                        <div className="text-xl lg:text-3xl">{eveniment.title}</div>
+                        <div className="flex items-center gap-2 text-base text-[#202330]/80">
+                          {eveniment.date &&
+                            new Intl.DateTimeFormat("ro-RO", {
+                              day: "numeric",
+                              month: "long",
+                            }).format(new Date(eveniment.date))}
+                          {eveniment.hour && (
+                            <>
+                              <Image
+                                src="/icons/dot.svg"
+                                alt="dot icon"
+                                width={24}
+                                height={24}
+                                className="pointer-events-none"
+                              />
+                              ora {eveniment.hour}
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <p className="text-[#202330]/80">
+                      Nu există evenimente anunțate în viitorul apropiat.
+                    </p>
+                  )}
+                </div>
+              ) : (
+                <p className="c-card__excerpt text-base leading-relaxed text-[#202330]/80 md:text-lg">
+                  {card.desc}
+                </p>
+              )}
+
+       
+              <div
+                className={`c-card__cta mt-4 flex items-center w-full ${idx === 0 ? "justify-center" : "justify-start"}`}
+              >
                 <Link
                   href={card.btnHref}
                   onTouchStart={() => setPressedIndex(idx)}
@@ -172,7 +267,7 @@ export default function CardSection() {
         ))}
       </div>
 
-      <div className="absolute bottom-0  w-full h-15 overflow-hidden z-1">
+      <div className="absolute bottom-0 w-full h-15 overflow-hidden z-1">
         <Image
           src="/patterns/top-bar.png"
           alt="top-bar-pattern"
@@ -180,7 +275,6 @@ export default function CardSection() {
           className="object-cover object-center"
         />
       </div>
-
 
 
     </section>

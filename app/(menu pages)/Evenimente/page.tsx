@@ -75,7 +75,7 @@ const EvenimentePage = () => {
 
             <Image
               className="z-2 object-cover hidden md:block opacity-40 "
-              src={"/assets/fundal.png"}
+              src={"/assets/fundal2.png"}
               alt="program-background"
               fill
             />
@@ -84,12 +84,12 @@ const EvenimentePage = () => {
         <div className="relative z-8 max-w-4xl mx-auto">
           {/* Upcoming Events */}
           <section className="mb-20 mt-25">
-            <h1 className="text-3xl md:text-4xl font-semibold text-[#CFA73A] mb-8 text-center">
+            <h1 className="text-3xl md:text-5xl font-semibold text-[#CFA73A] mb-20 text-center">
               Evenimente viitoare
             </h1>
             {upcoming.length === 0 ? (
               <div className="text-gray-400 text-center text-xl">
-                Nu există evenimente viitoare disponibile.
+                Nu există evenimente viitoare anunțate.
               </div>
             ) : (
               <ul className="space-y-6 mt-20">
@@ -121,7 +121,7 @@ const EvenimentePage = () => {
           <section>
             <div className="border-b border-[#C59D30]/30 pb-4 mb-20" />
 
-            <h1 className="text-3xl md:text-4xl font-semibold text-[#CFA73A] mb-20 text-center">
+            <h1 className="text-3xl md:text-5xl font-semibold text-[#CFA73A] mb-25 text-center">
               Evenimente trecute
             </h1>
 

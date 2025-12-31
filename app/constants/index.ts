@@ -1,6 +1,7 @@
 export const LINKS = [
     { label: "Pagina    principala", path: "" },
     { label: "Program    Liturgic", path: "Program-Liturgic" },
+    { label: "Organizator  spovedanie", path: "Programator" },
     { label: "Evenimente", path: "Evenimente" },
     { label: "Calendar", path: "Calendar" },
     { label: "Cateheze", path: "Cateheze" },

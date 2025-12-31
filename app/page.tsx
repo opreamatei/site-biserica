@@ -1,6 +1,6 @@
 import Background from "@/components/optimized/Background";
 import HeroSection from "@/components/optimized/HeroSection";
-import Events from "@/components/optimized/sections/Events";
+import Events from "@/components/optimized/sections/Programari";
 import Program from "@/components/optimized/sections/Program";
 import Saints from '@/components/optimized/sections/Saints';
 import ThreeCardCarousel from "@/components/Cards";
@@ -18,7 +18,7 @@ export default function Home() {
         <HeroSection />
       </section>
 
-      <section className="flex flex-col gap-60 pt-20 ">
+      <section className="flex flex-col gap-24 sm:gap-32 md:gap-44 lg:gap-60 pt-20">
         <Program/>
         <Events/>
       </section>

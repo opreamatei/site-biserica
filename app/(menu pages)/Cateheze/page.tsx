@@ -260,7 +260,7 @@ const CatehezaCard: React.FC<CatehezaCardProps> = ({
             )}
           </button>
           <div>
-            <h2 className="text-xl font-semibold text-white">{item.title}</h2>
+            <h2 className="text-xl md:text-3xl font-semibold text-white ">{item.title}</h2>
             <p className="mt-1 max-w-xl text-sm text-white/70">{item.description}</p>
           </div>
         </div>
@@ -343,13 +343,13 @@ const CatehezePage: React.FC = () => {
 
             <Image
               className="z-2 object-cover hidden md:block opacity-40 "
-              src={"/assets/fundal.png"}
+              src={"/assets/fundal2.png"}
               alt="program-background"
               fill
             />
           </div>
         </div>
-        <h1 className="text-4xl font-bold flex justify-center text-white mt-[80px] mb-12">
+        <h1 className="text-4xl md:text-6xl font-bold flex justify-center text-white mt-[130px] mb-20">
           Cateheze
         </h1>
 

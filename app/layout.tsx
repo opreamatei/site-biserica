@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import LogoLoader from "@/components/Logoloader";
 import { Merriweather } from "next/font/google";
+import Providers from "./providers";
 // import LenisProvider from "@/components/LenisProvider";
 
 const merriweather = Merriweather({
@@ -41,14 +42,16 @@ export default function RootLayout({
         className={`${merriweather.variable} ${geistSans.variable} ${geistMono.variable} antialiased max-w-screen overflow-x-hidden scroll-smooth`}
       >
         {/* <LenisProvider> */}
-            <ScrollProvider>
-              <LogoLoader>
-                <main>
-                  <Navbar />
-                </main>
-                {children}
-              </LogoLoader>
-            </ScrollProvider>
+        <Providers>
+          <ScrollProvider>
+            <LogoLoader>
+              <main>
+                <Navbar />
+              </main>
+              {children}
+            </LogoLoader>
+          </ScrollProvider>
+        </Providers>
         {/* </LenisProvider> */}
       </body>
     </html>

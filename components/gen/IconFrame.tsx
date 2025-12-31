@@ -2,9 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Calendar1Icon, CalendarFoldIcon, CalendarIcon, ChevronDown, Flower } from "lucide-react";
-import Link from "next/link";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 interface iconFrameProps {
   bgColor?: string;
@@ -12,7 +9,7 @@ interface iconFrameProps {
   children? : any,
 }
 
-export default function IconFrame({
+export default function IconFrame1({
   bgColor = "bg-[#df5719]",
   textColor = "text-black/80",
   children
@@ -30,6 +27,7 @@ export default function IconFrame({
       <div className="absolute">
         <div className={`rounded-full ${bgColor} w-7 h-7 absolute -top-4 left-0 -translate-x-1/2 grid place-items-center`}>
             <Flower className="w-4 h-4"/>
+
         </div>
        
       </div>

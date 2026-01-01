@@ -34,7 +34,6 @@
     "react-multi-carousel": "^2.8.6",
     "resend": "^6.6.0",
     "sanity": "^4.21.0",
-    "site-biserica": "github:NitaCristianu/site-biserica",
     "styled-components": "^6.1.19",
     "swiper": "^12.0.2",
     "three": "^0.179.1",

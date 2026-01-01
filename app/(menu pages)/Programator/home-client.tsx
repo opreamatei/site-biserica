@@ -43,7 +43,7 @@ function formatRoDate(date: string) {
 
 export default function HomeClient({ availability, priests }: Props) {
   const router = useRouter();
-  const { data: session, status } = useSession();
+  const { data: session, status, update } = useSession();
   const desiredDuration = session?.user?.allocatedMinutes ?? 30;
 
   const [registerForm, setRegisterForm] = useState({
@@ -79,6 +79,10 @@ export default function HomeClient({ availability, priests }: Props) {
   const [selectedDay, setSelectedDay] = useState<string>(
     availabilityState[0]?.date ?? ""
   );
+  const [showPolicy, setShowPolicy] = useState(false);
+  const [acceptedPolicy, setAcceptedPolicy] = useState(false);
+  const [selectedPriestId, setSelectedPriestId] = useState(priests[0]?.id ?? "");
+  const [priestChangeBusy, setPriestChangeBusy] = useState(false);
   const [busy, setBusy] = useState(false);
   const [bookingBusy, setBookingBusy] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -206,7 +210,7 @@ export default function HomeClient({ availability, priests }: Props) {
       return "Există deja un cont cu acest email.";
     }
     if (status === 400 && !raw) {
-      return "Completați toate câmpurile și alegeți un preot duhovnic. Dacă totul este corect și nu se creează contul, reîncărcați pagina și încercați din nou.";
+      return "Completați toate câmpurile și alegeți un preot duhovnic.";
     }
     return raw || "Nu s-a putut crea contul.";
   };
@@ -224,10 +228,40 @@ export default function HomeClient({ availability, priests }: Props) {
   };
 
 
+  const handlePriestChange = async (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const nextPriestId = event.target.value;
+    if (!nextPriestId || nextPriestId === selectedPriestId) return;
+
+    setSelectedPriestId(nextPriestId);
+    setError(null);
+    setMessage(null);
+    setPriestChangeBusy(true);
+
+    const res = await fetch("/api/user/priest", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ priestId: nextPriestId }),
+    });
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      setError(data.error ?? "Nu s-a putut actualiza preotul duhovnic.");
+      setPriestChangeBusy(false);
+      return;
+    }
+
+    if (update) {
+      await update({ user: { priestId: nextPriestId } });
+    }
+    router.refresh();
+    void refreshBookings();
+    setPriestChangeBusy(false);
+  };
+
   const refreshBookings = useCallback(async () => {
     const res = await fetch("/api/bookings", { cache: "no-store" });
     if (!res.ok) {
-      setError("Nu s-au putut încărca programările. Reîncercați.");
+      setError("Nu s-au putut încărca modificările. Reîncărcați pagina.");
       return;
     }
     const data = await res.json();
@@ -248,6 +282,14 @@ export default function HomeClient({ availability, priests }: Props) {
       void refreshBookings();
     }
   }, [status, refreshBookings]);
+
+  useEffect(() => {
+    if (status !== "authenticated" || priestChangeBusy) return;
+    const sessionPriestId = session?.user?.priestId ?? "";
+    if (sessionPriestId && sessionPriestId !== selectedPriestId) {
+      setSelectedPriestId(sessionPriestId);
+    }
+  }, [status, priestChangeBusy, session?.user?.priestId, selectedPriestId]);
 
   useEffect(() => {
     if (!message || error) return;
@@ -288,6 +330,21 @@ export default function HomeClient({ availability, priests }: Props) {
     () => bookings.some((b) => b.status !== "cancelled" && b.date === selectedDay),
     [bookings, selectedDay]
   );
+  const activeOtherPriestBooking = useMemo(
+    () =>
+      bookings.find(
+        (b) =>
+          b.status !== "cancelled" &&
+          b.priestId &&
+          selectedPriestId &&
+          b.priestId !== selectedPriestId
+      ) ?? null,
+    [bookings, selectedPriestId]
+  );
+  const activeOtherPriestName = useMemo(() => {
+    if (!activeOtherPriestBooking?.priestId) return null;
+    return priests.find((p) => p.id === activeOtherPriestBooking.priestId)?.name ?? null;
+  }, [activeOtherPriestBooking?.priestId, priests]);
 
   const pagedBookings = useMemo(() => {
     const start = (page - 1) * pageSize;
@@ -305,6 +362,10 @@ export default function HomeClient({ availability, priests }: Props) {
 
     if (registerForm.password !== registerForm.confirm) {
       setError("Parolele nu coincid.");
+      return;
+    }
+    if (!acceptedPolicy) {
+      setError("Trebuie sŽŸ acceptaE>i politica de confidenE>ialitate.");
       return;
     }
     const passwordError = validatePassword(registerForm.password);
@@ -339,6 +400,7 @@ export default function HomeClient({ availability, priests }: Props) {
     });
 
     setRegisterForm({ name: "", email: "", password: "", confirm: "", priestId: "" });
+    setAcceptedPolicy(false);
     setBusy(false);
     router.refresh();
     void refreshBookings();
@@ -444,6 +506,11 @@ export default function HomeClient({ availability, priests }: Props) {
       setError("Vă rugăm să vă autentificați pentru a face o programare.");
       return;
     }
+    if (activeOtherPriestBooking) {
+     
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     if (bookingBusy) return;
     setBookingBusy(true);
     setError(null);
@@ -496,14 +563,16 @@ export default function HomeClient({ availability, priests }: Props) {
   };
 
   const myPriest = useMemo(
-    () => priests.find((p) => p.id === session?.user?.priestId),
-    [priests, session?.user?.priestId]
+    () =>
+      priests.find((p) => p.id === selectedPriestId) ??
+      priests.find((p) => p.id === session?.user?.priestId),
+    [priests, selectedPriestId, session?.user?.priestId]
   );
 
 
   return (
     <YellowTexture>
-      <div className="min-h-screen flex flex-col p-6 rounded-2xl">
+      <div className="min-h-screen flex flex-col p-4 md:p-6 rounded-2xl">
         {status !== "authenticated" && (
           <div className="flex-1 grid place-items-center">
             {authView === "choice" && (
@@ -543,7 +612,7 @@ export default function HomeClient({ availability, priests }: Props) {
             {authView === "login" && (
               <form
                 onSubmit={handleLogin}
-                className="w-full max-w-md md:max-w-lg grid gap-6 rounded-2xl mt-4  p-6 md:p-8"
+                className="w-full max-w-md md:max-w-lg grid gap-6 rounded-2xl mt-4 p-4 md:p-8"
               >
                 <p className="text-4xl font-bold text-center tracking-tight mb-10 mt-15 text-white/80">
                   Autentificare
@@ -631,7 +700,7 @@ export default function HomeClient({ availability, priests }: Props) {
 
             {/* ================= RESET  ================= */}
             {authView === "reset" && (
-              <div className="w-full max-w-md md:max-w-lg grid gap-6 rounded-2xl mt-4 p-6 md:p-8">
+              <div className="w-full max-w-md md:max-w-lg grid gap-6 rounded-2xl mt-4 p-4 md:p-8">
                 <p className="text-4xl font-bold text-center tracking-tight mt-7 mt-15 mb-10 text-white/90">
                   Resetare parolă
                 </p>
@@ -743,7 +812,7 @@ export default function HomeClient({ availability, priests }: Props) {
             {authView === "register" && (
               <form
                 onSubmit={handleRegister}
-                className="w-full max-w-md md:max-w-lg grid gap-6 rounded-2xl mt-4 p-6 md:p-8"
+                className="w-full max-w-md md:max-w-lg grid gap-6 rounded-2xl mt-4 p-4 md:p-8"
               >
                 <p className="text-4xl font-bold text-center text-white/90 mt-10 mb-10 tracking-tight">
                   Creează cont
@@ -831,42 +900,205 @@ export default function HomeClient({ availability, priests }: Props) {
                     </option>
                   ))}
                 </select>
-
-                <IconFrame bgColor="bg-[#BE5237]" textColor="text-white/80">
-                  <button
-                    type="submit"
-                    disabled={busy}
-                    className={`w-full py-2 md:py-3 text-lg font-semibold transition-transform duration-150 ${pressedId === "register-submit" ? "scale-95" : "scale-100"}`}
-                    onTouchStart={() => handlePressStart("register-submit")}
-                    onTouchEnd={handlePressEnd}
-                  >
-                    {busy ? "Se creează cont..." : "Creează cont"}
-                  </button>
-                </IconFrame>
-
-                <button
-                  type="button"
-                  className={`text-sm underline text-white/70 text-center transition-transform duration-150 ${pressedId === "register-back" ? "scale-95" : "scale-100"}`}
-                  onClick={() => handleAuthView("choice")}
-                  onTouchStart={() => handlePressStart("register-back")}
-                  onTouchEnd={handlePressEnd}
-                >
-                  ← Înapoi
-                </button>
-
-                <div className="flex justify-center">
-                  <Logo />
+                <div className="mt-2 flex items-center gap-3 text-black/80">
+                  <input
+                    id="accept-policy"
+                    type="checkbox"
+                    required
+                    checked={acceptedPolicy}
+                    onChange={(event) => setAcceptedPolicy(event.target.checked)}
+                    className="h-4 w-4 accent-[#AE4B32]"
+                  />
+                  <label htmlFor="accept-policy" className="text-xs md:text-md lg:text-[15px]">
+                    Sunt de acord cu {" "}
+                    <button
+                      type="button"
+                      onClick={() => setShowPolicy(true)}
+                      className="underline hover:text-black/100"
+                    >
+                      politica de confidențialitate
+                    </button>
+                  </label>
                 </div>
-              </form>
+                {showPolicy && (
+                  <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-6"
+                    onClick={() => setShowPolicy(false)}
+                  >
+                    <div className="relative max-h-[80vh] w-full max-w-2xl overflow-hidden rounded-2xl border border-black/20 bg-[#f7f0e2] text-black shadow-2xl">
+                      <div className="flex items-center justify-between border-b border-black/10 px-6 py-4">
+                        <p className="text-xl lg:text-2xl font-semibold">
+                          Politica de confidențialitate
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => setShowPolicy(false)}
+                          className="rounded-full border border-black/20 px-3 py-1 text-sm font-semibold text-black/70 hover:bg-black/10"
+                          aria-label="Inchide"
+                        >
+                          x
+                        </button>
+                      </div>
+                      <div
+                        className="max-h-[calc(80vh-64px)] overflow-y-auto px-6 py-4 text-sm lg:text-base leading-relaxed text-black/80"
+                        onClick={(event) => event.stopPropagation()}
+                      >
+                        <p className="font-semibold text-black/90">1. Introducere</p>
+                        <p className="mt-2">
+                          Politica de Confidențialitate explică ce date colectăm, cum le folosim și care sunt drepturile
+                          utilizatorilor atunci când folosesc site-ul nostru (programări, cont, resetare parolă).
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">2. Operatorul de date</p>
+                        <p className="mt-2">
+                          Operator: Biserica Foișor
+                          <br />
+                          Adresa: Str. Foișorului Nr. 119, București
+                          <br />
+                          Email: contact@bisericafoisor.ro
+                          <br />
+                          Telefon: +40 723 257 569
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">3. Ce date colectăm</p>
+                        <p className="mt-2">
+                          - Date de contact: nume, email, telefon (pentru cont și confirmarea programărilor).
+                          <br />
+                          - Date de programare: data, ora, tipul programarii și alte informații necesare.
+                          <br />
+                          - Date de autentificare: parola (stocată criptat/hashed).
+                          <br />
+                          - Date tehnice minime: informații necesare funcționării site-ului (ex. cod de resetare).
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">4. Scopurile prelucrării</p>
+                        <p className="mt-2">
+                          - Creare cont și autentificare.
+                          <br />
+                          - Gestionarea programărilor și comunicarea lor.
+                          <br />
+                          - Resetarea parolei prin email.
+                          <br />
+                          - Siguranța și funcționarea platformei.
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">5. Temeiul legal</p>
+                        <p className="mt-2">
+                          Prelucrăm datele pe baza:
+                          <br />
+                          - executării unui contract (art. 6(1)(b) GDPR) pentru cont și programări;
+                          <br />
+                          - consimțământului (art. 6(1)(a)) acolo unde este cazul;
+                          <br />
+                          - interesului legitim (art. 6(1)(f)) pentru securitatea și integritatea serviciului.
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">6. Destinatari / terți</p>
+                        <p className="mt-2">
+                          Datele pot fi prelucrate de furnizori terți, strict pentru funcționarea serviciului:
+                          <br />
+                          - Sanity – stocarea datelor de programări și conturi;
+                          <br />
+                          - Resend – trimiterea emailurilor pentru resetarea parolei.
+                          <br />
+                          Acești furnizori acționează ca împuterniciți și au obligații GDPR.
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">7. Transferuri internaționale</p>
+                        <p className="mt-2">
+                          Dacă datele sunt transferate în afara SEE prin furnizori (ex. servicii cloud), acestea sunt
+                          protejate prin garanții adecvate (ex. clauze contractuale standard).
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">8. Durata stocării</p>
+                        <p className="mt-2">
+                          - Datele de programare: păstrate până la finalizarea programării, apoi șterse/anonimizate
+                          conform politicii interne.
+                          <br />
+                          - Datele de cont: păstrate cât timp contul este activ.
+                          <br />
+                          - Date de resetare: păstrate doar până la expirarea programării.
+                          <br />
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">9. Drepturile dumneavoastră</p>
+                        <p className="mt-2">
+                          Aveți dreptul la:
+                          <br />
+                          - acces, rectificare, ștergere;
+                          <br />
+                          - restricționare, portabilitate;
+                          <br />
+                          - opoziție la prelucrare;
+                          <br />
+                          - retragerea consimțământului;
+                          <br />
+                          - depunerea unei plângeri la ANSPDCP.
+                          <br />
+                          Cereri: anspdcp@dataprotection.ro
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">10. Securitatea datelor</p>
+                        <p className="mt-2">
+                          Aplicăm măsuri tehnice și organizatorice adecvate pentru protecția datelor, inclusiv
+                          criptare/hashed pentru parole, acces controlat și monitorizare.
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">11. Modificări ale politicii</p>
+                        <p className="mt-2">
+                          Putem actualiza periodic această politică. Versiunea curentă este disponibilă pe această
+                          pagină.
+                        </p>
+
+                        <p className="mt-4 font-semibold text-black/90">12. Contact</p>
+                        <p className="mt-2 mb-4">
+                          Pentru întrebări:
+                          <br />
+                          Email: contact@bisericafoisor.ro
+                          <br />
+                          Telefon: +40 723 257 569
+                          <br />
+                          Adresa: Str. Foișorului Nr. 119, București
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                    <IconFrame bgColor="bg-[#BE5237]" textColor="text-white/80">
+                      <button
+                        type="submit"
+                        disabled={busy}
+                        className={`w-full py-2 md:py-3 text-lg font-semibold transition-transform duration-150 ${pressedId === "register-submit" ? "scale-95" : "scale-100"}`}
+                        onTouchStart={() => handlePressStart("register-submit")}
+                        onTouchEnd={handlePressEnd}
+                      >
+                        {busy ? "Se creează cont..." : "Creează cont"}
+                      </button>
+                    </IconFrame>
+
+                    <button
+                      type="button"
+                      className={`text-sm underline text-white/70 text-center transition-transform duration-150 ${pressedId === "register-back" ? "scale-95" : "scale-100"}`}
+                      onClick={() => handleAuthView("choice")}
+                      onTouchStart={() => handlePressStart("register-back")}
+                      onTouchEnd={handlePressEnd}
+                    >
+                      ← Înapoi
+                    </button>
+
+                    <div className="flex justify-center">
+                      <Logo />
+                    </div>
+                  </form>
+                )}
+              </div>
             )}
-          </div>
-        )}
-        {/* ------------------ PROGRAMARI ------------------------ */}
-        {status === "authenticated" && (
-          <div className="min-h-screen flex items-center justify-center ">
-            <div className="w-full max-w-md md:max-w-lg grid gap-6 mt-10 rounded-2xl p-8 md:p-6">
-              {/* Heading */}
-              {/* <div className="flex items-center justify-between">
+            {/* ------------------ PROGRAMARI ------------------------ */}
+            {status === "authenticated" && (
+              <div className="min-h-screen flex items-center justify-center ">
+                <div className="w-full max-w-md md:max-w-lg grid gap-6 mt-10 rounded-2xl p-4 md:p-6">
+                  {/* Heading */}
+                  {/* <div className="flex items-center justify-between">
                  <div className="w-full text-center">
                   <p className="text-4xl font-bold tracking-tight mt-10 mb-10 md:mb-10">
                     Programările tale
@@ -874,245 +1106,294 @@ export default function HomeClient({ availability, priests }: Props) {
                 </div> 
               </div> */}
 
-              {/* User Info Section */}
-              <div className="mt-6 grid gap-4">
-                <div className="w-full p-4">
-                  <p className="text-sm uppercase text-center tracking-wide text-white/60">Bine ai venit</p>
-                  <h3 className="text-4xl my-5 uppercase text-center font-semibold text-white/80 text-shadow-xs text-shadow-black/30">
-                    {session?.user?.name ?? "Fara nume"}
-                  </h3>
-                  <p className="text-sm text-center opacity-80 text-white/60">{session?.user?.email}</p>
+                  {/* User Info Section */}
+                  <div className="mt-6 grid gap-4">
+                    <div className="w-full px-2 py-4 md:p-4">
+                      <p className="text-sm uppercase text-center tracking-wide text-white/60">Bine ai venit</p>
+                      <h3 className="text-4xl my-5 uppercase text-center font-semibold text-white/80 text-shadow-xs text-shadow-black/30">
+                        {session?.user?.name ?? "Fara nume"}
+                      </h3>
+                      <p className="text-md text-center opacity-80 text-white/60">{session?.user?.email}</p>
 
-                  {myPriest && (
-                    <p className="text-sm text-center opacity-80 text-white/60">
-                      Preot duhovnic: <span className="text-white">{myPriest.name}</span>
-                    </p>
-                  )}
-
-                  {/* Sign Out Button */}
-                  <button
-                    onClick={() => signOut({ redirect: false }).then(() => router.refresh())}
-                    className={`rounded-md absolute -translate-1/2 left-1/2 mt-12 border border-white/20 bg-red-500/30 px-3 py-1 text-sm text-white hover:border-white/40 cursor-pointer transition-transform duration-150 ${pressedId === "signout" ? "scale-95" : "scale-100"}`}
-                    onTouchStart={() => handlePressStart("signout")}
-                    onTouchEnd={handlePressEnd}
-                  >
-                    Delogare
-                  </button>
-                </div>
-                <div className="mt-6 flex items-center justify-between gap-3">
-                  <div className="w-full">
-                    <p className="text-sm text-center mt-[10vh] text-white/60">Alege ziua</p>
-                    <p className="md:text-2xl text-xl text-center font-semibold text-white/90 uppercase text-shadow-xs text-shadow-black/30 mb-6">
-                      {selectedDay ? formatRoDate(selectedDay) : "Nicio zi"}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Available Dates */}
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {availabilityState.length === 0 && (
-                    <p className="text-sm text-white/60">
-                      Nu există zile disponibile pentru preotul duhovnic ales.
-                    </p>
-                  )}
-                  {dates.map((day) => (
-                    <IconFrame2 bgColor="bg-gradient-to-r from-amber-400 to-yellow-400 opacity-90 mx-5" key={day}>
-                      <button
-                        onClick={() => setSelectedDay(day)}
-                        className={`relative rounded-xl px-4 py-2 text-sm transition cursor-pointer transition-transform duration-150 ${selectedDay === day
-                          ? "bg-white/5 text-black"
-                          : "opacity-50 text-black/80"
-                          } ${pressedId === `day-${day}` ? "scale-95" : "scale-100"}`}
-                        onTouchStart={() => handlePressStart(`day-${day}`)}
-                        onTouchEnd={handlePressEnd}
-                      >
-                        {formatRoDate(day)}
-                        {!availabilityState.some((e) => e.date === day) && (
-                          <span className="absolute inset-0 flex items-center justify-center rounded-md bg-black/60 text-[10px] uppercase tracking-wide opacity-70 group-hover:opacity-90">
-                            closed
-                          </span>
-                        )}
-                      </button>
-                    </IconFrame2>
-                  ))}
-                </div>
-
-                {/* Events for Selected Day */}
-                <div className="mt-4 rounded-xl p-4">
-                  <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-white/60">
-                    {!hasBookingForSelectedDay && (
-                      <span className="flex items-center gap-1">
-                        <span
-                          className={`h-3 w-3 rounded-full ${hasAvailableInterval ? "bg-green-500" : "bg-red-500"}`}
-                        />{" "}
-                        {hasAvailableInterval ? "Interval disponibil" : "Interval indisponibil"}
-                      </span>
-                    )}
-                    {hasBookingForSelectedDay && (
-                      <span className="flex items-center gap-1">
-                        <span className="h-3 w-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600" /> Programarea ta
-                      </span>
-                    )}
-                  </div>
-                  <div className="grid gap-3">
-                    {eventsForDay.map((event) => {
-                      const remaining = remainingForEvent(event);
-
-                      // Check if user is already booked for this event
-                      const isAlreadyBooked = bookings.some(
-                        (b) => b.status !== "cancelled" && b.date === event.date && b.eventId === event.id
-                      );
-
-                      // Check if user is already booked for any event on that day
-                      const userHasBookingForDay = bookings.some((b) => b.status !== "cancelled" && b.date === event.date);
-
-                      return (
-                        <div
-                          key={event.id}
-                          className={`flex items-center justify-between rounded-lg border border-white/10 px-3 py-3 ${remaining < desiredDuration ? "bg-white/5 opacity-60" : "bg-white/20"}`}
-                          title={remaining < desiredDuration ? "Nu se mai pot face înscrieri" : "Disponibil"}
-                        >
-                          <div>
-                            {event.endTime && (
-                              <p className="text-sm font-semibold text-shadow-xs text-shadow-black/30 text-white/90">
-                                Interval: {event.startTime} – {event.endTime}
-                              </p>
-                            )}
-                            {isAlreadyBooked && (
-                              <p className="text-xs bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent drop-shadow-md">V-ați înscris aici.</p>
-                            )}
-                            {userHasBookingForDay && !isAlreadyBooked && (
-                              <p className="text-xs text-white/70 italic">Aveți deja o programare în această zi.</p>
-                            )}
-                              {remaining < desiredDuration && !isAlreadyBooked && (
-                              <p className="text-xs text-red-600/90">Nu se mai pot face înscrieri.</p>
-                            )}
+                      {priests.length > 0 && (
+                        <div className="mt-2 flex flex-col items-center gap-2 text-md text-white/60">
+                          <div className="flex items-center justify-center gap-2 whitespace-nowrap">
+                            <span className="t whitespace-nowrap">Preot duhovnic:</span>
+                            <div className="relative">
+                              <select
+                                value={selectedPriestId}
+                                onChange={handlePriestChange}
+                                disabled={priestChangeBusy}
+                                className="appearance-none rounded-full border border-white/20 bg-white/10 py-1 pl-3 pr-8 text-xs text-white/90 focus:border-white/40 focus:outline-none"
+                              >
+                                {priests.map((priest) => (
+                                  <option key={priest.id} value={priest.id} className="text-black">
+                                    {priest.name}
+                                  </option>
+                                ))}
+                              </select>
+                              <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-white">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  className="h-4 w-4"
+                                >
+                                  <path d="m6 9 6 6 6-6" />
+                                </svg>
+                              </span>
+                            </div>
                           </div>
-
-                          {!userHasBookingForDay && remaining >= desiredDuration && !isAlreadyBooked && (
-                            <button
-                              onClick={() => void handleBook(event.id)}
-                              className={`rounded-md px-3 py-2 text-xs text-white/90 font-semibold bg-green-600 cursor-pointer hover:bg-green-500 transition-transform duration-150 ${pressedId === `book-${event.id}` ? "scale-95" : "scale-100"}`}
-                              onTouchStart={() => handlePressStart(`book-${event.id}`)}
-                              onTouchEnd={handlePressEnd}
-                            >
-                              Înscrie-te
-                            </button>
+                          {activeOtherPriestBooking && (
+                            <div className="mt-2 rounded-lg border border-red-500/40 bg-red-500/15 px-3 py-2 text-sm text-red-100 leading-snug">
+                              <div className="flex items-start gap-2">
+                                <span className="mt-1 h-2 w-2 flex-none rounded-full bg-red-400" />
+                                <div>
+                                  Aveți deja o înscriere activă
+                                  {activeOtherPriestName ? ` la ${activeOtherPriestName}` : ""}.
+                                  <br />
+                                  Anulați-o pentru a vă putea înscrie la {myPriest?.name ?? "acest preot"}.
+                                </div>
+                              </div>
+                            </div>
                           )}
                         </div>
-                      );
-                    })}
+                      )}
+                      {priestChangeBusy && (
+                        <div className="mt-3 flex items-center justify-center gap-2 text-xs text-white/70">
+                          <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                          Se actualizează programările...
+                        </div>
+                      )}
 
-                    {eventsForDay.length === 0 && (
-                      <p className="text-sm text-white/60">Nu există evenimente în această zi.</p>
-                    )}
+                      {/* Sign Out Button */}
+                      <button
+                        onClick={() => signOut({ redirect: false }).then(() => router.refresh())}
+                        className={`rounded-md absolute -translate-1/2 left-1/2 mt-12 border border-white/20 bg-red-500/30 px-3 py-1 text-sm text-white hover:border-white/40 cursor-pointer transition-transform duration-150 ${pressedId === "signout" ? "scale-95" : "scale-100"}`}
+                        onTouchStart={() => handlePressStart("signout")}
+                        onTouchEnd={handlePressEnd}
+                      >
+                        Delogare
+                      </button>
+                    </div>
+                    <div className="mt-6 flex items-center justify-between gap-3">
+                      <div className="w-full">
+                        <p className="text-sm text-center mt-[10vh] text-white/60">Alege ziua</p>
+                        <p className="md:text-2xl text-xl text-center font-semibold text-white/90 uppercase text-shadow-xs text-shadow-black/30 mb-6">
+                          {selectedDay ? formatRoDate(selectedDay) : "Nicio zi"}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Available Dates */}
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {availabilityState.length === 0 && (
+                        <p className="text-sm text-white/60">
+                          Nu există zile disponibile pentru preotul duhovnic ales.
+                        </p>
+                      )}
+                      {dates.map((day) => (
+                        <IconFrame2 bgColor="bg-gradient-to-r from-amber-400 to-yellow-400 opacity-90 mx-5" key={day}>
+                          <button
+                            onClick={() => setSelectedDay(day)}
+                            className={`relative rounded-xl px-4 py-2 text-sm transition cursor-pointer transition-transform duration-150 ${selectedDay === day
+                              ? "bg-white/5 text-black"
+                              : "opacity-50 text-black/80"
+                              } ${pressedId === `day-${day}` ? "scale-95" : "scale-100"}`}
+                            onTouchStart={() => handlePressStart(`day-${day}`)}
+                            onTouchEnd={handlePressEnd}
+                          >
+                            {formatRoDate(day)}
+                            {!availabilityState.some((e) => e.date === day) && (
+                              <span className="absolute inset-0 flex items-center justify-center rounded-md bg-black/60 text-[10px] uppercase tracking-wide opacity-70 group-hover:opacity-90">
+                                closed
+                              </span>
+                            )}
+                          </button>
+                        </IconFrame2>
+                      ))}
+                    </div>
+
+                    {/* Events for Selected Day */}
+                    <div className="mt-4 rounded-xl p-4">
+                      <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-white/60">
+                        {!hasBookingForSelectedDay && (
+                          <span className="flex items-center gap-1">
+                            <span
+                              className={`h-3 w-3 rounded-full ${hasAvailableInterval ? "bg-green-500" : "bg-red-500"}`}
+                            />{" "}
+                            {hasAvailableInterval ? "Interval disponibil" : "Interval indisponibil"}
+                          </span>
+                        )}
+                        {hasBookingForSelectedDay && (
+                          <span className="flex items-center gap-1">
+                            <span className="h-3 w-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600" /> Programarea ta
+                          </span>
+                        )}
+                      </div>
+                      <div className="grid gap-3">
+                        {eventsForDay.map((event) => {
+                          const remaining = remainingForEvent(event);
+
+                          // Check if user is already booked for this event
+                          const isAlreadyBooked = bookings.some(
+                            (b) => b.status !== "cancelled" && b.date === event.date && b.eventId === event.id
+                          );
+
+                          // Check if user is already booked for any event on that day
+                          const userHasBookingForDay = bookings.some((b) => b.status !== "cancelled" && b.date === event.date);
+
+                          return (
+                            <div
+                              key={event.id}
+                              className={`flex items-center justify-between rounded-lg border border-white/10 px-3 py-3 ${remaining < desiredDuration ? "bg-white/5 opacity-60" : "bg-white/20"}`}
+                              title={remaining < desiredDuration ? "Nu se mai pot face înscrieri" : "Disponibil"}
+                            >
+                              <div>
+                                {event.endTime && (
+                                  <p className="text-sm font-semibold text-shadow-xs text-shadow-black/30 text-white/90">
+                                    Interval: {event.startTime} – {event.endTime}
+                                  </p>
+                                )}
+                                {isAlreadyBooked && (
+                                  <p className="text-xs bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent drop-shadow-md">V-ați înscris aici.</p>
+                                )}
+                                {userHasBookingForDay && !isAlreadyBooked && (
+                                  <p className="text-xs text-white/70 italic">Aveți deja o programare în această zi.</p>
+                                )}
+                                {remaining < desiredDuration && !isAlreadyBooked && (
+                                  <p className="text-xs text-red-600/90">Nu se mai pot face înscrieri.</p>
+                                )}
+                              </div>
+
+                              {!userHasBookingForDay && remaining >= desiredDuration && !isAlreadyBooked && (
+                                <button
+                                  onClick={() => void handleBook(event.id)}
+                                  className={`rounded-md px-3 py-2 text-xs text-white/90 font-semibold bg-green-600 cursor-pointer hover:bg-green-500 whitespace-nowrap transition-transform duration-150 ${pressedId === `book-${event.id}` ? "scale-95" : "scale-100"}`}
+                                  onTouchStart={() => handlePressStart(`book-${event.id}`)}
+                                  onTouchEnd={handlePressEnd}
+                                >
+                                  Înscrie-te
+                                </button>
+                              )}
+                            </div>
+                          );
+                        })}
+
+                        {eventsForDay.length === 0 && (
+                          <p className="text-sm text-white/60">Nu există evenimente în această zi.</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  {/* <div className="border-b border-white/30 mt-5 pb-4" /> */}
+                  {(error || message) && (
+                    <div>
+                      {error && (
+                        <div className="mb-4 rounded-xl border border-red-500/30 bg-red-500/20 px-4 py-3 text-sm text-red-100 whitespace-pre-line">
+                          {error}
+                        </div>
+                      )}
+                      {message && (
+                        <div className="mb-4 rounded-xl border border-emerald-500/30 bg-emerald-500/20 px-4 py-3 text-sm text-emerald-100">
+                          {message}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  <div className="mt-4 flex justify-center">
+                    <IconFrame1 bgColor="bg-[#AE4B32]">
+                      <button
+                        type="button"
+                        onClick={() => setShowMyBookings((v) => !v)}
+                        className={`w-full py-2 md:py-3 px-4 text-sm md:text-base font-semibold text-center whitespace-nowrap cursor-pointer transition-transform duration-150 ${pressedId === "my-bookings-toggle" ? "scale-95" : "scale-100"}`}
+                        onTouchStart={() => handlePressStart("my-bookings-toggle")}
+                        onTouchEnd={handlePressEnd}
+                      >
+                        {showMyBookings ? "Ascunde programările" : "Programările tale"}
+                      </button>
+                    </IconFrame1>
+                  </div>
+                  {/* Bookings Section */}
+                  {showMyBookings && (
+                    <div className="mt-1 md:mt-10 space-y-3 rounded-xl p-4">
+
+                      {bookings.length === 0 ? (
+                        <p className="text-white/60">Nu există programări active.</p>
+                      ) : (
+                        <div className="max-h-72 overflow-y-auto space-y-3 pr-1">
+                          {pagedBookings.map((booking) => (
+                            <div
+                              key={booking._id}
+                              className={`flex items-center justify-between rounded-md border px-3 py-2 ${booking.status === "cancelled"
+                                ? "border-red-500/30 border-2 bg-red-500/10"
+                                : "border-green-500/30 bg-green-500/10"
+                                }`}
+                            >
+                              <div>
+                                <p className="text-sm text-white/90 text-shadow-xs text-shadow-black/20 font-semibold">{formatRoDate(booking.date)}</p>
+                                <p className="text-xs text-white/80 text-shadow-xs text-shadow-black/30">Ora: {booking.startTime}</p>
+                                <p className="text-xs text-white/60">
+                                  Stare:{" "}
+                                  <span
+                                    className={statusLabels[booking.status]?.className ?? "text-white"}
+                                  >
+                                    {statusLabels[booking.status]?.text ?? booking.status}
+                                  </span>
+                                </p>
+                              </div>
+                              {booking.status !== "cancelled" && (
+                                <button
+                                  disabled={bookingBusy}
+                                  onClick={() => void handleCancel(booking._id)}
+                                  className={`rounded-md border border-white/20 bg-red-500/40  px-3 py-1 text-xs text-red-100 hover:bg-red-500/20 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer transition-transform duration-150 ${pressedId === `cancel-${booking._id}` ? "scale-95" : "scale-100"}`}
+                                  onTouchStart={() => handlePressStart(`cancel-${booking._id}`)}
+                                  onTouchEnd={handlePressEnd}
+                                >
+                                  Anulează
+                                </button>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Pagination */}
+                      {bookings.length > pageSize && (
+                        <div className="flex items-center justify-between text-xs text-white/70">
+                          <button
+                            onClick={() => setPage((p) => Math.max(1, p - 1))}
+                            className={`mr-1 text-white hover:underline md:inline transition-transform duration-150 ${page === 1 ? "invisible" : ""} ${pressedId === "page-prev" ? "scale-95" : "scale-100"}`}
+                            onTouchStart={() => handlePressStart("page-prev")}
+                            onTouchEnd={handlePressEnd}
+                          >
+                            ← Anterior
+                          </button>
+                          <button
+                            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                            className={`ml-2 text-white hover:underline transition-transform duration-150 ${page >= totalPages ? "invisible" : ""} ${pressedId === "page-next" ? "scale-95" : "scale-100"}`}
+                            onTouchStart={() => handlePressStart("page-next")}
+                            onTouchEnd={handlePressEnd}
+                          >
+                            Următor →
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+
+                  <div className="flex justify-center md:mt-20">
+                    <Logo />
                   </div>
                 </div>
               </div>
-              {/* <div className="border-b border-white/30 mt-5 pb-4" /> */}
-              {(error || message) && (
-                  <div>
-                    {error && (
-                      <div className="mb-4 rounded-xl border border-red-500/30 bg-red-500/20 px-4 py-3 text-sm text-red-100 whitespace-pre-line">
-                        {error}
-                      </div>
-                    )}
-                    {message && (
-                      <div className="mb-4 rounded-xl border border-emerald-500/30 bg-emerald-500/20 px-4 py-3 text-sm text-emerald-100">
-                        {message}
-                      </div>
-                    )}
-                  </div>
-                )}
-              <div className="mt-4 flex justify-center">
-                <IconFrame1 bgColor="bg-[#AE4B32]">
-                  <button
-                    type="button"
-                    onClick={() => setShowMyBookings((v) => !v)}
-                    className={`w-full py-2 md:py-3 px-4 text-sm md:text-base font-semibold text-center whitespace-nowrap cursor-pointer transition-transform duration-150 ${pressedId === "my-bookings-toggle" ? "scale-95" : "scale-100"}`}
-                    onTouchStart={() => handlePressStart("my-bookings-toggle")}
-                    onTouchEnd={handlePressEnd}
-                  >
-                    {showMyBookings ? "Ascunde programările" : "Programările tale"}
-                  </button>
-                </IconFrame1>
-              </div>
-              {/* Bookings Section */}
-              {showMyBookings && (
-              <div className="mt-1 md:mt-10 space-y-3 rounded-xl p-4">
-                
-                {bookings.length === 0 ? (
-                  <p className="text-white/60">Nu există programări active.</p>
-                ) : (
-                  <div className="max-h-72 overflow-y-auto space-y-3 pr-1">
-                    {pagedBookings.map((booking) => (
-                      <div
-                        key={booking._id}
-                        className={`flex items-center justify-between rounded-md border px-3 py-2 ${booking.status === "cancelled"
-                          ? "border-red-500/30 border-2 bg-red-500/10"
-                          : "border-green-500/30 bg-green-500/10"
-                          }`}
-                      >
-                        <div>
-                          <p className="text-sm text-white/90 text-shadow-xs text-shadow-black/20 font-semibold">{formatRoDate(booking.date)}</p>
-                          <p className="text-xs text-white/80 text-shadow-xs text-shadow-black/30">Ora: {booking.startTime}</p>
-                          <p className="text-xs text-white/60">
-                            Stare:{" "}
-                            <span
-                              className={statusLabels[booking.status]?.className ?? "text-white"}
-                            >
-                              {statusLabels[booking.status]?.text ?? booking.status}
-                            </span>
-                          </p>
-                        </div>
-                        {booking.status !== "cancelled" && (
-                          <button
-                            disabled={bookingBusy}
-                            onClick={() => void handleCancel(booking._id)}
-                            className={`rounded-md border border-white/20 bg-red-500/40  px-3 py-1 text-xs text-red-100 hover:bg-red-500/20 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer transition-transform duration-150 ${pressedId === `cancel-${booking._id}` ? "scale-95" : "scale-100"}`}
-                            onTouchStart={() => handlePressStart(`cancel-${booking._id}`)}
-                            onTouchEnd={handlePressEnd}
-                          >
-                            Anulează
-                          </button>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Pagination */}
-                {bookings.length > pageSize && (
-                  <div className="flex items-center justify-between text-xs text-white/70">
-                    <button
-                      onClick={() => setPage((p) => Math.max(1, p - 1))}
-                      className={`mr-1 text-white hover:underline md:inline transition-transform duration-150 ${page === 1 ? "invisible" : ""} ${pressedId === "page-prev" ? "scale-95" : "scale-100"}`}
-                      onTouchStart={() => handlePressStart("page-prev")}
-                      onTouchEnd={handlePressEnd}
-                    >
-                      ← Anterior
-                    </button>
-                    <button
-                      onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-                      className={`ml-2 text-white hover:underline transition-transform duration-150 ${page >= totalPages ? "invisible" : ""} ${pressedId === "page-next" ? "scale-95" : "scale-100"}`}
-                      onTouchStart={() => handlePressStart("page-next")}
-                      onTouchEnd={handlePressEnd}
-                    >
-                      Următor →
-                    </button>
-                  </div>
-                )}
-              </div>
-              )}
-
-
-              <div className="flex justify-center md:mt-20">
-                <Logo />
-              </div>
-            </div>
+            )}
           </div>
-        )}
-      </div>
 
     </YellowTexture>
   )

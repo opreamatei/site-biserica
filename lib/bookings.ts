@@ -111,6 +111,17 @@ export async function createBooking(params: {
     throw new Error("Nu aveți un preot selectat. Refaceți contul sau contactați administratorul.");
   }
 
+  const userBookings = await fetchUserBookings(user.id);
+  const activeOtherPriest = userBookings.find(
+    (booking) =>
+      booking.status !== "cancelled" &&
+      booking.priestId &&
+      booking.priestId !== user.priestId,
+  );
+  if (activeOtherPriest) {
+    throw new Error("Aveți deja o programare activă la alt preot. Anulați-o pentru a continua.");
+  }
+
   // Reincarcam durata curenta a user-ului din Sanity pentru a nu depinde doar de sesiune.
   const latestUser = await readClient.fetch<{ allocatedMinutes?: number } | null>(
     `*[_type == "user" && _id == $id][0]{allocatedMinutes}`,

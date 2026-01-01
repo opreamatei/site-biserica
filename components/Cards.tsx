@@ -187,9 +187,9 @@ export default function CardSection() {
               >
                 {idx === 0 ? (
                   <>
-                    <span className="block byzantin">Evenimente</span>
+                    <h2 className="block byzantin">Evenimente</h2>
                     
-                    <span className="block byzantin">Viitoare</span>
+                    <h2 className="block byzantin">Viitoare</h2>
                   </>
                 ) : (
                   card.title

@@ -66,7 +66,7 @@ const authConfig: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, trigger, session }) {
       if (user) {
         const userRecord = user as unknown as {
           role?: unknown;
@@ -78,6 +78,24 @@ const authConfig: NextAuthOptions = {
         token.role = role ?? "user";
         token.allocatedMinutes = minutes ?? 30;
         token.priestId = typeof userRecord.priestId === "string" ? userRecord.priestId : undefined;
+      }
+      if (trigger === "update" && session) {
+        const nextRole =
+          parseRole((session as Record<string, unknown>).role) ??
+          parseRole((session as { user?: Record<string, unknown> }).user?.role);
+        const nextMinutes =
+          parseMinutes((session as Record<string, unknown>).allocatedMinutes) ??
+          parseMinutes((session as { user?: Record<string, unknown> }).user?.allocatedMinutes);
+        const nextPriestId =
+          typeof (session as Record<string, unknown>).priestId === "string"
+            ? ((session as Record<string, unknown>).priestId as string)
+            : typeof (session as { user?: Record<string, unknown> }).user?.priestId === "string"
+              ? ((session as { user?: Record<string, unknown> }).user?.priestId as string)
+              : undefined;
+
+        if (nextRole) token.role = nextRole;
+        if (typeof nextMinutes === "number") token.allocatedMinutes = nextMinutes;
+        if (nextPriestId) token.priestId = nextPriestId;
       }
       return token;
     },

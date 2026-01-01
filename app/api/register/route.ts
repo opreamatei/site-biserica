@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
   if (!name || !email || !password || !priestId) {
     return NextResponse.json(
-      { error: "Vă rugăm să completați numele, emailul, parola și să alegeți un preot." },
+      { error: "Vă rugăm să completați numele, emailul, parola și să alegeți un preot. Dacă totul este corect și nu se creează contul, reîncărcați pagina și încercați din nou." },
       { status: 400 },
     );
   }

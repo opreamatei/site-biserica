@@ -1,57 +1,57 @@
 {
   "duminică": {
-    "data": "28 decembrie",
+    "data": "4 ianuarie",
     "activitati": [
       { "nume": "Utrenia", "ora": "8:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" }
     ]
   },
   "luni": {
-    "data": "29 decembrie",
+    "data": "5 ianuarie",
     "activitati": [
-    { "nume": "Biserica este închisă", "ora": "" }
+    { "nume": "Rânduiala Ceasurilor Împărătești", "ora": "13:00" },
+    { "nume": "Vecernie", "ora": "" },
+    { "nume": "sfințirea Apei celei Mari", "ora": "" }
     ]
   },
   "marți": {
-    "data": "30 decembrie",
+    "data": "6 ianuarie",
     "activitati": [
-    { "nume": "Biserica este închisă", "ora": "" }
+    { "nume": "Utrenia", "ora": "8:00" },
+    { "nume": "Dumnezeiasca Liturghie", "ora": "" },
+    { "nume": "Botezul Domnului", "ora": "" }
     ]
   },
   "miercuri": {
-    "data": "31 decembrie",
+    "data": "7 ianuarie",
     "activitati": [
-      { "nume": "Odovania praznicului Nașterii Domnului", "ora": "17:00" },
-      { "nume": "Slujbă la cumpăna dintre ani", "ora": "" },
-      { "nume": "Priveghere", "ora": "" }
-
+      { "nume": "Utrenia", "ora": "8:00" },
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
     ]
   },
   "joi": {
-    "data": "1 ianuarie",
+    "data": "8 ianuarie",
     "activitati": [
-      { "nume": "Acatistul Mântuitorului Iisus Hristos", "ora": "8:30" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" },
-      { "nume": "Te Deum", "ora": "" }
-
+      { "nume": "Ceasul I", "ora": "6:00" },
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
     ]
   },
   "vineri": {
-    "data": "2 ianuarie",
+    "data": "9 ianuarie",
     "activitati": [
       { "nume": "Ceasul I", "ora": "6:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" }
     ]
   },
   "sâmbătă": {
-    "data": "3 ianuarie",
+    "data": "10 ianuarie",
     "activitati": [
       { "nume": "Dumnezeiasca Liturghie", "ora": "8:30" },
-      { "nume": "(fără parastas)", "ora": "" }
+      { "nume": "Pomenire pentru cei adormiți", "ora": "" }
     ]
   },
   "Duminică": {
-    "data": "4 ianuarie",
+    "data": "11 ianuarie",
     "activitati": [
       { "nume": "Utrenia", "ora": "8:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" }

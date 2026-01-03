@@ -4,33 +4,5 @@
     "label": "Pr1 decembrie târziu",
     "startTime": "14:00",
     "endTime": "16:00"
-  },{
-    "date": "2025-12-18",
-    "label": "Pr1 decembrie târziu",
-    "startTime": "16:00",
-    "endTime": "18:00"
-  },{
-    "date": "2025-12-18",
-    "label": "Pr1 decembrie târziu",
-    "startTime": "18:00",
-    "endTime": "20:00"
-  },
-  {
-    "date": "2025-12-20",
-    "label": "Program pr1 duminica",
-    "startTime": "07:30",
-    "endTime": "10:30"
-  },
-  {
-    "date": "2025-12-22",
-    "label": "Pr3 decembrie",
-    "startTime": "08:00",
-    "endTime": "09:30"
-  },
-  {
-    "date": "2026-01-06",
-    "label": "Pr3 ianuarie",
-    "startTime": "11:00",
-    "endTime": "12:30"
   }
 ]

@@ -1,57 +1,59 @@
 {
   "duminică": {
-    "data": "4 ianuarie",
+    "data": "11 ianuarie",
     "activitati": [
       { "nume": "Utrenia", "ora": "8:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" }
     ]
   },
   "luni": {
-    "data": "5 ianuarie",
+    "data": "12 ianuarie",
     "activitati": [
-    { "nume": "Rânduiala Ceasurilor Împărătești", "ora": "13:00" },
-    { "nume": "Dumnezeiasca Liturghie", "ora": "" },
-    { "nume": "Sfințirea Apei celei Mari", "ora": "" }
+      { "nume": "Ceasul I", "ora": "6:00" },
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" },
+      { "nume": "Acatistul Sfântului Trifon", "ora": "17:00" }
     ]
   },
   "marți": {
-    "data": "6 ianuarie",
-    "activitati": [
-    { "nume": "Utrenia", "ora": "8:00" },
-    { "nume": "Dumnezeiasca Liturghie", "ora": "" },
-    { "nume": "Botezul Domnului", "ora": "" }
-    ]
-  },
-  "miercuri": {
-    "data": "7 ianuarie",
-    "activitati": [
-      { "nume": "Utrenia", "ora": "8:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
-    ]
-  },
-  "joi": {
-    "data": "8 ianuarie",
+    "data": "13 ianuarie",
     "activitati": [
       { "nume": "Ceasul I", "ora": "6:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" }
     ]
   },
+  "miercuri": {
+    "data": "14 ianuarie",
+    "activitati": [
+      { "nume": "Ceasul I", "ora": "6:00" },
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+    ]
+  },
+  "joi": {
+    "data": "15 ianuarie",
+    "activitati": [
+      { "nume": "Ceasul I", "ora": "6:00" },
+      { "nume": "Dumnezeiasca Liturghie", "ora": "" },
+      { "nume": "Taina Mărturisirii", "ora": "" },
+      { "nume": "Molitfa I", "ora": "17:00" },
+      { "nume": "Molitfa II", "ora": "19:00" }
+    ]
+  },
   "vineri": {
-    "data": "9 ianuarie",
+    "data": "16 ianuarie",
     "activitati": [
       { "nume": "Ceasul I", "ora": "6:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" }
     ]
   },
   "sâmbătă": {
-    "data": "10 ianuarie",
+    "data": "17 ianuarie",
     "activitati": [
       { "nume": "Dumnezeiasca Liturghie", "ora": "8:30" },
       { "nume": "Pomenire pentru cei adormiți", "ora": "" }
     ]
   },
   "Duminică": {
-    "data": "11 ianuarie",
+    "data": "18 ianuarie",
     "activitati": [
       { "nume": "Utrenia", "ora": "8:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" }

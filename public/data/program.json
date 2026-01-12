@@ -33,9 +33,8 @@
     "activitati": [
       { "nume": "Ceasul I", "ora": "6:00" },
       { "nume": "Dumnezeiasca Liturghie", "ora": "" },
-      { "nume": "Taina Mărturisirii", "ora": "" },
-      { "nume": "Molitfa I", "ora": "17:00" },
-      { "nume": "Molitfa II", "ora": "19:00" }
+      { "nume": "Taina Mărturisirii - Molitfa I", "ora": "17:00" },
+      { "nume": "Taina Mărturisirii - Molitfa II", "ora": "19:00" }
     ]
   },
   "vineri": {

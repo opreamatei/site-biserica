@@ -121,9 +121,13 @@ export async function getEvents(priestId?: string, daysAhead = 90): Promise<Spov
     }
   >;
 
-  return events
+  const validEvents = events.filter(
+    (item): item is (typeof item & { date: string; startTime: string }) =>
+      Boolean(item.date && item.startTime),
+  );
+
+  return validEvents
     .map((item) => {
-      if (!item.date || !item.startTime) return null;
       const endTime = item.endTime;
       const parsedDuration =
         endTime != null
@@ -152,7 +156,6 @@ export async function getEvents(priestId?: string, daysAhead = 90): Promise<Spov
       };
     })
     .filter((event): event is SpovEvent => {
-      if (!event) return false;
       const d = new Date(event.date);
       return d >= lower && d <= upper;
     })

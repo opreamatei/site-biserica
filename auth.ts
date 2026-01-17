@@ -59,7 +59,7 @@ const authConfig: NextAuthOptions = {
           name: user.name,
           email: user.email,
           role: user.role ?? "user",
-          allocatedMinutes: user.allocatedMinutes ?? 30,
+          allocatedMinutes: user.allocatedMinutes ?? 15,
           priestId: user.priestId ?? null,
         };
       },
@@ -76,7 +76,7 @@ const authConfig: NextAuthOptions = {
         const role = parseRole(userRecord.role);
         const minutes = parseMinutes(userRecord.allocatedMinutes);
         token.role = role ?? "user";
-        token.allocatedMinutes = minutes ?? 30;
+        token.allocatedMinutes = minutes ?? 15;
         token.priestId = typeof userRecord.priestId === "string" ? userRecord.priestId : undefined;
       }
       if (trigger === "update" && session) {
@@ -105,7 +105,7 @@ const authConfig: NextAuthOptions = {
         const role = parseRole((token as Record<string, unknown>).role);
         const minutes = parseMinutes((token as Record<string, unknown>).allocatedMinutes);
         session.user.role = role ?? "user";
-        session.user.allocatedMinutes = minutes ?? 30;
+        session.user.allocatedMinutes = minutes ?? 15;
         session.user.priestId = (token as Record<string, unknown>).priestId as
           | string
           | undefined;

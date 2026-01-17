@@ -34,7 +34,7 @@ export default defineType({
       name: 'allocatedMinutes',
       title: 'Durata rezervare (minute)',
       type: 'number',
-      initialValue: 30,
+      initialValue: 15,
       description: 'Doar admin/dev. Cat timp blocheaza un booking al acestui utilizator.',
     }),
     defineField({

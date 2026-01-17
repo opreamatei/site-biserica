@@ -174,6 +174,7 @@ const AboutPage = () => {
 
               return (
                 <div
+                  key={`${section.image}-${index}`}
                   className="grid gap-10 grid-cols-2 md:items-center md:gap-16"
                 >
                   <div className={imageFirst ? "order-1 md:order-1 self-center" : "order-2 md:order-2 self-center"}>

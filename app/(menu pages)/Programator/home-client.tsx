@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import type { Priest, SpovEvent } from "@/lib/events";
+import type { Priest, SpovEvent } from "@/types/events";
 import type { BookingRecord } from "@/lib/bookings";
 import YellowTexture from "@/components/yellowbg";
 import IconFrame1 from "@/components/gen/IconFrame";
@@ -31,20 +31,35 @@ function sortBookings(list: BookingRecord[]): BookingRecord[] {
 function formatRoDate(date: string) {
   if (!date) return "";
 
+  const parts = date.split("-").map((value) => Number(value));
+  if (parts.length !== 3) return "";
+  const [year, month, day] = parts;
+  const parsedDate = new Date(year, month - 1, day);
+  if (Number.isNaN(parsedDate.getTime())) return "";
+
   const formatted = new Intl.DateTimeFormat("ro-RO", {
     weekday: "long",
     day: "numeric",
     month: "long",
-  }).format(new Date(date));
+  }).format(parsedDate);
 
   // Capitalizează prima literă (luni → Luni)
   return formatted.charAt(0).toUpperCase() + formatted.slice(1);
 }
 
+function calculateBookingDuration(peopleCount: number, baseMinutes = 15): number {
+  const count = Math.max(1, Math.floor(peopleCount));
+  const base = Math.max(1, Math.floor(baseMinutes));
+  if (count <= 2) return count * base;
+  if (count === 3) return base * 2;
+  return base * 2 + (count - 3) * 5;
+}
+
+const MAX_PEOPLE_COUNT = 10;
+
 export default function HomeClient({ availability, priests }: Props) {
   const router = useRouter();
   const { data: session, status, update } = useSession();
-  const desiredDuration = session?.user?.allocatedMinutes ?? 30;
 
   const [registerForm, setRegisterForm] = useState({
     name: "",
@@ -74,6 +89,8 @@ export default function HomeClient({ availability, priests }: Props) {
   const [showMyBookings, setShowMyBookings] = useState(false);
   const [bookings, setBookings] = useState<BookingRecord[]>([]);
   const [allBookings, setAllBookings] = useState<BookingRecord[]>([]);
+  const [peopleCount, setPeopleCount] = useState(1);
+  const [peopleCountInput, setPeopleCountInput] = useState("");
   const [availabilityState, setAvailabilityState] =
     useState<SpovEvent[]>(availability);
   const [selectedDay, setSelectedDay] = useState<string>(
@@ -85,6 +102,12 @@ export default function HomeClient({ availability, priests }: Props) {
   const [priestChangeBusy, setPriestChangeBusy] = useState(false);
   const [busy, setBusy] = useState(false);
   const [bookingBusy, setBookingBusy] = useState(false);
+  const [deleteAccountBusy, setDeleteAccountBusy] = useState(false);
+  const [showDeleteAccountConfirm, setShowDeleteAccountConfirm] =
+    useState(false);
+  const [bookingConfirmEventId, setBookingConfirmEventId] = useState<string | null>(
+    null
+  );
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState(1);
@@ -216,15 +239,8 @@ export default function HomeClient({ availability, priests }: Props) {
   };
 
   const validatePassword = (value: string): string | null => {
-    const requirements = [
-      { ok: value.length >= 8, text: "minim 8 caractere" },
-      { ok: /[A-Z]/.test(value), text: "cel puțin o literă mare" },
-      { ok: /\d/.test(value), text: "cel puțin o cifră" },
-      { ok: /[^\w\s]/.test(value), text: "cel puțin un caracter special" },
-    ];
-    const missing = requirements.filter((req) => !req.ok).map((req) => `- ${req.text}`);
-    if (missing.length === 0) return null;
-    return `Parola trebuie să conțină:\n${missing.join("\n")}`;
+    if (value.length >= 4) return null;
+    return "Parola trebuie sa aiba minim 4 caractere.";
   };
 
 
@@ -263,7 +279,7 @@ export default function HomeClient({ availability, priests }: Props) {
     if (!res.ok) {
       setError("Nu s-au putut încărca modificările. Reîncărcați pagina.");
       return;
-    }
+    }     
     const data = await res.json();
     setBookings(sortBookings(data.bookings ?? []));
     setAllBookings(data.allBookings ?? []);
@@ -276,12 +292,36 @@ export default function HomeClient({ availability, priests }: Props) {
     }
   }, [selectedDay]);
 
+  const refreshSessionUser = useCallback(async () => {
+    if (!update) return;
+    const res = await fetch("/api/user", { cache: "no-store" });
+    if (!res.ok) return;
+    const data = await res.json().catch(() => ({}));
+    if (!data?.user) return;
+    await update({
+      user: {
+        role: data.user.role,
+        allocatedMinutes: data.user.allocatedMinutes,
+        priestId: data.user.priestId,
+      },
+    });
+  }, [update]);
+
   useEffect(() => {
     if (status === "authenticated") {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       void refreshBookings();
+      void refreshSessionUser();
     }
-  }, [status, refreshBookings]);
+  }, [status, refreshBookings, refreshSessionUser]);
+
+  useEffect(() => {
+    if (status !== "authenticated") return;
+    const handleFocus = () => {
+      void refreshSessionUser();
+    };
+    window.addEventListener("focus", handleFocus);
+    return () => window.removeEventListener("focus", handleFocus);
+  }, [status, refreshSessionUser]);
 
   useEffect(() => {
     if (status !== "authenticated" || priestChangeBusy) return;
@@ -299,9 +339,23 @@ export default function HomeClient({ availability, priests }: Props) {
     return () => clearTimeout(timeout);
   }, [error, message]);
 
+  useEffect(() => {
+    const shouldLockScroll = showDeleteAccountConfirm || Boolean(bookingConfirmEventId);
+    document.body.style.overflow = shouldLockScroll ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [bookingConfirmEventId, showDeleteAccountConfirm]);
+
   const dates = useMemo(
     () => Array.from(new Set(availabilityState.map((e) => e.date))),
     [availabilityState]
+  );
+  const hasIntervals = availabilityState.length > 0;
+  const baseMinutes = session?.user?.allocatedMinutes ?? 15;
+  const requiredDuration = useMemo(
+    () => calculateBookingDuration(peopleCount, baseMinutes),
+    [peopleCount, baseMinutes]
   );
 
   const eventsForDay = useMemo(
@@ -314,7 +368,10 @@ export default function HomeClient({ availability, priests }: Props) {
         (b) => b.eventId === event.id && b.status !== "cancelled"
       );
       const used = eventBookings.reduce(
-        (sum, b) => sum + (b.durationMinutes ?? 30),
+        (sum, b) =>
+          sum +
+          (b.durationMinutes ??
+            calculateBookingDuration(b.peopleCount ?? 1)),
         0
       );
       return Math.max(0, event.durationMinutes - used);
@@ -323,9 +380,14 @@ export default function HomeClient({ availability, priests }: Props) {
   );
 
   const hasAvailableInterval = useMemo(
-    () => eventsForDay.some((event) => remainingForEvent(event) >= desiredDuration),
-    [eventsForDay, remainingForEvent, desiredDuration]
+    () => eventsForDay.some((event) => remainingForEvent(event) >= requiredDuration),
+    [eventsForDay, remainingForEvent, requiredDuration]
   );
+  const hasAnyAvailableInterval = useMemo(
+    () => availabilityState.some((event) => remainingForEvent(event) > 0),
+    [availabilityState, remainingForEvent]
+  );
+  const hasSelectableDay = dates.length > 0;
   const hasBookingForSelectedDay = useMemo(
     () => bookings.some((b) => b.status !== "cancelled" && b.date === selectedDay),
     [bookings, selectedDay]
@@ -429,7 +491,7 @@ export default function HomeClient({ availability, priests }: Props) {
       return;
     }
 
-    setMessage("Codul a fost generat verificați emailul.");
+    setMessage("Codul a fost generat. Verificați emailul.");
     if (data.token) setResetRequestedToken(data.token as string);
     setResetBusy(false);
   };
@@ -501,17 +563,91 @@ export default function HomeClient({ availability, priests }: Props) {
     void refreshBookings();
   };
 
+  const requestDeleteAccount = () => {
+    if (deleteAccountBusy) return;
+    setShowDeleteAccountConfirm(true);
+  };
+
+  const handleDeleteAccount = async () => {
+    if (deleteAccountBusy) return;
+    setShowDeleteAccountConfirm(false);
+
+    setError(null);
+    setMessage(null);
+    setDeleteAccountBusy(true);
+
+    const res = await fetch("/api/user", { method: "DELETE" });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      setError(data.error ?? "Nu s-a putut șterge contul.");
+      setDeleteAccountBusy(false);
+      return;
+    }
+
+    await signOut({ redirect: false });
+    router.refresh();
+    setDeleteAccountBusy(false);
+  };
+
+  const handlePeopleCountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setPeopleCountInput(value);
+
+    if (value.trim() === "") {
+      setPeopleCount(1);
+      return;
+    }
+
+    const raw = Number(value);
+    if (!Number.isFinite(raw)) {
+      return;
+    }
+    const normalized = Math.max(1, Math.min(MAX_PEOPLE_COUNT, Math.floor(raw)));
+    setPeopleCount(normalized);
+  };
+
+  const handlePeopleCountBlur = () => {
+    const value = peopleCountInput.trim();
+    if (value === "") {
+      setPeopleCount(1);
+      setPeopleCountInput("1");
+      return;
+    }
+
+    const raw = Number(value);
+    if (!Number.isFinite(raw) || raw < 1) {
+      setPeopleCount(1);
+      setPeopleCountInput("1");
+      return;
+    }
+
+    const normalized = Math.min(MAX_PEOPLE_COUNT, Math.floor(raw));
+    const normalizedText = String(normalized);
+    setPeopleCount(Math.max(1, normalized));
+    if (normalizedText !== peopleCountInput) {
+      setPeopleCountInput(normalizedText);
+    }
+  };
+
   const handleBook = async (eventId: string) => {
     if (!session?.user) {
       setError("Vă rugăm să vă autentificați pentru a face o programare.");
       return;
     }
-    if (activeOtherPriestBooking) {
-     
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    if (bookingBusy) return;
+      if (activeOtherPriestBooking) {
+       
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      if (!Number.isFinite(peopleCount) || peopleCount < 1) {
+        setError("Numarul de persoane este invalid.");
+        return;
+      }
+      if (peopleCount > MAX_PEOPLE_COUNT) {
+        setError("Numarul maxim de persoane este 10.");
+        return;
+      }
+      if (bookingBusy) return;
     setBookingBusy(true);
     setError(null);
     setMessage(null);
@@ -519,8 +655,8 @@ export default function HomeClient({ availability, priests }: Props) {
     const res = await fetch("/api/bookings", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ eventId }),
-    });
+        body: JSON.stringify({ eventId, peopleCount }),
+      });
     const data = await res.json().catch(() => ({}));
 
     if (!res.ok) {
@@ -537,6 +673,13 @@ export default function HomeClient({ availability, priests }: Props) {
     setMessage("Înscrierea a fost înregistrată.");
     setBookingBusy(false);
     //setShowScheduler(false);
+  };
+
+  const handleBookingConfirm = async () => {
+    if (!bookingConfirmEventId) return;
+    const eventId = bookingConfirmEventId;
+    setBookingConfirmEventId(null);
+    await handleBook(eventId);
   };
 
   const handleCancel = async (id: string) => {
@@ -1109,11 +1252,11 @@ export default function HomeClient({ availability, priests }: Props) {
                   {/* User Info Section */}
                   <div className="mt-6 grid gap-4">
                     <div className="w-full px-2 py-4 md:p-4">
-                      <p className="text-sm uppercase text-center tracking-wide text-white/60">Bine ai venit</p>
+                      <p className="text-sm uppercase text-center tracking-wide text-white/60 select-none">Bine ai venit</p>
                       <h3 className="text-4xl my-5 uppercase text-center font-semibold text-white/80 text-shadow-xs text-shadow-black/30">
                         {session?.user?.name ?? "Fara nume"}
                       </h3>
-                      <p className="text-md text-center opacity-80 text-white/60">{session?.user?.email}</p>
+                      <p className="text-md text-center opacity-80 text-white/60 select-none">{session?.user?.email}</p>
 
                       {priests.length > 0 && (
                         <div className="mt-2 flex flex-col items-center gap-2 text-md text-white/60">
@@ -1124,10 +1267,10 @@ export default function HomeClient({ availability, priests }: Props) {
                                 value={selectedPriestId}
                                 onChange={handlePriestChange}
                                 disabled={priestChangeBusy}
-                                className="appearance-none rounded-full border border-white/20 bg-white/10 py-1 pl-3 pr-8 text-xs text-white/90 focus:border-white/40 focus:outline-none"
+                                className="appearance-none rounded-full border border-white/20 bg-white/10 py-1 pl-3 pr-8 text-xs select-none text-white/90 focus:border-white/40 focus:outline-none cursor-pointer"
                               >
                                 {priests.map((priest) => (
-                                  <option key={priest.id} value={priest.id} className="text-black">
+                                  <option key={priest.id} value={priest.id} className="text-black ">
                                     {priest.name}
                                   </option>
                                 ))}
@@ -1170,30 +1313,41 @@ export default function HomeClient({ availability, priests }: Props) {
                         </div>
                       )}
 
-                      {/* Sign Out Button */}
-                      <button
-                        onClick={() => signOut({ redirect: false }).then(() => router.refresh())}
-                        className={`rounded-md absolute -translate-1/2 left-1/2 mt-12 border border-white/20 bg-red-500/30 px-3 py-1 text-sm text-white hover:border-white/40 cursor-pointer transition-transform duration-150 ${pressedId === "signout" ? "scale-95" : "scale-100"}`}
-                        onTouchStart={() => handlePressStart("signout")}
-                        onTouchEnd={handlePressEnd}
-                      >
-                        Delogare
-                      </button>
+                      <div className="mt-12 flex items-center justify-center gap-3">
+                        <button
+                          onClick={() => signOut({ redirect: false }).then(() => router.refresh())}
+                          className={`rounded-md border border-white/30 bg-red-500/30 px-3 py-1 text-sm text-white hover:border-white/40 cursor-pointer transition-transform select-none duration-150 ${pressedId === "signout" ? "scale-95" : "scale-100"}`}
+                          onTouchStart={() => handlePressStart("signout")}
+                          onTouchEnd={handlePressEnd}
+                        >
+                          Delogare
+                        </button>
+                        <button
+                          type="button"
+                          disabled={deleteAccountBusy}
+                          onClick={requestDeleteAccount}
+                          className={`rounded-md border border-white/20 bg-red-600/30 px-3 py-1 text-sm text-white hover:border-red-300/60 cursor-pointer transition-transform select-none duration-150 disabled:cursor-not-allowed disabled:opacity-50 ${pressedId === "delete-account" ? "scale-95" : "scale-100"}`}
+                          onTouchStart={() => handlePressStart("delete-account")}
+                          onTouchEnd={handlePressEnd}
+                        >
+                          {deleteAccountBusy ? "Se dezactivează..." : "Dezactivare"}
+                        </button>
+                      </div>
                     </div>
                     <div className="mt-6 flex items-center justify-between gap-3">
                       <div className="w-full">
-                        <p className="text-sm text-center mt-[10vh] text-white/60">Alege ziua</p>
-                        <p className="md:text-2xl text-xl text-center font-semibold text-white/90 uppercase text-shadow-xs text-shadow-black/30 mb-6">
+                        <p className="text-sm text-center mt-[10vh] text-white/60 select-none">Alege ziua</p>
+                        <p className="md:text-2xl text-xl text-center font-semibold text-white/90 uppercase text-shadow-xs text-shadow-black/30 mb-6 ">
                           {selectedDay ? formatRoDate(selectedDay) : "Nicio zi"}
                         </p>
                       </div>
                     </div>
 
                     {/* Available Dates */}
-                    <div className="mt-3 flex flex-wrap gap-2">
+                    <div className="mt-3 flex flex-wrap gap-2 select-none">
                       {availabilityState.length === 0 && (
                         <p className="text-sm text-white/60">
-                          Nu există zile disponibile pentru preotul duhovnic ales.
+                          Nu există intervale disponibile pentru preotul duhovnic ales.
                         </p>
                       )}
                       {dates.map((day) => (
@@ -1219,10 +1373,11 @@ export default function HomeClient({ availability, priests }: Props) {
                     </div>
 
                     {/* Events for Selected Day */}
+                    {hasSelectableDay && hasAnyAvailableInterval && (
                     <div className="mt-4 rounded-xl p-4">
                       <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-white/60">
                         {!hasBookingForSelectedDay && (
-                          <span className="flex items-center gap-1">
+                          <span className="flex items-center gap-1 select-none">
                             <span
                               className={`h-3 w-3 rounded-full ${hasAvailableInterval ? "bg-green-500" : "bg-red-500"}`}
                             />{" "}
@@ -1230,10 +1385,26 @@ export default function HomeClient({ availability, priests }: Props) {
                           </span>
                         )}
                         {hasBookingForSelectedDay && (
-                          <span className="flex items-center gap-1">
+                          <span className="flex items-center gap-1 select-none">
                             <span className="h-3 w-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600" /> Programarea ta
                           </span>
                         )}
+                      </div>
+                      <div className="mb-4 flex flex-wrap items-center gap-3 text-xs text-white/70">
+                        <label className="flex items-center gap-2">
+                          <span>Număr persoane</span>
+                          <input
+                            type="number"
+                            min={1}
+                            max={MAX_PEOPLE_COUNT}
+                            value={peopleCountInput}
+                            onChange={handlePeopleCountChange}
+                            onBlur={handlePeopleCountBlur}
+                            placeholder="1"
+                            className="w-20 rounded-md border border-white/20 bg-white/10 px-2 py-1 text-white/90 focus:border-white/40 focus:outline-none"
+                          />
+                        </label>
+                       {/* <span>Durata estimata: {requiredDuration} min</span> */}
                       </div>
                       <div className="grid gap-3">
                         {eventsForDay.map((event) => {
@@ -1250,8 +1421,8 @@ export default function HomeClient({ availability, priests }: Props) {
                           return (
                             <div
                               key={event.id}
-                              className={`flex items-center justify-between rounded-lg border border-white/10 px-3 py-3 ${remaining < desiredDuration ? "bg-white/5 opacity-60" : "bg-white/20"}`}
-                              title={remaining < desiredDuration ? "Nu se mai pot face înscrieri" : "Disponibil"}
+                              className={`flex items-center justify-between rounded-lg border border-white/10 px-3 py-3 ${remaining < requiredDuration ? "bg-white/5 opacity-60" : "bg-white/20"}`}
+                              title={remaining < requiredDuration ? "Nu se mai pot face înscrieri" : "Disponibil"}
                             >
                               <div>
                                 {event.endTime && (
@@ -1260,19 +1431,25 @@ export default function HomeClient({ availability, priests }: Props) {
                                   </p>
                                 )}
                                 {isAlreadyBooked && (
-                                  <p className="text-xs bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent drop-shadow-md">V-ați înscris aici.</p>
+                                  <p className="text-xs bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent drop-shadow-md select-none">V-ați înscris aici.</p>
                                 )}
-                                {userHasBookingForDay && !isAlreadyBooked && (
-                                  <p className="text-xs text-white/70 italic">Aveți deja o programare în această zi.</p>
-                                )}
-                                {remaining < desiredDuration && !isAlreadyBooked && (
-                                  <p className="text-xs text-red-600/90">Nu se mai pot face înscrieri.</p>
+                                {remaining < requiredDuration && !isAlreadyBooked ? (
+                                  <p className="text-xs text-red-600/90">
+                                    Nu se mai pot face înscrieri în acest interval.
+                                  </p>
+                                ) : (
+                                  userHasBookingForDay &&
+                                  !isAlreadyBooked && (
+                                    <p className="text-xs text-white/70 italic">
+                                      Aveți deja o înscriere activă
+                                    </p>
+                                  )
                                 )}
                               </div>
 
-                              {!userHasBookingForDay && remaining >= desiredDuration && !isAlreadyBooked && (
+                              {!userHasBookingForDay && remaining >= requiredDuration && !isAlreadyBooked && (
                                 <button
-                                  onClick={() => void handleBook(event.id)}
+                                  onClick={() => setBookingConfirmEventId(event.id)}
                                   className={`rounded-md px-3 py-2 text-xs text-white/90 font-semibold bg-green-600 cursor-pointer hover:bg-green-500 whitespace-nowrap transition-transform duration-150 ${pressedId === `book-${event.id}` ? "scale-95" : "scale-100"}`}
                                   onTouchStart={() => handlePressStart(`book-${event.id}`)}
                                   onTouchEnd={handlePressEnd}
@@ -1287,8 +1464,10 @@ export default function HomeClient({ availability, priests }: Props) {
                         {eventsForDay.length === 0 && (
                           <p className="text-sm text-white/60">Nu există evenimente în această zi.</p>
                         )}
+                        
                       </div>
                     </div>
+                    )}
                   </div>
                   {/* <div className="border-b border-white/30 mt-5 pb-4" /> */}
                   {(error || message) && (
@@ -1310,7 +1489,7 @@ export default function HomeClient({ availability, priests }: Props) {
                       <button
                         type="button"
                         onClick={() => setShowMyBookings((v) => !v)}
-                        className={`w-full py-2 md:py-3 px-4 text-sm md:text-base font-semibold text-center whitespace-nowrap cursor-pointer transition-transform duration-150 ${pressedId === "my-bookings-toggle" ? "scale-95" : "scale-100"}`}
+                        className={`w-full py-2 md:py-3 px-4 text-sm md:text-base font-semibold text-center whitespace-nowrap cursor-pointer transition-transform select-none duration-150 ${pressedId === "my-bookings-toggle" ? "scale-95" : "scale-100"}`}
                         onTouchStart={() => handlePressStart("my-bookings-toggle")}
                         onTouchEnd={handlePressEnd}
                       >
@@ -1320,7 +1499,7 @@ export default function HomeClient({ availability, priests }: Props) {
                   </div>
                   {/* Bookings Section */}
                   {showMyBookings && (
-                    <div className="mt-1 md:mt-10 space-y-3 rounded-xl p-4">
+                    <div className="mt-1 md:mt-10 space-y-3 rounded-xl p-4 select-none">
 
                       {bookings.length === 0 ? (
                         <p className="text-white/60">Nu există programări active.</p>
@@ -1337,6 +1516,7 @@ export default function HomeClient({ availability, priests }: Props) {
                               <div>
                                 <p className="text-sm text-white/90 text-shadow-xs text-shadow-black/20 font-semibold">{formatRoDate(booking.date)}</p>
                                 <p className="text-xs text-white/80 text-shadow-xs text-shadow-black/30">Ora: {booking.startTime}</p>
+                                <p className="text-xs text-white/70">Persoane: {booking.peopleCount ?? 1}</p>
                                 <p className="text-xs text-white/60">
                                   Stare:{" "}
                                   <span
@@ -1395,7 +1575,95 @@ export default function HomeClient({ availability, priests }: Props) {
             )}
           </div>
 
+          {bookingConfirmEventId && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 select-none"
+              onClick={(event) => {
+                if (event.target === event.currentTarget) {
+                  setBookingConfirmEventId(null);
+                }
+              }}
+            >
+              <div
+                className="w-full max-w-lg rounded-2xl border border-[#e4d4b0] bg-[#fffaf0] text-[#2b220a] shadow-2xl"
+                onClick={(event) => event.stopPropagation()}
+              >
+                <div className="flex items-center mt-4">
+      
+                </div>
+                <div className="px-5 py-4">
+                  <div className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-900 leading-snug">
+                    <div className="flex items-start gap-2">
+                      <div>
+                        Înscrierea <span className="font-bold">nu</span> înlocuiește
+                        nici prezența fizică, nici participarea la rugăciunile de
+                        dezlegare (Molitfa -{" "}
+                        <span className="underline">ora de începere a intervalului</span>
+                        ).
+                        <br />
+                        Fără acestea, programarea este nulă.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-end gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setBookingConfirmEventId(null)}
+                      className="rounded-md border border-[#2b220a]/20 bg-red-500/80 px-4 py-2 text-sm font-semibold text-white transition-transform duration-150 active:scale-95"
+                    >
+                      Înapoi
+                    </button>
+                    <button
+                      type="button"
+                      disabled={bookingBusy}
+                      onClick={() => void handleBookingConfirm()}
+                      className="rounded-md bg-green-600 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 transition-transform duration-150 active:scale-95 disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      Înscrie-te
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          {showDeleteAccountConfirm && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+              onClick={(event) => {
+                if (event.target === event.currentTarget) {
+                  setShowDeleteAccountConfirm(false);
+                }
+              }}
+            >
+              <div className="w-full max-w-sm rounded-2xl border border-[#e4d4b0] bg-[#fffaf0] p-6 text-[#2b220a] shadow-2xl">
+                <p className="text-lg font-semibold">Ștergere cont</p>
+                <p className="mt-2 text-sm text-[#4b3b12]">
+                  Confirmați ștergerea contului? Acțiunea este definitivă.
+                </p>
+                <div className="mt-5 flex items-center justify-end gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowDeleteAccountConfirm(false)}
+                    className="rounded-md border border-[#2b220a]/20 bg-[#f6e8bf] px-3 py-1 text-sm font-semibold text-[#2b220a] transition-transform duration-150 active:scale-95 cursor-pointer"
+                  >
+                    Renunță
+                  </button>
+                  <button
+                    type="button"
+                    disabled={deleteAccountBusy}
+                    onClick={() => void handleDeleteAccount()}
+                    className="rounded-md bg-red-700/80 px-3 py-1 text-sm font-semibold text-white hover:bg-red-600 transition-transform duration-150 active:scale-95 cursor-pointer disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {deleteAccountBusy ? "Se șterge..." : "Șterge contul"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
     </YellowTexture>
   )
 }
+
+
 

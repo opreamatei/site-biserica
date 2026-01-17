@@ -19,8 +19,13 @@ export default function Page() {
   const [program, setProgram] = useState<Zi[]>([]);
 
   useEffect(() => {
-    fetch("/data/program.json")
-      .then((res) => res.json())
+    fetch("/api/program", { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Nu s-a putut incarca programul.");
+        }
+        return res.json();
+      })
       .then((data) => {
         const programArray: Zi[] = Object.entries(data).map(
           ([zi_saptamana, info]: any) => ({

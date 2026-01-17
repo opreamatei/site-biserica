@@ -28,6 +28,13 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'peopleCount',
+      title: 'Numar persoane',
+      type: 'number',
+      initialValue: 1,
+      validation: (Rule) => Rule.required().min(1).max(10),
+    }),
+    defineField({
       name: 'durationMinutes',
       title: 'Durata (minute)',
       type: 'number',

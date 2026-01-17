@@ -152,7 +152,7 @@ export default function CardSection() {
     }, rootRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [debug]);
 
 
   return (

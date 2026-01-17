@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs";
+﻿import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 import { getWriteClient, readClient } from "@/lib/sanity";
 import priests from "@/data/priests.json";
@@ -12,7 +12,17 @@ export async function POST(req: Request) {
 
   if (!name || !email || !password || !priestId) {
     return NextResponse.json(
-      { error: "Vă rugăm să completați numele, emailul, parola și să alegeți un preot. Dacă totul este corect și nu se creează contul, reîncărcați pagina și încercați din nou." },
+      {
+        error:
+          "Va rugam sa completati numele, emailul, parola si sa alegeti un preot. Daca totul este corect si nu se creeaza contul, reincarcati pagina si incercati din nou.",
+      },
+      { status: 400 },
+    );
+  }
+
+  if (password.length < 4) {
+    return NextResponse.json(
+      { error: "Parola trebuie sa aiba minim 4 caractere." },
       { status: 400 },
     );
   }
@@ -28,7 +38,7 @@ export async function POST(req: Request) {
   );
 
   if (existing > 0) {
-    return NextResponse.json({ error: "Există deja un cont cu acest email." }, { status: 409 });
+    return NextResponse.json({ error: "Exista deja un cont cu acest email." }, { status: 409 });
   }
 
   const hash = await bcrypt.hash(password, 10);
@@ -41,7 +51,7 @@ export async function POST(req: Request) {
       email,
       passwordHash: hash,
       role: "user",
-      allocatedMinutes: 30,
+      allocatedMinutes: 15,
       priestId,
       createdAt: new Date().toISOString(),
     });
@@ -51,7 +61,7 @@ export async function POST(req: Request) {
     const message =
       error instanceof Error
         ? error.message
-        : "Nu s-a putut crea contul. Verificați cheile Sanity.";
+        : "Nu s-a putut crea contul. Verificati cheile Sanity.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

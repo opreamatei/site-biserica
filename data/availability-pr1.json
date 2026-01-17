@@ -1,8 +1,13 @@
 [
   {
-    "date": "2026-01-05",
-    "label": "Pr1 ianuarie",
-    "startTime": "10:00",
-    "endTime": "12:00"
-  }
+    "date": "2026-01-16",
+    "label": "prima sesiune",
+    "startTime": "11:32",
+    "endTime": "11:47"
+  }, {
+    "date": "2026-01-16",
+    "label": "a doua sesiune",
+    "startTime": "11:45",
+    "endTime": "12:01"
+  } 
 ]

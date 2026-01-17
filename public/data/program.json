@@ -1,61 +1,125 @@
 {
   "duminică": {
-    "data": "11 ianuarie",
+    "data": "18 ianuarie",
     "activitati": [
-      { "nume": "Utrenia", "ora": "8:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      {
+        "nume": "Utrenia",
+        "ora": "8:00"
+      },
+      {
+        "nume": "Dumnezeiasca Liturghie",
+        "ora": ""
+      }
     ]
   },
   "luni": {
-    "data": "12 ianuarie",
+    "data": "19 ianuarie",
     "activitati": [
-      { "nume": "Ceasul I", "ora": "6:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" },
-      { "nume": "Acatistul Sfântului Trifon", "ora": "17:00" }
+      {
+        "nume": "Ceasul I",
+        "ora": "6:00"
+      },
+      {
+        "nume": "Dumnezeiasca Liturghie",
+        "ora": ""
+      },
+      {
+        "nume": "Paraclisul Sfântului Trifon",
+        "ora": "17:00"
+      }, {
+        "nume": "Rugăciuni pentru cei bolnavi",
+        "ora": ""
+      }
     ]
   },
   "marți": {
-    "data": "13 ianuarie",
+    "data": "20 ianuarie",
     "activitati": [
-      { "nume": "Ceasul I", "ora": "6:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      {
+        "nume": "Ceasul I",
+        "ora": "6:00"
+      },
+      {
+        "nume": "Dumnezeiasca Liturghie",
+        "ora": ""
+      }
     ]
   },
   "miercuri": {
-    "data": "14 ianuarie",
+    "data": "21 ianuarie",
     "activitati": [
-      { "nume": "Ceasul I", "ora": "6:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      {
+        "nume": "Ceasul I",
+        "ora": "6:00"
+      },
+      {
+        "nume": "Dumnezeiasca Liturghie",
+        "ora": ""
+      },
+      {
+        "nume": "Taina Mărturisirii - Molitfa I - Pr. Gheorghe",
+        "ora": "17:00"
+      },
+      {
+        "nume": "Taina Mărturisirii - Molitfa II - Pr. Gheorghe",
+        "ora": "19:00"
+      }
     ]
   },
   "joi": {
-    "data": "15 ianuarie",
+    "data": "22 ianuarie",
     "activitati": [
-      { "nume": "Ceasul I", "ora": "6:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" },
-      { "nume": "Taina Mărturisirii - Molitfa I", "ora": "17:00" },
-      { "nume": "Taina Mărturisirii - Molitfa II", "ora": "19:00" }
+      {
+        "nume": "Ceasul I",
+        "ora": "6:00"
+      },
+      {
+        "nume": "Dumnezeiasca Liturghie",
+        "ora": ""
+      },
+      {
+        "nume": "Taina Mărturisirii - Pr. Sorin",
+        "ora": "17:00"
+      }
     ]
   },
   "vineri": {
-    "data": "16 ianuarie",
+    "data": "23 ianuarie",
     "activitati": [
-      { "nume": "Ceasul I", "ora": "6:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      {
+        "nume": "Ceasul I",
+        "ora": "6:00"
+      },
+      {
+        "nume": "Dumnezeiasca Liturghie",
+        "ora": ""
+      }
     ]
   },
   "sâmbătă": {
-    "data": "17 ianuarie",
+    "data": "24 ianuarie",
     "activitati": [
-      { "nume": "Dumnezeiasca Liturghie", "ora": "8:30" },
-      { "nume": "Pomenire pentru cei adormiți", "ora": "" }
+      {
+        "nume": "Dumnezeiasca Liturghie",
+        "ora": "8:30"
+      },
+      {
+        "nume": "Pomenire pentru cei adormiți",
+        "ora": ""
+      }
     ]
   },
   "Duminică": {
-    "data": "18 ianuarie",
+    "data": "25 ianuarie",
     "activitati": [
-      { "nume": "Utrenia", "ora": "8:00" },
-      { "nume": "Dumnezeiasca Liturghie", "ora": "" }
+      {
+        "nume": "Utrenia",
+        "ora": "8:00"
+      },
+      {
+        "nume": "Dumnezeiasca Liturghie",
+        "ora": ""
+      }
     ]
   }
 }

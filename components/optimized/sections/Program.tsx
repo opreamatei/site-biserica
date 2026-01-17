@@ -35,7 +35,10 @@ const Program = () => {
     const getProgram = async () => {
       setLoading(true); // show loader while fetching
       try {
-        const res = await fetch("/data/program.json");
+        const res = await fetch("/api/program", { cache: "no-store" });
+        if (!res.ok) {
+          throw new Error("Nu s-a putut incarca programul.");
+        }
         const data = await res.json();
 
         const zileOrd = [

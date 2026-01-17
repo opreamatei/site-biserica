@@ -93,9 +93,9 @@ export function ResetPasswordEmail({
 
 function formatToken(value: string) {
   const clean = value.replace(/[\s-]/g, "").toUpperCase();
-  const groups = clean.match(/.{1,4}/g);
-  return groups ? groups.join("-") : clean;
+  return clean.slice(0, 4);
 }
+
 
 const bodyStyle: React.CSSProperties = {
   margin: "0",

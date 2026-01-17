@@ -18,6 +18,7 @@ export default function SimpleCarousel({ slides }: { slides: Slide[] }) {
   const lightboxX = useMotionValue(0);
   const lightboxContainerRef = useRef<HTMLDivElement | null>(null);
   const [lightboxWidth, setLightboxWidth] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const slideGap = 16; // gap between slides
 
@@ -94,7 +95,6 @@ export default function SimpleCarousel({ slides }: { slides: Slide[] }) {
   const next = () => setCurrent((p) => (p === slides.length - 1 ? slides.length - 1 : p + 1));
   const lightboxPrev = () => setLightboxIndex((p) => (p === 0 ? 0 : p - 1));
   const lightboxNext = () => setLightboxIndex((p) => (p === slides.length - 1 ? slides.length - 1 : p + 1));
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div className="relative group">

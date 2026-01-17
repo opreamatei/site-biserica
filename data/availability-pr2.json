@@ -1,8 +1,13 @@
 [
   {
-    "date": "2024-12-08",
+    "date": "2024-01-08",
     "label": "Pr2 azi",
     "startTime": "16:00",
-    "endTime": "18:00"
+    "endTime": "16:20"
+  }, {
+    "date": "2024-01-08",
+    "label": "Pr2 azi",
+    "startTime": "17:00",
+    "endTime": "17:40"
   }
 ]

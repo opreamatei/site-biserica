@@ -1,0 +1,26 @@
+name: Cron - Priest Notifications
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call priest notifications cron
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+        run: |
+          if [ -z "$SITE_URL" ]; then
+            echo "Missing SITE_URL secret"
+            exit 1
+          fi
+          if [ -z "$CRON_SECRET" ]; then
+            echo "Missing CRON_SECRET secret"
+            exit 1
+          fi
+          curl -sS -X GET "$SITE_URL/api/cron/priest-notifications" \
+            -H "Authorization: Bearer $CRON_SECRET"

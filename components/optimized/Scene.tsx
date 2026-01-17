@@ -551,7 +551,7 @@ export default function Scene() {
       });
       ctx.revert();
     };
-  }, [debug]);
+  }, [debug, fixedViewportHeight]);
 
   return (
     <div

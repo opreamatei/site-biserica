@@ -1,5 +1,24 @@
 [
-  { "id": "pr1", "name": "Pr. Gheorghe Oprea" },
-  { "id": "pr2", "name": "Pr. Constantin Sandu" },
-  { "id": "pr3", "name": "Pr. Sorin Georgescu" }
+  {
+    "id": "pr1",
+    "name": "Pr. Gheorghe Oprea",
+    "notificationMode": "flex",
+    "notifyTime": "11:30",
+    "notifyEmail": "mateiopreamti@gmail.com"
+  },
+  {
+    "id": "pr2",
+    "name": "Pr. Constantin Sandu",
+    "notificationMode": "flex",
+    "notifyTime": "20:00",
+    "notifyEmail": ""
+  },
+  {
+    "id": "pr3",
+    "name": "Pr. Sorin Georgescu",
+    "notificationMode": "strict",
+    "notifyTime": "11:16",
+    "bookingCutoffTime": "11:16",
+    "notifyEmail": "matei.oprea@scoala197.ro"
+  }
 ]

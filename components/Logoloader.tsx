@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLayoutEffect, useRef, useState, ReactNode } from "react";
 import { gsap } from "gsap";
 
@@ -93,12 +94,15 @@ export default function LogoLoader({ children }: LogoLoaderProps) {
           className="fixed inset-0 z-[65] flex h-screen items-center justify-center bg-[var(--background)]"
           style={{ willChange: "transform, opacity" }}
         >
-          <img
+          <Image
             ref={logoRef}
             src="/logo_negru_1.webp"
             alt="Logo"
+            width={57}
+            height={57}
             className="h-[3.57rem] w-[3.57rem] invert-100"
             style={{ willChange: "transform, opacity" }}
+            priority
           />
         </div>
       )}

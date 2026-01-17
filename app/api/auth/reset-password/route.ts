@@ -1,4 +1,4 @@
-﻿import bcrypt from "bcryptjs";
+import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 import { getWriteClient, readClient } from "@/lib/sanity";
 
@@ -11,7 +11,14 @@ export async function POST(req: Request) {
 
   if (!email || !token || !password) {
     return NextResponse.json(
-      { error: "Emailul, tokenul și parola nouă sunt obligatorii." },
+      { error: "Emailul, tokenul ?i parola noua sunt obligatorii." },
+      { status: 400 },
+    );
+  }
+
+  if (password.length < 4) {
+    return NextResponse.json(
+      { error: "Parola trebuie sa aiba minim 4 caractere." },
       { status: 400 },
     );
   }
@@ -29,8 +36,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Token invalid sau expirat." }, { status: 400 });
   }
 
-  const storedToken = user.resetToken.replace(/[\s-]/g, "").toUpperCase();
-  if (storedToken !== token) {
+  const normalize4 = (v: string) =>
+    v.replace(/[\s-]/g, "").toUpperCase().slice(0, 4);
+
+  if (normalize4(user.resetToken) !== normalize4(token)) {
     return NextResponse.json({ error: "Token invalid." }, { status: 400 });
   }
 
@@ -51,3 +60,5 @@ export async function POST(req: Request) {
 
   return NextResponse.json({ ok: true });
 }
+
+

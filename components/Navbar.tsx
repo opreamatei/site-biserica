@@ -80,7 +80,7 @@ export default function Navbar() {
             animate={{ opacity: 1, paddingTop: 0 }}
             exit={{ opacity: 0, paddingTop: -20 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="fixed inset-0 z-50 top-0 left-0 w-screen h-screen bg-black/40 backdrop-blur-xl flex flex-col justify-center select-none"
+            className="fixed inset-0 z-50 top-0 left-0 w-screen h-screen bg-[#02021ff1] backdrop-blur-xl flex flex-col justify-center select-none"
           >
             {/* Navigation links */}
             <nav className="flex flex-col items-end justify-center h-full p-10 gap-10 text-right text-white/80">

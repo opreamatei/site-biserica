@@ -25,7 +25,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-10 lg:gap-32">
         <div className="flex flex-col md:flex-[2] lg:flex-[3] gap-4">
           <div className="flex items-start gap-4">
-            <img src="./icons/phone.svg" className="w-7 h-7 mt-1 md:mt-2" />
+            <Image
+              src="/icons/phone.svg"
+              alt="Telefon"
+              width={28}
+              height={28}
+              className="w-7 h-7 mt-1 md:mt-2"
+            />
             <div className="flex flex-col">
               <p className="text-xl font-medium text-white/90">Telefon</p>
               <div className="text-white/70 mt-2 space-y-2">
@@ -50,7 +56,13 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-[1.5] lg:flex-[2] gap-2">
           <div className="flex items-start gap-4">
-            <img src="./icons/map.svg" className="w-7 h-7 mt-1" />
+            <Image
+              src="/icons/map.svg"
+              alt="Adresa"
+              width={28}
+              height={28}
+              className="w-7 h-7 mt-1"
+            />
             <div>
               <p className="text-xl font-medium text-white/90">Adresă</p>
               <p className="text-white/70 ">
@@ -70,7 +82,13 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-[1] lg:flex-[1] gap-2">
           <div className="flex items-start gap-5 mr-2">
-            <img src="./icons/mail.svg" className="w-7 h-7 mt-1" />
+            <Image
+              src="/icons/mail.svg"
+              alt="Email"
+              width={28}
+              height={28}
+              className="w-7 h-7 mt-1"
+            />
             <div>
               <p className="text-xl font-medium text-white/90">Email</p>
               <div className="flex flex-col gap-1 mt-1">

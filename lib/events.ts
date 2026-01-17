@@ -126,11 +126,10 @@ export async function getEvents(priestId?: string, daysAhead = 90): Promise<Spov
       Boolean(item.date && item.startTime),
   );
 
-  return validEvents
-    .map((item) => {
-      const endTime = item.endTime;
-      const parsedDuration =
-        endTime != null
+  const mappedEvents = validEvents.map<SpovEvent>((item) => {
+    const endTime = item.endTime;
+    const parsedDuration =
+      endTime != null
           ? (() => {
               const start = new Date(`2000-01-01T${item.startTime}`);
               const end = new Date(`2000-01-01T${endTime}`);
@@ -138,24 +137,26 @@ export async function getEvents(priestId?: string, daysAhead = 90): Promise<Spov
               return diff > 0 ? diff : undefined;
             })()
           : undefined;
-      const slotDuration =
-        Array.isArray(item.slots) ? (item.slots.length || 1) * 30 : undefined;
-      const durationMinutes =
-        parsedDuration ??
-        item.durationMinutes ??
-        slotDuration ??
-        120;
-      return {
-        id: item.id,
-        priestId: item.priestId,
-        date: item.date,
-        startTime: item.startTime,
-        endTime,
-        label: item.label ?? `Sesiune spovedanie ${item.date}`,
-        durationMinutes,
-      };
-    })
-    .filter((event): event is SpovEvent => {
+    const slotDuration =
+      Array.isArray(item.slots) ? (item.slots.length || 1) * 30 : undefined;
+    const durationMinutes =
+      parsedDuration ??
+      item.durationMinutes ??
+      slotDuration ??
+      120;
+    return {
+      id: item.id,
+      priestId: item.priestId,
+      date: item.date,
+      startTime: item.startTime,
+      ...(endTime ? { endTime } : {}),
+      label: item.label ?? `Sesiune spovedanie ${item.date}`,
+      durationMinutes,
+    };
+  });
+
+  return mappedEvents
+    .filter((event) => {
       const d = new Date(event.date);
       return d >= lower && d <= upper;
     })

@@ -4,7 +4,7 @@
     "name": "Pr. Gheorghe Oprea",
     "notificationMode": "flex",
     "notifyTime": "11:30",
-    "notifyEmail": "mateiopreamti@gmail.com"
+    "notifyEmail": "pr.gheorghe@gmail.com"
   },
   {
     "id": "pr2",
@@ -19,6 +19,6 @@
     "notificationMode": "strict",
     "notifyTime": "11:16",
     "bookingCutoffTime": "11:16",
-    "notifyEmail": "matei.oprea@scoala197.ro"
+    "notifyEmail": ""
   }
 ]

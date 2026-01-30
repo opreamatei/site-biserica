@@ -183,8 +183,17 @@ export async function DELETE(
 
   try {
     const client = getWriteClient();
-    await client.delete(id);
-    return NextResponse.json({ ok: true });
+    const bookingIds = await readClient.fetch<string[]>(
+      `*[_type == "booking" && eventId == $eventId]._id`,
+      { eventId: id },
+    );
+    const tx = client.transaction();
+    bookingIds.forEach((bookingId) => {
+      tx.delete(bookingId);
+    });
+    tx.delete(id);
+    await tx.commit();
+    return NextResponse.json({ ok: true, deletedBookings: bookingIds.length });
   } catch (error) {
     console.error("[availability] Failed to delete interval", error);
     return NextResponse.json(

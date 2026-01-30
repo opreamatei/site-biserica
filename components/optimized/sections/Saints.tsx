@@ -119,7 +119,7 @@ const Sfzi = () => {
 
         <div className="absolute inset-0 bg-black/65" />
 
-        <div className="relative z-5 flex flex-col items-center p-6 text-center mx-auto max-w-3xl space-y-6">
+        <div className="relative z-2 flex flex-col items-center p-6 text-center mx-auto max-w-3xl space-y-6">
           <h1
             ref={titleRef}
             className="flex flex-wrap justify-center items-center text-white drop-shadow-lg"

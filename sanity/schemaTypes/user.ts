@@ -68,5 +68,29 @@ export default defineType({
       type: 'datetime',
       hidden: true,
     }),
+    defineField({
+      name: 'stripeCustomerId',
+      title: 'Stripe Customer ID',
+      type: 'string',
+      readOnly: true,
+    }),
+    defineField({
+      name: 'stripeSubscriptionId',
+      title: 'Stripe Subscription ID',
+      type: 'string',
+      readOnly: true,
+    }),
+    defineField({
+      name: 'stripeSubscriptionStatus',
+      title: 'Stripe Subscription Status',
+      type: 'string',
+      readOnly: true,
+    }),
+    defineField({
+      name: 'stripeSubscriptionCancelAt',
+      title: 'Stripe Subscription Cancel At',
+      type: 'datetime',
+      readOnly: true,
+    }),
   ],
 })

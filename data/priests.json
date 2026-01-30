@@ -3,7 +3,7 @@
     "id": "pr1",
     "name": "Pr. Gheorghe Oprea",
     "notificationMode": "flex",
-    "notifyTime": "11:30",
+    "notifyTime": "20:30",
     "notifyEmail": "pr.gheorghe@gmail.com"
   },
   {
@@ -17,8 +17,8 @@
     "id": "pr3",
     "name": "Pr. Sorin Georgescu",
     "notificationMode": "strict",
-    "notifyTime": "11:16",
-    "bookingCutoffTime": "11:16",
-    "notifyEmail": ""
+    "notifyTime": "22:30",
+    "bookingCutoffTime": "22:30",
+    "notifyEmail": "perregeorgescu@yahoo.com"
   }
 ]

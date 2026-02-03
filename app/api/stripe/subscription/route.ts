@@ -75,6 +75,15 @@ export async function POST(req: Request) {
       process.env.STRIPE_RECURRING_PRODUCT_ID ??
       (await stripe.products.create({ name: PRODUCT_NAME })).id;
 
+    const metadata: Record<string, string> = {
+      userId: user._id,
+      donationType: "recurring",
+      amount: String(normalizedAmount),
+    };
+    if (user.email) {
+      metadata.donorEmail = user.email;
+    }
+
     const subscription = await stripe.subscriptions.create({
       customer: customerId,
       items: [
@@ -92,11 +101,7 @@ export async function POST(req: Request) {
         save_default_payment_method: "on_subscription",
       },
       expand: ["latest_invoice.payment_intent"],
-      metadata: {
-        userId: user._id,
-        donationType: "recurring",
-        amount: String(normalizedAmount),
-      },
+      metadata,
     });
 
     const latestInvoiceRef = subscription.latest_invoice;

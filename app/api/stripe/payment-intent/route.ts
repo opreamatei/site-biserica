@@ -38,6 +38,7 @@ export async function POST(req: Request) {
       automatic_payment_methods: { enabled: true },
       metadata: {
         donationAmount: String(normalizedAmount),
+        donationType: "one-time",
       },
     });
 

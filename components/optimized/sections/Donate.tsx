@@ -20,8 +20,8 @@ const stripePromise = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
   ? loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
   : null;
 
-const DONATION_OPTIONS = [50, 100, 200, 500];
-const RECURRING_OPTIONS = [10, 20, 50, 80];
+const DONATION_OPTIONS = [30, 50, 120, 230, 490];
+const RECURRING_OPTIONS = [20, 30, 50, 70, 100, 200, 300];
 
 const STRIPE_APPEARANCE = {
   theme: "night",
@@ -263,6 +263,7 @@ useEffect(() => {
     } else {
       setNotice(null);
     }
+    setQuickError(null);
     setQuickCustom("");
     setPaymentMode("one-time");
     setRecurringAmount(null);
@@ -655,8 +656,12 @@ useEffect(() => {
                 <div className="flex flex-col gap-3">
                 <p className="text-xs uppercase tracking-wide text-white/70">Donați rapid</p>
                 <div className="grid grid-cols-2 gap-3">
-                  {DONATION_OPTIONS.map((amount) => (
-                    <button
+                  {DONATION_OPTIONS.map((amount, index) => {
+                    const isLastOdd =
+                      DONATION_OPTIONS.length % 2 === 1 &&
+                      index === DONATION_OPTIONS.length - 1;
+                    return (
+                      <button
                       key={amount}
                       type="button"
                       onClick={() => void handleDonate(amount, "preset")}
@@ -665,13 +670,18 @@ useEffect(() => {
                         donationLoadingAmount === amount
                           ? "opacity-70"
                           : "hover:bg-[#35355a]"
-                      } ${donationLoadingAmount && donationLoadingAmount !== amount ? "opacity-50" : ""}`}
+                      } ${donationLoadingAmount && donationLoadingAmount !== amount ? "opacity-50" : ""} ${
+                        isLastOdd
+                          ? "col-span-2 mx-auto w-full max-w-[calc((100%-0.75rem)/2)]"
+                          : ""
+                      }`}
                     >
                       {donationLoadingAmount === amount
                         ? "Se încarcă..."
                         : `Donează ${amount} RON`}
-                    </button>
-                  ))}
+                      </button>
+                    );
+                  })}
                 </div>
                 <div className="flex items-center gap-2">
                   <input
@@ -712,8 +722,12 @@ useEffect(() => {
                   <p className="text-xs text-white/70">Puteți oricând modifica suma.</p>
                 )}
                 <div className="grid grid-cols-2 gap-3">
-                  {RECURRING_OPTIONS.map((amount) => (
-                    <button
+                  {RECURRING_OPTIONS.map((amount, index) => {
+                    const isLastOdd =
+                      RECURRING_OPTIONS.length % 2 === 1 &&
+                      index === RECURRING_OPTIONS.length - 1;
+                    return (
+                      <button
                       key={amount}
                       type="button"
                       onClick={() => {
@@ -725,13 +739,18 @@ useEffect(() => {
                         recurringAmount === amount
                           ? "ring-2 ring-[#C59D30]"
                           : "hover:bg-[#2a3550]"
+                      } ${
+                        isLastOdd
+                          ? "col-span-2 mx-auto w-full max-w-[calc((100%-0.75rem)/2)]"
+                          : ""
                       }`}
                     >
                       {donationLoadingAmount === amount
                         ? "Se încarcă..."
                         : `${amount} RON`}
-                    </button>
-                  ))}
+                      </button>
+                    );
+                  })}
                 </div>
                 <div className="flex items-center gap-2">
                   <input

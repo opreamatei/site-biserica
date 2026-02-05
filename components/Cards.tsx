@@ -27,7 +27,7 @@ type Eveniment = {
 
 const Cards: Card[] = [
      {
-      title: "Evenimente Urmatoare",
+      title: "Evenimente viitoare",
       desc: null,
       btnTxt: "Află mai multe",
       btnHref: "/Evenimente",
@@ -185,15 +185,7 @@ export default function CardSection() {
               <h2
                 className={`c-card__title text-3xl font-semibold text-[#202330] md:text-5xl ${idx === 0 ? "text-center" : "text-left"}`}
               >
-                {idx === 0 ? (
-                  <>
-                    <h2 className="block byzantin">Evenimente</h2>
-                    
-                    <h2 className="block byzantin">Viitoare</h2>
-                  </>
-                ) : (
-                  card.title
-                )}
+                {card.title}
               </h2>
 
               {idx === 0 ? (

@@ -20,12 +20,12 @@ export async function POST(req: Request) {
   const body = (await req.json().catch(() => null)) as CheckoutBody | null;
   const amount = body?.amount;
   if (!Number.isFinite(amount)) {
-    return NextResponse.json({ error: "Suma invalida." }, { status: 400 });
+    return NextResponse.json({ error: "Sumă invalidă." }, { status: 400 });
   }
 
   const normalizedAmount = Math.floor(amount as number);
   if (!ALLOWED_AMOUNTS_RON.includes(normalizedAmount)) {
-    return NextResponse.json({ error: "Suma nepermisa." }, { status: 400 });
+    return NextResponse.json({ error: "Sumă nepermisă." }, { status: 400 });
   }
 
   try {

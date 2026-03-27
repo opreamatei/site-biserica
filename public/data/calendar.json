@@ -1769,7 +1769,9 @@
         "Soborul Sfântului Proroc Ioan Botezătorul"
       ],
       "tip": "Sărbătoare",
-      "dezlegări": ["peste"]
+      "dezlegări": [
+        "peste"
+      ]
     },
     "2026-01-08": {
       "zi": 8,
@@ -2005,309 +2007,315 @@
     }
   },
   "2026-02": {
-  "2026-02-01": {
-    "zi": 1,
-    "zi_saptamana": "D",
-    "sfinți": [
-      "Sfânta Bridgit, ocrotitoarea Irlandei",
-      "Sfântul Mucenic Trifon",
-      "Sfântul Vasile, Episcopul Tesalonicului",
-      "Sfânta Muceniță Felicitas",
-      "Sfântul Petru din Galatia",
-      "Sfânta Muceniță Perpetua",
-      "Înainte-prăznuirea Întâmpinării Domnului",
-      "Cinstirea Sfintei Icoane a Maicii Domnului de la Mănăstirea Socola"
-    ],
-    "tip": "Duminică",
-    "dezlegări": []
+    "2026-02-01": {
+      "zi": 1,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfânta Bridgit, ocrotitoarea Irlandei",
+        "Sfântul Mucenic Trifon",
+        "Sfântul Vasile, Episcopul Tesalonicului",
+        "Sfânta Muceniță Felicitas",
+        "Sfântul Petru din Galatia",
+        "Sfânta Muceniță Perpetua",
+        "Înainte-prăznuirea Întâmpinării Domnului",
+        "Cinstirea Sfintei Icoane a Maicii Domnului de la Mănăstirea Socola"
+      ],
+      "tip": "Duminică",
+      "dezlegări": []
+    },
+    "2026-02-02": {
+      "zi": 2,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Întâmpinarea Domnului",
+        "Sfântul Mucenic Iordan",
+        "Sfântul Mucenic Agatodor",
+        "Sfântul Mucenic Gavriil"
+      ],
+      "tip": "Praznic împărătesc",
+      "dezlegări": []
+    },
+    "2026-02-03": {
+      "zi": 3,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfântul și Dreptul Simeon, primitorul de Dumnezeu",
+        "Sfânta Prorociță Ana",
+        "Sfântul Ierarh Nicolae al Japoniei",
+        "Sfântul Ansgar, luminătorul Danemarcei și al Suediei",
+        "Sfântul Ierarh Ignatie de Marioupolis"
+      ],
+      "tip": "Post",
+      "dezlegări": []
+    },
+    "2026-02-04": {
+      "zi": 4,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfântul Cuvios Isidor Pelusiotul",
+        "Sfântul Sfințit Mucenic Avramie"
+      ],
+      "tip": "Post",
+      "dezlegări": []
+    },
+    "2026-02-05": {
+      "zi": 5,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfânta Muceniță Teodula",
+        "Sfânta Muceniță Agata",
+        "Cinstirea Sfintei Icoane a Maicii Domnului «Aflarea celor pierduți»",
+        "Cinstirea Sfintei Icoane a Maicii Domnului «Eleț-Cernigov»",
+        "Cinstirea Sfintei Icoane a Maicii Domnului «Salvatoarea de la înec»"
+      ],
+      "tip": "Fără post",
+      "dezlegări": []
+    },
+    "2026-02-06": {
+      "zi": 6,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Ierarh Fotie, patriarhul Constantinopolului",
+        "Sfântul Cuvios Varsanufie cel Mare",
+        "Sfântul Ierarh Vucol, Episcopul Smirnei",
+        "Sfântul Cuvios Ioan din Gaza",
+        "Sfântul Cuvios Arsenie din Ikalto"
+      ],
+      "tip": "Fără post",
+      "dezlegări": [
+        "harți"
+      ]
+    },
+    "2026-02-07": {
+      "zi": 7,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Ierarh Partenie, Episcopul Lampsacului",
+        "Sfinții 4 Mucenici tribuni și cei 1003 mucenici din Nicomidia",
+        "Sfântul Cuvios Luca din Elada"
+      ],
+      "tip": "Sâmbătă",
+      "dezlegări": []
+    },
+    "2026-02-08": {
+      "zi": 8,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Mare Mucenic Teodor Stratilat",
+        "Sfântul Proroc Zaharia",
+        "Duminica a 34-a după Rusalii (a Fiului risipitor)"
+      ],
+      "tip": "Duminică",
+      "dezlegări": []
+    },
+    "2026-02-09": {
+      "zi": 9,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Petru Damaschinul",
+        "Sfântul Mucenic Nichifor",
+        "Sfântul Sfințit Mucenic Pangratie",
+        "Odovania Praznicului Întâmpinării Domnului"
+      ],
+      "tip": "Odovanie",
+      "dezlegări": []
+    },
+    "2026-02-10": {
+      "zi": 10,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfântul Sfințit Mucenic Haralambie",
+        "Sfânta Cuvioasă Ana din Novgorod"
+      ],
+      "tip": "Sărbătoare",
+      "dezlegări": []
+    },
+    "2026-02-11": {
+      "zi": 11,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfânta Teodora, împărăteasa",
+        "Sfântul Ierarh Vlasie, Episcopul Sevastiei"
+      ],
+      "tip": "Post",
+      "dezlegări": []
+    },
+    "2026-02-12": {
+      "zi": 12,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Ierarh Meletie, Arhiepiscopul Antiohiei",
+        "Sfântul Ierarh Alexie, Mitropolitul Moscovei",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Iviron"
+      ],
+      "tip": "Fără post",
+      "dezlegări": []
+    },
+    "2026-02-13": {
+      "zi": 13,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Simeon Izvorâtorul de Mir",
+        "Sfinții Apostoli Acvila și Priscila",
+        "Sfântul Ierarh Serafim (Sobolev)"
+      ],
+      "tip": "Post",
+      "dezlegări": []
+    },
+    "2026-02-14": {
+      "zi": 14,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Filimon, Episcopul Gazei",
+        "Sâmbăta morților – Moșii de iarnă"
+      ],
+      "tip": "Sâmbătă",
+      "dezlegări": []
+    },
+    "2026-02-15": {
+      "zi": 15,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Cinstirea Icoanei Maicii Domnului «Ostrobramsk - Vilnius»",
+        "Duminica Înfricoșătoarei Judecăți (Lăsatul sec de carne)"
+      ],
+      "tip": "Duminică",
+      "dezlegări": []
+    },
+    "2026-02-16": {
+      "zi": 16,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Ierarh Flavian al Constantinopolului"
+      ],
+      "tip": "Fără post",
+      "dezlegări": []
+    },
+    "2026-02-17": {
+      "zi": 17,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfântul Mare Mucenic Teodor Tiron",
+        "Sfânta Împărăteasă Pulheria"
+      ],
+      "tip": "Fără post",
+      "dezlegări": []
+    },
+    "2026-02-18": {
+      "zi": 18,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfântul Ierarh Leon, Episcopul Romei",
+        "Sfântul Ierarh Agapit"
+      ],
+      "tip": "Zi aliturgică",
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-02-19": {
+      "zi": 19,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Apostol Arhip",
+        "Sfânta Cuvioasă Filoteea din Atena"
+      ],
+      "tip": "Fără post",
+      "dezlegări": []
+    },
+    "2026-02-20": {
+      "zi": 20,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Ierarh Agaton",
+        "Sfântul Cuvios Visarion"
+      ],
+      "tip": "Zi aliturgică",
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-02-21": {
+      "zi": 21,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Mucenic Mavrichie",
+        "Sâmbăta Sfinților Cuvioși"
+      ],
+      "tip": "Sâmbătă",
+      "dezlegări": []
+    },
+    "2026-02-22": {
+      "zi": 22,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Duminica Izgonirii lui Adam din Rai (Lăsatul sec de brânză)"
+      ],
+      "tip": "Duminică",
+      "dezlegări": []
+    },
+    "2026-02-23": {
+      "zi": 23,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Sfințit Mucenic Policarp, Episcopul Smirnei"
+      ],
+      "tip": "Începutul Postului Mare",
+      "dezlegări": []
+    },
+    "2026-02-24": {
+      "zi": 24,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Aflarea Capului Sfântului Ioan Botezătorul",
+        "Sfântul Cuvios Petroniu de la Prodromu"
+      ],
+      "tip": "Post",
+      "dezlegări": []
+    },
+    "2026-02-25": {
+      "zi": 25,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfântul Ierarh Tarasie, Patriarhul Constantinopolului"
+      ],
+      "tip": "Post",
+      "dezlegări": []
+    },
+    "2026-02-26": {
+      "zi": 26,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Ierarh Porfirie, Episcopul Gazei",
+        "Sfânta Muceniță Fotini Samarineanca"
+      ],
+      "tip": "Post",
+      "dezlegări": []
+    },
+    "2026-02-27": {
+      "zi": 27,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Cuvios Efrem Katunakiotul"
+      ],
+      "tip": "Post",
+      "dezlegări": []
+    },
+    "2026-02-28": {
+      "zi": 28,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Cuvios Ioan Casian Romanul",
+        "Sfântul Cuvios Gherman din Dobrogea",
+        "Sâmbăta Sfântului Mare Mucenic Teodor Tiron"
+      ],
+      "tip": "Post",
+      "dezlegări": []
+    }
   },
-  "2026-02-02": {
-    "zi": 2,
-    "zi_saptamana": "L",
-    "sfinți": [
-      "Întâmpinarea Domnului",
-      "Sfântul Mucenic Iordan",
-      "Sfântul Mucenic Agatodor",
-      "Sfântul Mucenic Gavriil"
-    ],
-    "tip": "Praznic împărătesc",
-    "dezlegări": []
-  },
-  "2026-02-03": {
-    "zi": 3,
-    "zi_saptamana": "Ma",
-    "sfinți": [
-      "Sfântul și Dreptul Simeon, primitorul de Dumnezeu",
-      "Sfânta Prorociță Ana",
-      "Sfântul Ierarh Nicolae al Japoniei",
-      "Sfântul Ansgar, luminătorul Danemarcei și al Suediei",
-      "Sfântul Ierarh Ignatie de Marioupolis"
-    ],
-    "tip": "Post",
-    "dezlegări": []
-  },
-  "2026-02-04": {
-    "zi": 4,
-    "zi_saptamana": "Mi",
-    "sfinți": [
-      "Sfântul Cuvios Isidor Pelusiotul",
-      "Sfântul Sfințit Mucenic Avramie"
-    ],
-    "tip": "Post",
-    "dezlegări": []
-  },
-  "2026-02-05": {
-    "zi": 5,
-    "zi_saptamana": "J",
-    "sfinți": [
-      "Sfânta Muceniță Teodula",
-      "Sfânta Muceniță Agata",
-      "Cinstirea Sfintei Icoane a Maicii Domnului «Aflarea celor pierduți»",
-      "Cinstirea Sfintei Icoane a Maicii Domnului «Eleț-Cernigov»",
-      "Cinstirea Sfintei Icoane a Maicii Domnului «Salvatoarea de la înec»"
-    ],
-    "tip": "Fără post",
-    "dezlegări": []
-  },
-  "2026-02-06": {
-    "zi": 6,
-    "zi_saptamana": "V",
-    "sfinți": [
-      "Sfântul Ierarh Fotie, patriarhul Constantinopolului",
-      "Sfântul Cuvios Varsanufie cel Mare",
-      "Sfântul Ierarh Vucol, Episcopul Smirnei",
-      "Sfântul Cuvios Ioan din Gaza",
-      "Sfântul Cuvios Arsenie din Ikalto"
-    ],
-    "tip": "Fără post",
-    "dezlegări": ["harți"]
-  },
-  "2026-02-07": {
-    "zi": 7,
-    "zi_saptamana": "S",
-    "sfinți": [
-      "Sfântul Ierarh Partenie, Episcopul Lampsacului",
-      "Sfinții 4 Mucenici tribuni și cei 1003 mucenici din Nicomidia",
-      "Sfântul Cuvios Luca din Elada"
-    ],
-    "tip": "Sâmbătă",
-    "dezlegări": []
-  },
-  "2026-02-08": {
-    "zi": 8,
-    "zi_saptamana": "D",
-    "sfinți": [
-      "Sfântul Mare Mucenic Teodor Stratilat",
-      "Sfântul Proroc Zaharia",
-      "Duminica a 34-a după Rusalii (a Fiului risipitor)"
-    ],
-    "tip": "Duminică",
-    "dezlegări": []
-  },
-  "2026-02-09": {
-    "zi": 9,
-    "zi_saptamana": "L",
-    "sfinți": [
-      "Sfântul Petru Damaschinul",
-      "Sfântul Mucenic Nichifor",
-      "Sfântul Sfințit Mucenic Pangratie",
-      "Odovania Praznicului Întâmpinării Domnului"
-    ],
-    "tip": "Odovanie",
-    "dezlegări": []
-  },
-  "2026-02-10": {
-    "zi": 10,
-    "zi_saptamana": "Ma",
-    "sfinți": [
-      "Sfântul Sfințit Mucenic Haralambie",
-      "Sfânta Cuvioasă Ana din Novgorod"
-    ],
-    "tip": "Sărbătoare",
-    "dezlegări": []
-  },
-  "2026-02-11": {
-    "zi": 11,
-    "zi_saptamana": "Mi",
-    "sfinți": [
-      "Sfânta Teodora, împărăteasa",
-      "Sfântul Ierarh Vlasie, Episcopul Sevastiei"
-    ],
-    "tip": "Post",
-    "dezlegări": []
-  },
-  "2026-02-12": {
-    "zi": 12,
-    "zi_saptamana": "J",
-    "sfinți": [
-      "Sfântul Ierarh Meletie, Arhiepiscopul Antiohiei",
-      "Sfântul Ierarh Alexie, Mitropolitul Moscovei",
-      "Cinstirea Sfintei Icoane a Maicii Domnului din Iviron"
-    ],
-    "tip": "Fără post",
-    "dezlegări": []
-  },
-  "2026-02-13": {
-    "zi": 13,
-    "zi_saptamana": "V",
-    "sfinți": [
-      "Sfântul Simeon Izvorâtorul de Mir",
-      "Sfinții Apostoli Acvila și Priscila",
-      "Sfântul Ierarh Serafim (Sobolev)"
-    ],
-    "tip": "Post",
-    "dezlegări": []
-  },
-  "2026-02-14": {
-    "zi": 14,
-    "zi_saptamana": "S",
-    "sfinți": [
-      "Sfântul Filimon, Episcopul Gazei",
-      "Sâmbăta morților – Moșii de iarnă"
-    ],
-    "tip": "Sâmbătă",
-    "dezlegări": []
-  },
-  "2026-02-15": {
-    "zi": 15,
-    "zi_saptamana": "D",
-    "sfinți": [
-      "Cinstirea Icoanei Maicii Domnului «Ostrobramsk - Vilnius»",
-      "Duminica Înfricoșătoarei Judecăți (Lăsatul sec de carne)"
-    ],
-    "tip": "Duminică",
-    "dezlegări": []
-  },
-  "2026-02-16": {
-    "zi": 16,
-    "zi_saptamana": "L",
-    "sfinți": [
-      "Sfântul Ierarh Flavian al Constantinopolului"
-    ],
-    "tip": "Fără post",
-    "dezlegări": []
-  },
-  "2026-02-17": {
-    "zi": 17,
-    "zi_saptamana": "Ma",
-    "sfinți": [
-      "Sfântul Mare Mucenic Teodor Tiron",
-      "Sfânta Împărăteasă Pulheria"
-    ],
-    "tip": "Fără post",
-    "dezlegări": []
-  },
-  "2026-02-18": {
-    "zi": 18,
-    "zi_saptamana": "Mi",
-    "sfinți": [
-      "Sfântul Ierarh Leon, Episcopul Romei",
-      "Sfântul Ierarh Agapit"
-    ],
-    "tip": "Zi aliturgică",
-    "dezlegări": ["peste"]
-  },
-  "2026-02-19": {
-    "zi": 19,
-    "zi_saptamana": "J",
-    "sfinți": [
-      "Sfântul Apostol Arhip",
-      "Sfânta Cuvioasă Filoteea din Atena"
-    ],
-    "tip": "Fără post",
-    "dezlegări": []
-  },
-  "2026-02-20": {
-    "zi": 20,
-    "zi_saptamana": "V",
-    "sfinți": [
-      "Sfântul Ierarh Agaton",
-      "Sfântul Cuvios Visarion"
-    ],
-    "tip": "Zi aliturgică",
-    "dezlegări": ["peste"]
-  },
-  "2026-02-21": {
-    "zi": 21,
-    "zi_saptamana": "S",
-    "sfinți": [
-      "Sfântul Mucenic Mavrichie",
-      "Sâmbăta Sfinților Cuvioși"
-    ],
-    "tip": "Sâmbătă",
-    "dezlegări": []
-  },
-  "2026-02-22": {
-    "zi": 22,
-    "zi_saptamana": "D",
-    "sfinți": [
-      "Duminica Izgonirii lui Adam din Rai (Lăsatul sec de brânză)"
-    ],
-    "tip": "Duminică",
-    "dezlegări": []
-  },
-  "2026-02-23": {
-    "zi": 23,
-    "zi_saptamana": "L",
-    "sfinți": [
-      "Sfântul Sfințit Mucenic Policarp, Episcopul Smirnei"
-    ],
-    "tip": "Începutul Postului Mare",
-    "dezlegări": []
-  },
-  "2026-02-24": {
-    "zi": 24,
-    "zi_saptamana": "Ma",
-    "sfinți": [
-      "Aflarea Capului Sfântului Ioan Botezătorul",
-      "Sfântul Cuvios Petroniu de la Prodromu"
-    ],
-    "tip": "Post",
-    "dezlegări": []
-  },
-  "2026-02-25": {
-    "zi": 25,
-    "zi_saptamana": "Mi",
-    "sfinți": [
-      "Sfântul Ierarh Tarasie, Patriarhul Constantinopolului"
-    ],
-    "tip": "Post",
-    "dezlegări": []
-  },
-  "2026-02-26": {
-    "zi": 26,
-    "zi_saptamana": "J",
-    "sfinți": [
-      "Sfântul Ierarh Porfirie, Episcopul Gazei",
-      "Sfânta Muceniță Fotini Samarineanca"
-    ],
-    "tip": "Post",
-    "dezlegări": []
-  },
-  "2026-02-27": {
-    "zi": 27,
-    "zi_saptamana": "V",
-    "sfinți": [
-      "Sfântul Cuvios Efrem Katunakiotul"
-    ],
-    "tip": "Post",
-    "dezlegări": []
-  },
-  "2026-02-28": {
-    "zi": 28,
-    "zi_saptamana": "S",
-    "sfinți": [
-      "Sfântul Cuvios Ioan Casian Romanul",
-      "Sfântul Cuvios Gherman din Dobrogea",
-      "Sâmbăta Sfântului Mare Mucenic Teodor Tiron"
-    ],
-    "tip": "Post",
-    "dezlegări": []
-  }
-},
   "2026-03": {
-  "2026-03-01": {
-     "zi": 1,
+    "2026-03-01": {
+      "zi": 1,
       "zi_saptamana": "D",
       "sfinți": [
         "Sfânta Cuvioasă Muceniță Evdochia",
@@ -2320,9 +2328,9 @@
         "Sfântul Mucenic Marcel",
         "✝ Duminica întâi din Post (a Ortodoxiei)"
       ]
-  },
-  "2026-03-02": {
-    "zi": 2,
+    },
+    "2026-03-02": {
+      "zi": 2,
       "zi_saptamana": "L",
       "sfinți": [
         "Sfântul Nicolae Planas, ocrotitorul celor căsătoriți",
@@ -2331,9 +2339,9 @@
         "Sfântul Mucenic Isihie",
         "Sfântul Sfințit Mucenic Teodot, Episcopul Chiriniei"
       ]
-  },
-  "2026-03-03": {
-    "zi": 3,
+    },
+    "2026-03-03": {
+      "zi": 3,
       "zi_saptamana": "Ma",
       "sfinți": [
         "Sfânta Cuvioasă Camelia din Ecoulives",
@@ -2341,18 +2349,18 @@
         "Sfântul Mucenic Cleonic",
         "Sfântul Mucenic Eutropie"
       ]
-  },
-  "2026-03-04": {
-    "zi": 4,
+    },
+    "2026-03-04": {
+      "zi": 4,
       "zi_saptamana": "Mi",
       "sfinți": [
         "Sfântul Cuvios Gherasim de la Iordan",
         "Sfânta Muceniţă Iuliana",
         "Sfântul Mucenic Pavel"
       ]
-  },
-  "2026-03-05": {
-     "zi": 5,
+    },
+    "2026-03-05": {
+      "zi": 5,
       "zi_saptamana": "J",
       "sfinți": [
         "Sfântul Mucenic Conon Grădinarul",
@@ -2363,17 +2371,17 @@
         "Sfântul Mucenic Evloghie",
         "Cinstirea Icoanei Maicii Domnului Îndrumătoarea și Ocrotitoarea copiilor"
       ]
-  },
-  "2026-03-06": {
-    "zi": 6,
+    },
+    "2026-03-06": {
+      "zi": 6,
       "zi_saptamana": "V",
       "sfinți": [
         "Aflarea Sfintei Cruci",
         "Sfântul Mucenic Eufrosin",
         "Sfinții 42 de Mucenici din Amoreea"
       ]
-  },
-  "2026-03-07": {
+    },
+    "2026-03-07": {
       "zi": 7,
       "zi_saptamana": "S",
       "sfinți": [
@@ -2383,9 +2391,9 @@
         "Sfinții Sfințiți Mucenici Episcopi din Cherson: Vasilevs, Evghenie, Capiton, Agatodor, Elpidie și Eterie",
         "Cinstirea Sfintei Icoane a Maicii Domnului din Odrino, Orlov „Chezașa celor păcătoși”"
       ]
-  },
-  "2026-03-08": {
-    "zi": 8,
+    },
+    "2026-03-08": {
+      "zi": 8,
       "zi_saptamana": "D",
       "sfinți": [
         "✝ Sfântul Preot Mucenic Liviu-Galaction de la Cluj",
@@ -2395,27 +2403,27 @@
         "Cinstirea Sfintei Icoanei a Maicii Domnului „a Semnului” (a Rădăcinii din Kursk)",
         "✝ Duminica a 2-a din Post (a Sfântului Grigorie Palama)"
       ]
-  },
-  "2026-03-09": {
-    "zi": 9,
+    },
+    "2026-03-09": {
+      "zi": 9,
       "zi_saptamana": "L",
       "sfinți": [
         "✝ Sfinții 40 de Mucenici din Sevastia",
         "Sfântul Mucenic Urpasian",
         "Cinstirea Sfintei Icoanei a Maicii Domnului „Cuvântul S-a făcut Trup”"
       ]
-  },
-  "2026-03-10": {
-     "zi": 10,
+    },
+    "2026-03-10": {
+      "zi": 10,
       "zi_saptamana": "Ma",
       "sfinți": [
         "Sfântul Mucenic Codrat",
         "Sfântul Mucenic Dionisie",
         "Sfântul Mucenic Ciprian"
       ]
-  },
-  "2026-03-11": {
-    "zi": 11,
+    },
+    "2026-03-11": {
+      "zi": 11,
       "zi_saptamana": "Mi",
       "sfinți": [
         "Sfântul Ierarh Sofronie, Patriarhul Ierusalimului",
@@ -2425,9 +2433,9 @@
         "Sfântul Cuvios Alexie de la Goloseev",
         "Sfântul Mucenic Talu"
       ]
-  },
-  "2026-03-12": {
-    "zi": 12,
+    },
+    "2026-03-12": {
+      "zi": 12,
       "zi_saptamana": "J",
       "sfinți": [
         "Sfântul Ierarh Grigorie Dialogul, Episcopul Romei",
@@ -2435,27 +2443,27 @@
         "Sfântul Cuvios Teofan Mărturisitorul",
         "Cinstirea Sfintei Icoanei a Maicii Domnului din Lida"
       ]
-  },
-  "2026-03-13": {
-    "zi": 13,
+    },
+    "2026-03-13": {
+      "zi": 13,
       "zi_saptamana": "V",
       "sfinți": [
         "Aducerea moaștelor Sfântului Ierarh Nichifor, Patriarhul Constantinopolului",
         "Sfânta Cuvioasă Ipomoni",
         "Sfânta Muceniță Hristina din Persia"
       ]
-  },
-  "2026-03-14": {
-    "zi": 14,
+    },
+    "2026-03-14": {
+      "zi": 14,
       "zi_saptamana": "S",
       "sfinți": [
         "Sfântul Cuvios Benedict de Nursia",
         "Sfântul Sfințit Mucenic Alexandru preotul",
         "Cinstirea Sfintei Icoane a Maicii Domnului din Mănăstirea Sfântul Teodor"
       ]
-  },
-  "2026-03-15": {
-    "zi": 15,
+    },
+    "2026-03-15": {
+      "zi": 15,
       "zi_saptamana": "D",
       "sfinți": [
         "Sfântul Mucenic Timolau",
@@ -2463,9 +2471,9 @@
         "Sfântul Mucenic Agapie",
         "✝ Duminica a 3-a din Post (a Sfintei Cruci)"
       ]
-  },
-  "2026-03-16": {
-     "zi": 16,
+    },
+    "2026-03-16": {
+      "zi": 16,
       "zi_saptamana": "L",
       "sfinți": [
         "Sfântul Cuvios Hristodul din Patmos",
@@ -2474,9 +2482,9 @@
         "Sfântul Mucenic Papa",
         "Sfântul Dimitrie, regele Georgiei"
       ]
-  },
-  "2026-03-17": {
-    "zi": 17,
+    },
+    "2026-03-17": {
+      "zi": 17,
       "zi_saptamana": "Ma",
       "sfinți": [
         "Sfântul Cuvios Alexie, omul lui Dumnezeu",
@@ -2484,9 +2492,9 @@
         "Sfântul Cuvios Teostirict imnograful",
         "Sfântul Mucenic Marin"
       ]
-  },
-  "2026-03-18": {
-     "zi": 18,
+    },
+    "2026-03-18": {
+      "zi": 18,
       "zi_saptamana": "Mi",
       "sfinți": [
         "Sfântul Ierarh Chiril, Arhiepiscopul Ierusalimului",
@@ -2496,9 +2504,9 @@
         "Sfântul Mucenic Evcarpion",
         "Sfântul Mucenic Eduard, regele Angliei"
       ]
-  },
-  "2026-03-19": {
-    "zi": 19,
+    },
+    "2026-03-19": {
+      "zi": 19,
       "zi_saptamana": "J",
       "sfinți": [
         "Sfântul Mucenic Hrisant",
@@ -2510,18 +2518,18 @@
         "Cinstirea Sfintei Icoanei a Maicii Domnului din Smolensk „Dulcea sărutare”",
         "Cinstirea Sfintei Icoanei a Maicii Domnului „Lubiatov”"
       ]
-  },
-  "2026-03-20": {
-    "zi": 20,
+    },
+    "2026-03-20": {
+      "zi": 20,
       "zi_saptamana": "V",
       "sfinți": [
         "Sfântul Ierarh Cuthbert",
         "Sfinții Cuvioși Mucenici din Mănăstirea Sfântului Sava cel Sfințit",
         "Sfântul Ierarh Nichita Mărturisitorul, Episcopul Apoloniadei"
       ]
-  },
-  "2026-03-21": {
-    "zi": 21,
+    },
+    "2026-03-21": {
+      "zi": 21,
       "zi_saptamana": "S",
       "sfinți": [
         "Sfântul Ierarh Iacob Mărturisitorul",
@@ -2529,9 +2537,9 @@
         "Sfântul Serafim de Virița",
         "Sfântul Ierarh Toma, Patriarhul Constantinopolului"
       ]
-  },
-  "2026-03-22": {
-    "zi": 22,
+    },
+    "2026-03-22": {
+      "zi": 22,
       "zi_saptamana": "D",
       "sfinți": [
         "Sfântul Sfințit Mucenic Vasile, preotul din Ancira",
@@ -2539,18 +2547,18 @@
         "Sfântul Cuvios Mucenic Eftimie",
         "✝ Duminica a 4-a din Post (a Sfântului Ioan Scărarul)"
       ]
-  },
-  "2026-03-23": {
-   "zi": 23,
+    },
+    "2026-03-23": {
+      "zi": 23,
       "zi_saptamana": "L",
       "sfinți": [
         "Sfântul Cuvios Nou Mucenic Luca din Mitilini",
         "Sfântul Cuvios Mucenic Nicon și cei 199 de ucenici ai lui",
         "Denia Canonului Mare"
       ]
-  },
-  "2026-03-24": {
-  "zi": 24,
+    },
+    "2026-03-24": {
+      "zi": 24,
       "zi_saptamana": "Ma",
       "sfinți": [
         "Sfântul Cuvios Zaharia Postitorul de la Lavra Peșterilor",
@@ -2559,17 +2567,19 @@
         "Cinstirea Sfintei Icoanei a Maicii Domnului „Muntele netăiat”",
         "Înainte-prăznuirea Bunei Vestiri"
       ]
-  },
-  "2026-03-25": {
-     "zi": 25,
+    },
+    "2026-03-25": {
+      "zi": 25,
       "zi_saptamana": "Mi",
       "sfinți": [
         "✝ Buna Vestire"
       ],
-      "dezlegări": ["pește"]
-  },
-  "2026-03-26": {
-     "zi": 26,
+      "dezlegări": [
+        "pește"
+      ]
+    },
+    "2026-03-26": {
+      "zi": 26,
       "zi_saptamana": "J",
       "sfinți": [
         "Sfântul Mucenic Montanus, preotul",
@@ -2578,9 +2588,9 @@
         "Soborul Sfântului Arhanghel Gavriil",
         "Odovania Praznicului Bunei Vestiri"
       ]
-  },
-  "2026-03-27": {
-     "zi": 27,
+    },
+    "2026-03-27": {
+      "zi": 27,
       "zi_saptamana": "V",
       "sfinți": [
         "Sfânta Muceniţă Lidia",
@@ -2590,9 +2600,9 @@
         "Cinstirea Sfintei Icoanei a Maicii Domnului „Dulcea sărutare” (Glykophilousa)",
         "Denia Acatistului Bunei Vestiri"
       ]
-  },
-  "2026-03-28": {
-     "zi": 28,
+    },
+    "2026-03-28": {
+      "zi": 28,
       "zi_saptamana": "S",
       "sfinți": [
         "Sfântul Cuvios Ștefan, făcătorul de minuni",
@@ -2604,9 +2614,9 @@
         "Cinstirea Sfintei Icoane a Maicii Domnului din Kiev-Bratsk",
         "Cinstirea Sfintei Icoanei a Maicii Domnului „Imnul Acatist” de la Mănăstirea Dionisiu"
       ]
-  },
-  "2026-03-29": {
-    "zi": 29,
+    },
+    "2026-03-29": {
+      "zi": 29,
       "zi_saptamana": "D",
       "sfinți": [
         "Sfântul Ierarh Diadoh, Episcopul Foticeii",
@@ -2617,18 +2627,18 @@
         "Sfântul Cuvios Sava cel Nou din Kalymnos",
         "✝ Duminica a 5-a din Post (a Cuvioasei Maria Egipteanca)"
       ]
-  },
-  "2026-03-30": {
-     "zi": 30,
+    },
+    "2026-03-30": {
+      "zi": 30,
       "zi_saptamana": "L",
       "sfinți": [
         "Sfântul Cuvios Ioan Scărarul",
         "Sfânta Cuvioasă Euvula, mama Sfântului Pantelimon",
         "Sfântul Proroc Ioad"
       ]
-  },
-  "2026-03-31": {
-   "zi": 31,
+    },
+    "2026-03-31": {
+      "zi": 31,
       "zi_saptamana": "Ma",
       "sfinți": [
         "Cuviosul Vlasie, cel din Amorio",
@@ -2640,6 +2650,1829 @@
         "Sfântul Ierarh Acachie Mărturisitorul, Episcopul Melitinei",
         "Sosirea icoanei Maicii Domnului la Iviron"
       ]
+    }
+  },
+  "2026-04": {
+    "2026-04-01": {
+      "zi": 1,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfânta Cuvioasă Maria Egipteanca",
+        "Sfântul Mucenic Gherontie",
+        "Sfântul Cuvios Varsanufie de la Optina",
+        "Sfântul Cuvios Macarie Mărturisitorul"
+      ]
+    },
+    "2026-04-02": {
+      "zi": 2,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Cuvios Tit, făcătorul de minuni",
+        "Sfântul Mucenic Edesie",
+        "Sfântul Mucenic Amfian"
+      ]
+    },
+    "2026-04-03": {
+      "zi": 3,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Mucenic Elpidifor",
+        "Sfântul Cuvios Ilirie",
+        "Sfântul Cuvios Nichita Mărturisitorul",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Floarea nepieritoare”"
+      ]
+    },
+    "2026-04-04": {
+      "zi": 4,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sâmbăta lui Lazăr",
+        "Sfântul Ierarh Teona, Arhiepiscopul Tesalonicului",
+        "Sfântul Cuvios Gheorghe de la Maleon",
+        "Sfântul Cuvios Platon",
+        "Sfântul Cuvios Zosima",
+        "Sfântul Cuvios Iosif, scriitorul de cântări"
+      ]
+    },
+    "2026-04-05": {
+      "zi": 5,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfânta Cuvioasă Teodora din Tesalonic",
+        "Sfântul Mucenic Agatopod",
+        "Sfântul Mucenic Serapion",
+        "Sfântul Mucenic Nichifor",
+        "Sfântul Mucenic Diodor",
+        "Sfântul Mucenic Claudie",
+        "Sfântul Mucenic Teodul",
+        "Sfântul Mucenic Victorin și cei împreună cu dânsul",
+        "(✝) Intrarea Domnului în Ierusalim (Floriile)"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-04-06": {
+      "zi": 6,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfânta și Marea zi Luni",
+        "Sfântul Sfințit Mucenic Irineu, Episcop de Sirmium",
+        "Sfântul Cuvios Grigorie Sinaitul",
+        "Sfântul Ierarh Eutihie, Patriarhul Constantinopolului",
+        "Sfânta Cuvioasă Platonida"
+      ]
+    },
+    "2026-04-07": {
+      "zi": 7,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfânta și Marea zi Marți",
+        "Sfântul Ierarh Tihon, Patriarhul Moscovei și al Întregii Rusii",
+        "Sfânta Muceniță Achilina",
+        "Sfântul Mucenic Caliopie",
+        "Sfântul Ierarh Gheorghe Mărturisitorul, Episcopul Mitilenei",
+        "Sfântul Cuvios Sava cel Nou din Kalymnos"
+      ]
+    },
+    "2026-04-08": {
+      "zi": 8,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfânta și Marea zi Miercuri",
+        "Sfântul Apostol Ermis",
+        "Sfântul Apostol Irodion",
+        "Sfântul Apostol Flegon",
+        "Sfântul Apostol Ruf",
+        "Sfântul Apostol Asincrit",
+        "Sfântul Apostol Agav",
+        "Sfântul Ierarh Celestin, episcopul Romei"
+      ]
+    },
+    "2026-04-09": {
+      "zi": 9,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfânta și Marea zi Joi",
+        "Sfinții Mucenici Rafail, Irina și Nicolae din Insula Lesvos",
+        "Sfântul Mucenic Eupsihie din Cezareea Capadociei",
+        "Sfântul Cuvios Vadim, arhimandritul"
+      ]
+    },
+    "2026-04-10": {
+      "zi": 10,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfânta și Marea zi Vineri",
+        "Sfinții Mucenici Terentie, Pompie, African, Maxim, Macarie și Dima",
+        "Sfântul Grigorie al V-lea, Patriarhul Constantinopolului",
+        "Zi aliturgică. Denia Prohodului Domnului"
+      ]
+    },
+    "2026-04-11": {
+      "zi": 11,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfânta și Marea zi Sâmbătă",
+        "Sfântul Sfințit Mucenic Antipa, Episcopul Pergamului Asiei"
+      ]
+    },
+    "2026-04-12": {
+      "zi": 12,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfânta Cuvioasă Antuza",
+        "Sfântul Ierarh Vasile Mărturisitorul, Episcopul Pariei",
+        "Sfânta Cuvioasă Atanasia de la Eghina",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Murom",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Belâniciskaia”",
+        "(✝) Învierea Domnului (Sfintele Paști)"
+      ]
+    },
+    "2026-04-13": {
+      "zi": 13,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "(✝) Sfintele Paști",
+        "Sfântul Ierarh Calinic de la Cernica, Episcopul Râmnicului",
+        "Sfântul Mucenic Sava de la Buzău",
+        "Sfânta Cuvioasă Filofteia de la Pasărea",
+        "Sfântul Sfințit Mucenic Artemon preotul, din Laodiceea",
+        "Sfinții Mucenici Rafail, Irina și Nicolae din Insula Lesvos",
+        "Sfântul Mucenic Elefterie Persul",
+        "Cinstirea Sfintei Icoane a Maicii Domnului Vimatarissa (Altarița)"
+      ]
+    },
+    "2026-04-14": {
+      "zi": 14,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "(✝) Sfintele Paști",
+        "Sfântul Ierarh Pahomie de la Gledin, Episcopul Romanului",
+        "Sfânta Muceniță Tomaida",
+        "Sfântul Ierarh Martin Mărturisitorul, Episcopul Romei",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Vilnius"
+      ]
+    },
+    "2026-04-15": {
+      "zi": 15,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfântul Apostol Trofim",
+        "Sfântul Apostol Pud",
+        "Sfânta Muceniță Vasilisa",
+        "Sfânta Muceniță Anastasia",
+        "Sfântul Mucenic Crescent",
+        "Sfântul Apostol Aristarh",
+        "Soborul tuturor Sfinților Sinaiţi"
+      ]
+    },
+    "2026-04-16": {
+      "zi": 16,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Amfilohie Makris din Patmos",
+        "Sfintele Mucenițe fecioare Agapia, Irina și Hionia",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Tambov",
+        "Cinstirea Sfintei Icoane a Maicii Domnului „Ilyin-Cernigov”"
+      ]
+    },
+    "2026-04-17": {
+      "zi": 17,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "(✝) Izvorul Tămăduirii",
+        "Cinstirea Sfintei Icoane a Maicii Domnului „Siriaca”",
+        "Descoperirea moaștelor Sfântului Alexandru din Svir",
+        "Sfântul Ierarh Acachie, Episcopul Melitinei Armeniei",
+        "Sfântul Sfințit Mucenic Simeon, Episcopul Persiei",
+        "Sfântul Mucenic Adrian",
+        "Sfântul Macarie Notara, episcopul Corintului",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Ierusalim",
+        "Cinstirea Sfintei Icoane a Maicii Domnului Eleovrytissa"
+      ]
+    },
+    "2026-04-18": {
+      "zi": 18,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Ierarh Cosma Mărturisitorul, Episcopul Calcedonului",
+        "Sfântul Cuvios Ioan, ucenicul Sfântului Grigorie Decapolitul",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „a Sfântului Maxim”",
+        "Sfântul Mucenic Ioan din Ianina",
+        "Sfântul Ierarh Ioan, Arhiepiscopul Antiohiei"
+      ]
+    },
+    "2026-04-19": {
+      "zi": 19,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Sfințit Mucenic Pafnutie",
+        "Sfântul Ierarh Gheorghe Mărturisitorul, Episcopul Antiohiei Pisidiei",
+        "Sfântul Cuvios Ioan de la Lavra Veche",
+        "(✝) Duminica a 2-a după Paști (a Sfântului Apostol Toma)"
+      ]
+    },
+    "2026-04-20": {
+      "zi": 20,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Ierarh Teotim, Episcopul Tomisului",
+        "Sfântul Cuvios Anastasie Sinaitul",
+        "Sfântul Apostol Zaheu",
+        "Sfântul Anastasie Sinaitul, Patriarhul Antiohiei",
+        "Sfântul Cuvios Ioasaf",
+        "Sfântul Cuvios Atanasie",
+        "Sfântul Cuvios Teodor Trihina",
+        "Cinstirea Sfintei Icoane a Maicii Domnului Voithia"
+      ]
+    },
+    "2026-04-21": {
+      "zi": 21,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfânta Muceniță Alexandra, Împărăteasa",
+        "Sfântul Mucenic Teodor din Perga",
+        "Sfântul Sfințit Mucenic Ianuarie, Episcop de Benevent"
+      ]
+    },
+    "2026-04-22": {
+      "zi": 22,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfântul Ierarh Teodor Sicheotul, Episcopul Anastasiopolei",
+        "Sfântul Cuvios Anania din Creta",
+        "Sfântul Mucenic Leonid",
+        "Sfântul Apostol Natanael",
+        "Sfântul Cuvios Vitalie Monahul"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-04-23": {
+      "zi": 23,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "(✝) Sfântul Mare Mucenic Gheorghe, Purtătorul de biruință",
+        "Sfântul Mucenic Valerie"
+      ]
+    },
+    "2026-04-24": {
+      "zi": 24,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "(✝) Sfântul Mucenic Valentin din Durostorum",
+        "(✝) Sfântul Ierarh Mărturisitor Ilie Iorest, Mitropolitul Transilvaniei",
+        "(✝) Sfântul Ierarh Mărturisitor Sava Brancovici, Mitropolitul Transilvaniei",
+        "(✝) Sfântul Ierarh Iosif Mărturisitorul din Maramureș",
+        "(✝) Sfântul Mucenic Pasicrat din Durostorum",
+        "(✝) Sfântul Ierarh Simion Ștefan, Mitropolitul Transilvaniei",
+        "Sfânta Cuvioasă Elisabeta",
+        "Cuviosul Xenofon Ctitorul",
+        "Sfântul Mucenic Sava Stratilat"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-04-25": {
+      "zi": 25,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "(✝) Sfântul Cuvios Vasile de la Poiana Mărului",
+        "Sfântul Apostol și Evanghelist Marcu"
+      ]
+    },
+    "2026-04-26": {
+      "zi": 26,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "(✝) Soborul Sfintelor Femei Românce",
+        "(✝) Sfinții Mucenici Chiril, Chindeu și Tasie din Axiopolis (Cernavodă)",
+        "Sfânta Cuvioasă Glafira",
+        "Sfântul Sfințit Mucenic Vasilevs, Episcopul Amasiei",
+        "Cei șase mii de mucenici de la Mănăstirea Sfântul David Gareji, Georgia",
+        "Cinstirea Sfintei Icoane făcătoare de minuni a Sfântului Arhanghel Mihail din Insula Lesvos",
+        "(✝) Duminica a 3-a după Paști (a Mironosițelor)"
+      ]
+    },
+    "2026-04-27": {
+      "zi": 27,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Apostol Zinon",
+        "Sfântul Sfințit Mucenic Simeon, ruda Domnului",
+        "Sfântul Apostol Marcu",
+        "Sfântul Apostol Aristarh"
+      ]
+    },
+    "2026-04-28": {
+      "zi": 28,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "(✝) Sfinții Mucenici Maxim, Cvintilian și Dadas din Ozovia",
+        "Sfântul Apostol Sosipatru",
+        "Sfântul Apostol Iason"
+      ]
+    },
+    "2026-04-29": {
+      "zi": 29,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfântul Ierarh Vasile de Ostrog",
+        "Sfântul Nectarie de la Optina",
+        "Sfântul Cuvios Memnon, făcătorul de minuni",
+        "Sfinții 9 Mucenici din Cizic"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-04-30": {
+      "zi": 30,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Apostol Iacob, fratele Sfântului Apostol Ioan Evanghelistul",
+        "Sfântul Ierarh Ignatie Briancianinov",
+        "Sfântul Ierarh Donat, Episcopul Evriei",
+        "Sfânta Muceniță Arghira"
+      ]
+    }
+  },
+  "2026-05": {
+    "2026-05-01": {
+      "zi": 1,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Cuvios Mucenic Eftimie",
+        "Sfânta Tamara, regina Georgiei",
+        "Sfântul Nou Mucenic Ignatie",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Bucurie neașteptată”",
+        "Sfântul Cuvios Pafnutie din Borovsk",
+        "Sfânta Cuvioasă Isidora",
+        "Sfântul Proroc Ieremia",
+        "Sfântul Cuvios Mucenic Acachie",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Andronic”"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-05-02": {
+      "zi": 2,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Ierarh Atanasie al III-lea (Patelarie), Patriarhul Constantinopolului",
+        "Sfânta Matrona din Moscova",
+        "Aducerea moaștelor Sfântului Ierarh Atanasie cel Mare în Constantinopol"
+      ]
+    },
+    "2026-05-03": {
+      "zi": 3,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Cuvios Irodion de la Lainici",
+        "Sfântul Mucenic Ahmed Caligraful",
+        "Sfânta Muceniță Mavra",
+        "Sfântul Mucenic Timotei",
+        "Sfântul Cuvios Teodosie de la Lavra Pecerska",
+        "Sfântul Mucenic Rodopian, diaconul",
+        "Sfântul Mucenic Diodor",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Sven",
+        "Sfântul Teodor Bizantinul",
+        "Duminica a 4-a după Paști (Vindecarea slăbănogului de la Vitezda)"
+      ]
+    },
+    "2026-05-04": {
+      "zi": 4,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfânta Cuvioasă Mavra de pe Ceahlău",
+        "Sfânta Muceniță Pelaghia",
+        "Sfântul Cuvios Nichifor",
+        "Sfântul Cuvios Ilarion",
+        "Sfântul Cuvios Valerian",
+        "Sfânta Cuvioasă Monica, mama Fericitului Augustin",
+        "Sfântul Ierarh Atanasie, Episcopul Corintului",
+        "Mutarea moaștelor Sfântului și Dreptului Lazăr la Constantinopol"
+      ]
+    },
+    "2026-05-05": {
+      "zi": 5,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfânta Cuvioasă Matrona de la Hurezi",
+        "Sfântul Cuvios Mucenic Efrem cel Nou",
+        "Sfânta Mare Muceniță Irina",
+        "Sfântul Mucenic Neofit",
+        "Sfântul Mucenic Gaian",
+        "Sfântul Ierarh Eftimie, fratele Cuvioasei Parascheva de la Iași",
+        "Sfântul Mucenic Gaie",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Potirul Nesecat”"
+      ]
+    },
+    "2026-05-06": {
+      "zi": 6,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfântul și Dreptul Iov, mult răbdătorul",
+        "Sfânta Cuvioasă Sofia, asceta din Kleisoura",
+        "Înjumătățirea praznicului Cincizecimii",
+        "Sfântul Cuvios Mamant",
+        "Sfântul Mucenic Varvar",
+        "Sfântul Cuvios Ilarion",
+        "Sfântul Cuvios Pahomie"
+      ],
+      "dezlegări": ["peste"]
+    },
+    "2026-05-07": {
+      "zi": 7,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Arătarea semnului Sfintei Cruci la Ierusalim",
+        "Sfântul Cuvios Ioan Zedazneli, dimpreună cu 12 ucenici din Georgia",
+        "Sfântul Preot Mărturisitor Alexie Toth",
+        "Sfântul Mucenic Codrat",
+        "Sfântul Nil Sorski",
+        "Sfântul Mucenic Acachie"
+      ]
+    },
+    "2026-05-08": {
+      "zi": 8,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Apostol și Evanghelist Ioan",
+        "Sfântul Cuvios Arsenie cel Mare",
+        "Sfânta Emilia, mama Sfântului Ierarh Vasile cel Mare",
+        "Sfântul Vasile cel Bătrân, tatăl Sfântului Vasile cel Mare"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-05-09": {
+      "zi": 9,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Aducerea moaștelor Sfântului Ierarh Nicolae la Bari",
+        "Sfântul Shio din Mgvime, Georgia",
+        "Sfântul Mucenic Hristofor",
+        "Sfântul Mucenic Epimah",
+        "Sfântul Proroc Isaia",
+        "Sfântul Mucenic Gordian",
+        "Sfântul Iosif de la Optina"
+      ]
+    },
+    "2026-05-10": {
+      "zi": 10,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Cuvios Calistrat de la Timișeni și Vasiova",
+        "Sfântul Apostol Simon Zilotul",
+        "Sfântul Mucenic Ciprian",
+        "Sfântul Mucenic Filadelf",
+        "Sfântul Mucenic Alfeu",
+        "Sfântul Cuvios Lavrentie",
+        "Sfântul Cuvios Isihie Mărturisitorul",
+        "Duminica a 5-a după Paști (a Samarinencei)"
+      ]
+    },
+    "2026-05-11": {
+      "zi": 11,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Cuvios Dionisie Vatopedinul de la Colciu",
+        "Sfântul Ierarh Metodie, Apostolul slavilor",
+        "Sfântul Cuvios Chiril, Apostolul slavilor",
+        "Sfântul Mucenic Dioscor",
+        "Sfântul Sfințit Mucenic Mochie",
+        "Sfânta Muceniță Olimpia din Insula Lesvos",
+        "Sfântul Mucenic Arghir",
+        "Înnoirea Constantinopolului"
+      ]
+    },
+    "2026-05-12": {
+      "zi": 12,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfântul Mucenic Ioan Valahul",
+        "Sfântul Ierarh Epifanie, Arhiepiscopul Ciprului",
+        "Sfântul Ierarh Gherman, Patriarhul Constantinopolului",
+        "Sfântul Cuvios Amfilohie de la Poceaev",
+        "Aflarea moaștelor Sfintei Mucenițe Irina din Lesvos"
+      ]
+    },
+    "2026-05-13": {
+      "zi": 13,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfântul Cuvios Gheorghe Ivirul",
+        "Sfântul Cuvios Serghie Mărturisitorul",
+        "Sfântul Cuvios Eftimie Ivirul",
+        "Sfânta Muceniță Glicheria",
+        "Sfântul Cuvios Ioan Ivirul",
+        "Sfântul Cuvios Gavriil Ivirul",
+        "Odovania Înjumătățirii praznicului Cincizecimii"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-05-14": {
+      "zi": 14,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Mucenic Isidor din Chios",
+        "Sfântul Sfințit Mucenic Terapont, Episcopul Ciprului"
+      ]
+    },
+    "2026-05-15": {
+      "zi": 15,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Ierarh Iacob Putneanul, Mitropolitul Moldovei",
+        "Sfântul Cuvios Pahomie cel Mare",
+        "Sfântul Ierarh Ahile, Episcopul Larisei",
+        "Sfântul Mucenic Halvard Norvegianul"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-05-16": {
+      "zi": 16,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfinții Cuvioși Sila, Paisie și Natan de la Sihăstria Putnei",
+        "Sfântul Mucenic Isaachie Persul din Meţovo",
+        "Sfântul Martir Vakusin din Klepci",
+        "Sfântul Mucenic Petru din Vlaherne",
+        "Sfântul Mucenic Simeon",
+        "Sfântul Cuvios Teodor cel Sfințit"
+      ]
+    },
+    "2026-05-17": {
+      "zi": 17,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Cuvios Teofan",
+        "Sfântul Apostol Andronic și soția sa, Iunia",
+        "Sfântul Nou Mucenic Nicolae din Metsovo",
+        "Sfântul Cuvios Nectarie",
+        "Sfântul Dodo, ucenicul Sfântului David din Gareji, Georgia",
+        "Duminica a 6-a după Paști (a Orbului din naștere)"
+      ]
+    },
+    "2026-05-18": {
+      "zi": 18,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Mucenic Dionisie",
+        "Sfântul Mucenic Petru",
+        "Sfântul Mucenic Teodot din Ancira",
+        "Sfânta Hristina și cele 7 sfinte fecioare împreună cu ea",
+        "Sfântul Mucenic Paulin"
+      ]
+    },
+    "2026-05-19": {
+      "zi": 19,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfânta Nina, cea întocmai cu Apostolii și luminătoarea Georgiei",
+        "Sfântul Cuvios Memnon",
+        "Sfânta Muceniță Chiriachi",
+        "Sfântul Sfințit Mucenic Patrichie, Episcopul Prusei"
+      ]
+    },
+    "2026-05-20": {
+      "zi": 20,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfânta Lidia din Filipi",
+        "Sfântul Cuvios Talasie",
+        "Sfântul Mucenic Talaleu",
+        "Sfântul Cuvios Marcu Pustnicul",
+        "Sfânta Muceniță Damiana și cele 40 de Fecioare",
+        "Sfinții Zabulon și Suzana, părinții Sfintei Nina, luminătoarea Georgiei",
+        "Sfinții Cuvioși Nichita, Ioan și Iosif, ctitorii Mănăstirii Nea Moni din Chios",
+        "Odovania praznicului Învierii Domnului"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-05-21": {
+      "zi": 21,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Înălțarea Domnului (Ziua Eroilor)",
+        "Sfinții Împărați și întocmai cu Apostolii Constantin și mama sa, Elena",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Cea iubitoare” a Peșterilor din Pskov",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Vladimir"
+      ]
+    },
+    "2026-05-22": {
+      "zi": 22,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfinții Părinți de la Sinodul al II-lea Ecumenic",
+        "Sfântul Mucenic Marcel",
+        "Sfântul Mucenic Vasilisc",
+        "Sfânta Muceniță Sofia Doctorița"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-05-23": {
+      "zi": 23,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Ierarh Mihail Mărturisitorul, Episcopul Sinadei",
+        "Sfântul Cuvios Ioachim Papoulakis din Ithaca",
+        "Sfântul Evmenie Saridakis",
+        "Soborul Sfinților din Rostov și Yaroslav",
+        "Sfânta Mironosiță Maria lui Cleopa"
+      ]
+    },
+    "2026-05-24": {
+      "zi": 24,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfânta Mărturisitoare Blandina de la Iași",
+        "Sfântul Cuvios Simeon cel din Muntele Minunat",
+        "Sfânta Muceniță Marciana",
+        "Sfântul Mucenic Serapion",
+        "Duminica a 7-a după Paști (a Sfinților Părinți de la Sinodul I Ecumenic)"
+      ]
+    },
+    "2026-05-25": {
+      "zi": 25,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "A treia aflare a Capului Sfântului Ioan, Înaintemergătorul și Botezătorul Domnului",
+        "Sfântul Ierarh Inochentie al Odessei",
+        "Sfântul Mucenic Celestin"
+      ]
+    },
+    "2026-05-26": {
+      "zi": 26,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfântul Apostol Tadeu",
+        "Sfântul Mucenic Averchie",
+        "Sfântul Apostol Alfeu",
+        "Sfântul Apostol Carp",
+        "Sfânta Muceniță Elena"
+      ]
+    },
+    "2026-05-27": {
+      "zi": 27,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sfântul Mucenic Iuliu Veteranul",
+        "Sfântul Mărturisitor Ioan Rusul",
+        "Sfântul Sfințit Mucenic Terapont, Episcopul Sardei",
+        "Sfântul Sfințit Mucenic Eladie"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-05-28": {
+      "zi": 28,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Ierarh Nichita Mărturisitorul, Episcopul Calcedonului",
+        "Sfânta Muceniță Eliconida",
+        "Sfântul Sfințit Mucenic Eutihie, Episcopul Melitinei",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Niceea (Nicene)"
+      ]
+    },
+    "2026-05-29": {
+      "zi": 29,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfânta Muceniță Teodosia, fecioara",
+        "Odovania praznicului Înălțării Domnului",
+        "Sfânta Cuvioasă Ipomoni",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Moscova „Chezașa celor păcătoși”",
+        "Sfântul Sfințit Mucenic Olivian",
+        "Sfântul Ierarh Alexandru, Arhiepiscopul Alexandriei",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Odrino, Orlov „Chezașa celor păcătoși”"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-05-30": {
+      "zi": 30,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Cuvios Isaachie Mărturisitorul",
+        "Sfântul Cuvios Varlaam",
+        "Sfânta Macrina cea Bătrână",
+        "Sfântul Mucenic Natalie",
+        "Sâmbăta celor adormiți – Moșii de vară"
+      ]
+    },
+    "2026-05-31": {
+      "zi": 31,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Mucenic Eusebiu",
+        "Sfântul Apostol Ermie",
+        "Sfântul Mucenic Haralambie",
+        "Sfântul Mucenic Ermie",
+        "Pogorârea Sfântului Duh (Cincizecimea sau Rusaliile). Duminica a 8-a după Paști"
+      ]
+    }
+  },
+  "2026-06": {
+    "2026-06-01": {
+      "zi": 1,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfânta Treime",
+        "Sfântul Iustin Martirul și Filosoful",
+        "Sfântul Mucenic Firm",
+        "Sfântul Mucenic Valerian",
+        "Sfântul Mucenic Hariton",
+        "Sfântul Cuvios Agapit de la Lavra Pecerska",
+        "Sfântul Mucenic Iustin"
+      ]
+    },
+    "2026-06-02": {
+      "zi": 2,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Mare Mucenic Ioan cel Nou de la Suceava",
+        "Sfântul Ierarh Nichifor, Patriarhul Constantinopolului"
+      ]
+    },
+    "2026-06-03": {
+      "zi": 3,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Mucenic Luchilian și cei împreună cu el patru tineri: Ipatie, Paul, Dionisie și Claudie",
+        "Sfânta Muceniță Paula fecioara (Harți)"
+      ]
+    },
+    "2026-06-04": {
+      "zi": 4,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfinții Mucenici Zotic, Atal, Camasie și Filip de la Niculițel",
+        "Sfânta Cuvioasă Sofia",
+        "Sfântul Ierarh Mitrofan, Patriarhul Constantinopolului",
+        "Sfintele Mironosițe Maria și Marta, surorile Dreptului Lazăr Ap. Romani 1, 28-32; 2, 1-9 Ev. Matei 5, 27-32"
+      ]
+    },
+    "2026-06-05": {
+      "zi": 5,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfânta Cuvioasă Elisabeta de la Pasărea",
+        "Sfântul Sfințit Mucenic Dorotei, Episcopul Tirului",
+        "Sfântul Bonifatie, Apostolul Germaniei",
+        "Sfântul Ioan de Valaam",
+        "Sfinții Mucenici Marchian, Nicandru, Iperehie, Apolon, Leonid, Arie, Gheorghe, Selneniad, Irineu și Pamvon",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Igorevskaia” Ap. Romani 2, 14-29 Ev. Matei 5, 33-41 (Harți)"
+      ]
+    },
+    "2026-06-06": {
+      "zi": 6,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Odovania praznicului Pogorârii Sfântului Duh",
+        "Sfântul Cuvios Ilarion cel Nou, egumenul Mănăstirii Dalmaților",
+        "Sfântul Cuvios Visarion",
+        "Sfânta Muceniță Valeria",
+        "Sfântul Mucenic Ghelasie",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Pimenovskaia”"
+      ]
+    },
+    "2026-06-07": {
+      "zi": 7,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfânta Muceniță Zenaida",
+        "Sfântul Cuvios Antim, preotul",
+        "Sfântul Sfințit Mucenic Teodot, Episcopul Ancirei",
+        "Sfântul Marcelin, Episcopul Romei",
+        "Sfânta Cuvioasă Sebastiana",
+        "Duminica întâi după Rusalii (a Tuturor Sfinților)(Lăsatul secului pentru Postul Sfinților Apostoli Petru și Pavel)"
+      ]
+    },
+    "2026-06-08": {
+      "zi": 8,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfinții Mucenici Nicandru și Marcian",
+        "Sfânta Muceniță Caliopia",
+        "Sfântul Cuvios Navcratie",
+        "Aducerea moaștelor Sfântului Mare Mucenic Teodor Stratilat (Începutul Postului Sfinților Apostoli Petru și Pavel)"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-09": {
+      "zi": 9,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Ierarh Chiril, Arhiepiscopul Alexandriei",
+        "Sfânta Muceniţă Enata",
+        "Sfânta Muceniță Marta",
+        "Sfântul David din Gareji, Georgia",
+        "Sfânta Muceniță Mariamni",
+        "Sfânta Muceniță Tecla",
+        "Sfânta Muceniță Maria"
+      ]
+    },
+    "2026-06-10": {
+      "zi": 10,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Soborul Sfinților din Siberia",
+        "Sfânta Muceniță Antonina",
+        "Sfântul Mucenic Alexandru",
+        "Sfântul Sfințit Mucenic Timotei, Episcopul Prusei",
+        "Sfinții Cuvioși Teofan și Pansemnia din Antiohia",
+        "Sfântul Cuvios Zosima Fenicianul"
+      ]
+    },
+    "2026-06-11": {
+      "zi": 11,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Ierarh Luca, Arhiepiscopul Crimeei",
+        "Sfântul Apostol Bartolomeu",
+        "Sfântul Apostol Barnaba",
+        "Sfântul Cuvios Gavriil din Kapsala",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Axion Estin”"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-12": {
+      "zi": 12,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Cuvios Onufrie cel Mare",
+        "Sfântul Cuvios Petru Athonitul"
+      ]
+    },
+    "2026-06-13": {
+      "zi": 13,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Ierarh Trifilie, Episcopul Levcosiei din Cipru",
+        "Sfânta Muceniță Achilina",
+        "Sfânta Alexandra Schimonahia, Stareța și Întemeietoarea Mănăstirii Diveevo",
+        "Aflarea moaștelor Sfântului Mucenic Nicolae din Lesvos "
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-14": {
+      "zi": 14,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Proroc Elisei",
+        "Sfântul Iustin Popovici",
+        "Sfântul Ierarh Metodie, Patriarhul Constantinopolului",
+        "Duminica a 2-a după Rusalii (a Sfinților români)"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-15": {
+      "zi": 15,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Mucenic Isihie",
+        "Sfântul Proroc Amos",
+        "Sfântul Mare Mucenic Lazăr, Cneazul Serbiei",
+        "Fericitul Augustin",
+        "Fericitul Ieronim"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-16": {
+      "zi": 16,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Ierarh Martir Neofit Cretanul, Mitropolitul Țării Românești",
+        "Sfântul Ierarh Tihon, Episcopul Amatundei",
+        "Sfântul Sfinţit Mucenic Marcu, Episcopul Apoloniadei",
+        "Sfântul Cuvios Moise de la Optina"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-17": {
+      "zi": 17,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Mucenic Salva din Akhaltsikhe, Georgia",
+        "Sfântul Mucenic Felix",
+        "Sfântul Mucenic Isavru",
+        "Sfântul Mucenic Peregrin",
+        "Sfântul Mucenic Inochentie",
+        "Sfinții Mucenici Manuil, Savel și Ismail"
+      ]
+    },
+    "2026-06-18": {
+      "zi": 18,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Cuvios Erasm",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Bogolubskaia”",
+        "Sfânta Muceniță Alina",
+        "Sfântul Mucenic Teodul",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Bogolubskaia” din Zimarovo",
+        "Sfântul Mucenic Ipatie",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Bogolubskaia” din Moscova",
+        "Sfântul Mucenic Leontie"
+      ]
+    },
+    "2026-06-19": {
+      "zi": 19,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Cuvios Paisie cel Mare",
+        "Sfântul Apostol Iuda, ruda Domnului"
+      ]
+    },
+    "2026-06-20": {
+      "zi": 20,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Calist Angelicoudes",
+        "Sfântul Sfințit Mucenic Metodie, Episcopul Patarelor",
+        "Sfântul Nicolae Cabasila",
+        "Sfântul Ierarh Calist, Patriarhul Constantinopolului"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-21": {
+      "zi": 21,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Mucenic Iulian din Tars",
+        "Sfântul Mucenic Afrodisie",
+        "Duminica a 3-a după Rusalii (a Sfinților Athoniți. Despre grijile vieții)"
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-22": {
+      "zi": 22,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Ierarh Grigorie Dascălul, Mitropolitul Țării Românești",
+        "Sfântul Mucenic Alban din Verulamul Britaniei",
+        "Sfântul Mucenic Galaction",
+        "Sfântul Mucenic Zenon",
+        "Sfântul Mucenic Zina",
+        "Sfântul Sfințit Mucenic Eusebiu, Episcopul Samosatelor "
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-23": {
+      "zi": 23,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfânta Muceniță Agripina",
+        "Soborul Sfinților din Vladimir",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Cea iubitoare” a Peșterilor din Pskov",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Zaonikievskaya”",
+        "Sfântul Mucenic Aristocleu, preotul",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Vladimir "
+      ]
+    },
+    "2026-06-24": {
+      "zi": 24,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Nașterea Sfântului Ioan Botezătorul (Sânzienele – Drăgaica)",
+        "Aducerea moaștelor Sfântului Mare Mucenic Ioan cel Nou de la Suceava",
+        "Sfântul Ierarh Niceta de Remesiana",
+        "Sfântul Atanasie din Paros "
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-25": {
+      "zi": 25,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfânta Mare Muceniță Fevronia",
+        "Sfântul Petru, Cneaz de Murom",
+        "Sfânta Fevronia, Cneaghină de Murom",
+        "Sfântul Mucenic Orentie",
+        "Sfântul Cuvios Dionisie",
+        "Sfântul Mucenic Procopie",
+        "Sfântul Cuvios Dometie",
+        "Sfânta Muceniță Livia",
+        "Sfântul Nicon de la Optina "
+      ]
+    },
+    "2026-06-26": {
+      "zi": 26,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Cuvios David din Tesalonic",
+        "Sărbătoarea Tuturor Sfinților Georgieni",
+        "Sfântul Ierarh Ioan, Episcopul Goției",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Tihvin",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului din Lida",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Sedmiezerskaya”",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Șapte lacuri” "
+      ]
+    },
+    "2026-06-27": {
+      "zi": 27,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Cuvios Samson, primitorul de străini",
+        "Sfânta Ioana Mironosița",
+        "Sfântul Mucenic Anect "
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-28": {
+      "zi": 28,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Aducerea moaștelor Sfinților Mucenici Doctori fără de arginți Chir și Ioan",
+        "Sfântul Mucenic Papias",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „a Sfântului Ioan Damaschin” (Trihirussa)",
+        "Duminica a 4-a după Rusalii (Vindecarea slugii sutașului) "
+      ],
+      "dezlegări": [
+        "peste"
+      ]
+    },
+    "2026-06-29": {
+      "zi": 29,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfinții Apostoli Petru și Pavel",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Kasperov"
+      ]
+    },
+    "2026-06-30": {
+      "zi": 30,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Ierarh Ghelasie de la Râmeț",
+        "Soborul Sfinților 12 Apostoli",
+        "Sfântul Cuvios Ghervasie din Patras",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Balikinskaya”"
+      ]
+    }
+  },
+  "2026-07": {
+    "2026-07-01": {
+      "zi": 1,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Ierarh Leontie de la Rădăuți",
+        "Sfinții Mucenici Doctori fără de arginți, Cosma și Damian, din Roma "
+      ]
+    },
+    "2026-07-02": {
+      "zi": 2,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Voievod Ștefan cel Mare",
+        "Așezarea veșmântului Născătoarei de Dumnezeu în Vlaherne",
+        "Sfântul Ierarh Ioan Maximovici",
+        "Sfântul Ierarh Iuvenalie, patriarhul Ierusalimului",
+        "Sfântul Mucenic Iuvenalie din Alaska",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Vlahernskaya” (Vlahernitissa)",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Cea care alăptează” (Galaktotrofousa)",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Pozhayskaia”",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Feodotevskaia”",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Ahtîrskaia” "
+      ]
+    },
+    "2026-07-03": {
+      "zi": 3,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Ierarh Anatolie, Patriarhul Constantinopolului",
+        "Sfântul Mucenic Iachint",
+        "Sfântul Mucenic Meliton",
+        "Descoperirea mormântului și a moaștelor Sfântului Mucenic Rafail din Lesvos "
+      ]
+    },
+    "2026-07-04": {
+      "zi": 4,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfânta Olimpiada de la Fărcașa",
+        "Sfântul Ierarh Andrei Criteanul, Arhiepiscopul Cretei",
+        "Sfânta Cuvioasă Marta",
+        "Sfântul Cuvios Andrei Rubliov, iconograful",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Galata "
+      ]
+    },
+    "2026-07-05": {
+      "zi": 5,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Cuvios Atanasie Athonitul",
+        "Sfântul Cuvios Serghie de la Radonej",
+        "Cei șase cuvioși ucenici ai Sfântului Atanasie Athonitul",
+        "Sfântul Cuvios Mucenic Ciprian",
+        "Sfântul Cuvios Lampadie",
+        "Duminica a 5-a după Rusalii (Vindecarea celor doi demonizați din ținutul Gadarei) "
+      ]
+    },
+    "2026-07-06": {
+      "zi": 6,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Cuvios Dometie cel Milostiv de la Râmeț",
+        "Sfânta Cuvioasă Filotimia de la Râmeț, mama Sfântului Cuvios Dometie cel Milostiv",
+        "Sfântul Cuvios Sisoe cel Mare",
+        "Sfânta Muceniță Lucia din Roma",
+        "Sfântul Mucenic Arhip",
+        "Sfântul Sfințit Mucenic Astie, episcopul Dirahiei",
+        "Sfântul Mucenic Filimon",
+        "Sfinții Mucenici Marius și Marta, soția sa, și fiii lor Audifaciu și Avacum "
+      ]
+    },
+    "2026-07-07": {
+      "zi": 7,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfânta Mare Muceniță Chiriachi",
+        "Sfântul Mucenic Evanghel, Episcopul Tomisului",
+        "Sfântul Cuvios Acachie",
+        "Sfântul Cuvios Toma din Maleon",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Vlahernskaya” (Vlahernitissa) "
+      ]
+    },
+    "2026-07-08": {
+      "zi": 8,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfinții Mucenici Epictet și Astion",
+        "Sfântul Mare Mucenic Procopie",
+        "Sfânta Muceniță Suniva din Norvegia",
+        "Sfântul Cuvios Teofil, Izvorâtorul de mir",
+        "Sfânta Teodosia",
+        "Cinstirea Sfintei Icoane a Bunei Vestiri din Ustiug",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Kazan (Kazanskaia)",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului din Sitka",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Eleusa” din Novgorod "
+      ]
+    },
+    "2026-07-09": {
+      "zi": 9,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Cinstirea Sfintei Icoane a Maicii Domnului Îndrumătoarea de la Mănăstirea Neamț",
+        "Sfântul Cuvios Coprie Egipteanul",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Cipru",
+        "Sfântul Mucenic Prov",
+        "Sfântul Mucenic Andrei",
+        "Sfântul Sfințit Mucenic Chiril",
+        "Sfântul Sfințit Mucenic Pangratie, Episcopul Tavromeniei",
+        "Sfinții Cuvioși Dionisie Retorul și Mitrofan Duhovnicul",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Koloci "
+      ]
+    },
+    "2026-07-10": {
+      "zi": 10,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Cuvios Sava Vatopedinul",
+        "Sfântul Cuvios Antonie de la Lavra Pecerska",
+        "Sfântul Mucenic Apolonie",
+        "Sfinții 45 de Mucenici din Nicopolea Armeniei",
+        "Sfântul Ierarh Gheorghe, episcopul Tesalonicului",
+        "Sfântul Mucenic Siluan",
+        "Sfântul Mucenic Vianor",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului din Koneviț "
+      ]
+    },
+    "2026-07-11": {
+      "zi": 11,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Cuvios Sofronie de la Essex",
+        "Sfânta Mare Muceniță Eufimia",
+        "Sfânta Olga, Împărăteasa Rusiei",
+        "Sfântul Mucenic Nectarie Aghioritul",
+        "Sfântul Cuvios Leon din Mandra",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Rjevskaia” (sau „Okovețkaia”) "
+      ]
+    },
+    "2026-07-12": {
+      "zi": 12,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Cinstirea Sfintei Icoane Prodromița de la Muntele Athos",
+        "Sfântul Cuvios Paisie Aghioritul",
+        "Sfânta Veronica",
+        "Sfântul Mucenic Ilarie",
+        "Sfântul Mucenic Proclu",
+        "Sfântul Cuvios Mihail Maleinul",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „a Sfântului Ioan Damaschin” (Trihirussa)",
+        "Duminica a 6-a după Rusalii (Vindecarea slăbănogului din Capernaum) "
+      ]
+    },
+    "2026-07-13": {
+      "zi": 13,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Cuvios Nifon Prodromitul",
+        "Aducerea moaștelor Sfântului Cuvios Dimitrie cel Nou la București",
+        "Soborul Sfântului Arhanghel Gavriil",
+        "Sfântul Cuvios Ștefan Savaitul",
+        "Sfânta Muceniță Golinduhia din Persia",
+        "Sfânta Cuvioasă Sara "
+      ]
+    },
+    "2026-07-14": {
+      "zi": 14,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Cuvios Nicodim Aghioritul",
+        "Sfântul Mucenic Iust",
+        "Sfântul Mucenic Iraclie",
+        "Sfântul Apostol Achila "
+      ]
+    },
+    "2026-07-15": {
+      "zi": 15,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfinții Mucenici Chiric și Iulita",
+        "Sfântul Vladimir, Luminătorul Rusiei",
+        "Sfânta Cuvioasă Matrona",
+        "Sfântul Ierarh Iosif, Arhiepiscopul Tesalonicului "
+      ]
+    },
+    "2026-07-16": {
+      "zi": 16,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfânta Muceniță Iulia",
+        "Sfântul Mucenic Antioh",
+        "Sfântul Sfințit Mucenic Atinoghen cu cei 10 ucenici ai săi",
+        "Sfântul Mucenic Avudin",
+        "Sfântul Mucenic Faust "
+      ]
+    },
+    "2026-07-17": {
+      "zi": 17,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfânta Mare Muceniță Marina",
+        "Sfinții Țari Mucenici Romanov: Nicolae și Alexandra și fiii lor Olga, Tatiana, Maria, Anastasia și Alexei",
+        "Sfântul Ierarh Eufrasie, Episcopul Ienopolei "
+      ]
+    },
+    "2026-07-18": {
+      "zi": 18,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Mucenic Emilian de la Durostor",
+        "Sfânta Cuvioasă Muceniță Elisabeta, ducesa Rusiei",
+        "Sfântul Mucenic Pavel",
+        "Sfântul Mucenic Iachint",
+        "Sfânta Muceniță Valentina",
+        "Sfântul Cuvios Pamvo",
+        "Cinstirea Sfintei Icoane a Maicii Domnului de pe Tolga (Tolgska) "
+      ]
+    },
+    "2026-07-19": {
+      "zi": 19,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfinţii Părinţi de la Sinodul al IV-lea Ecumenic",
+        "Sfânta Cuvioasă Macrina, sora Sfântului Vasile cel Mare",
+        "Aflarea moaștelor Sfântului Cuvios Serafim de Sarov",
+        "Sfântul Cuvios Die",
+        "Duminica a 7-a după Rusalii (Vindecarea a doi orbi și a unui mut din Capernaum)"
+      ]
+    },
+    "2026-07-20": {
+      "zi": 20,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Slăvitul Proroc Ilie Tesviteanul",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Abalatsk”"
+      ]
+    },
+    "2026-07-21": {
+      "zi": 21,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfinții Cuvioși Rafael și Partenie de la Agapia Veche",
+        "Sfântul Proroc Iezechiel",
+        "Sfântul Cuvios Simeon",
+        "Sfântul Cuvios Ioan Pustnicul",
+        "Cinstirea Icoanei Maicii Domnului „Grabnic Ajutătoarea” de la Mănăstirea Dintr-un Lemn "
+      ]
+    },
+    "2026-07-22": {
+      "zi": 22,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Preot Mărturisitor Ilie Lăcătușu",
+        "Sfânta Mironosiță și întocmai cu Apostolii Maria Magdalena",
+        "Sfânta Muceniță Marcela",
+        "Sfântul Cuvios Gavriil Athonitul din Odessa "
+      ]
+    },
+    "2026-07-23": {
+      "zi": 23,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Aducerea moaștelor Sfântului Sfințit Mucenic Foca",
+        "Sfânta Muceniţă Valeria",
+        "Sfinții Mucenici Trofim și Teofil",
+        "Sfântul Mucenic Vitalie",
+        "Sfânta Cuvioasă Pelaghia din insula Tinos",
+        "Sfântul Sfințit Mucenic Apolinarie, episcopul Ravenei",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Bucuria tuturor celor necăjiți” (cu monede) din Sankt Petersburg",
+        "Cinstirea Sfintei Icoane a Maicii Domnului de la Poceaev "
+      ]
+    },
+    "2026-07-24": {
+      "zi": 24,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfânta Mare Muceniță Hristina",
+        "Sfântul Mucenic Ermoghen "
+      ]
+    },
+    "2026-07-25": {
+      "zi": 25,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Adormirea Sfintei Ana, mama Preasfintei Născătoare de Dumnezeu",
+        "Sfânta Cuvioasă Eupraxia",
+        "Sfântul Grigorie Kallidis, Arhiepiscopul Irakliei și Redestului",
+        "Sfinţii Părinţi de la Sinodul al V-lea Ecumenic",
+        "Sfânta Cuvioasă Olimpiada "
+      ]
+    },
+    "2026-07-26": {
+      "zi": 26,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Cuvios Ioanichie cel Nou de la Muscel (Argeș)",
+        "Sfânta Cuvioasă Muceniță Paraschevi din Roma",
+        "Sfântul Cuvios Moise Ungurul",
+        "Sfântul Sfințit Mucenic Ermolae",
+        "Sfântul Sava al III-lea",
+        "Sfântul Cuvios Gherontie Athonitul",
+        "Sfântul Iacob Netsvetov din Alaska",
+        "Duminica a 8-a după Rusalii (Înmulțirea pâinilor) "
+      ]
+    },
+    "2026-07-27": {
+      "zi": 27,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Mare Mucenic și Tămăduitor Pantelimon",
+        "Sfântul Clement, Arhiepiscopul Ohridei",
+        "Sfântul Cuvios Manuel",
+        "Sfânta Cuvioasă Antuza"
+      ]
+    },
+    "2026-07-28": {
+      "zi": 28,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfânta Cuvioasă Irina Hrisovalantou, care a primit mere din Rai",
+        "Sfântul Cuvios Pavel de la Xiropotamu",
+        "Sfinții Apostoli și Diaconi Prohor, Nicanor, Timon și Parmena, dintre cei 70",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Sedmiezerskaya”",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Tambov",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Hodighitria” din Smolensk",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Umilenie” de la Diveevo",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Șapte lacuri”",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Grebenskaia”",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Kostromskaia”",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului din Lavra Sfintei Treimi"
+      ]
+    },
+    "2026-07-29": {
+      "zi": 29,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Mucenic Calinic",
+        "Sfânta Muceniță Teodota cu fiii săi",
+        "Sfântul Rege și Martir Olav al Norvegiei",
+        "Sfântul Mucenic Eustație din Georgia",
+        "Sfântul Mucenic Mamant",
+        "Sfântul Mucenic Veniamin "
+      ]
+    },
+    "2026-07-30": {
+      "zi": 30,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Mucenic Valentin, Episcopul Umbriei",
+        "Sfântul Anatolie „cel Tânăr” de la Optina",
+        "Sfinții Apostoli Sila, Silvan, Crescent, Epenet și Andronic",
+        "Sfânta Muceniță Iulita  (Lăsatul secului pentru Postul Adormirii Maicii Domnului)"
+      ]
+    },
+    "2026-07-31": {
+      "zi": 31,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul și Dreptul Iosif din Arimateea",
+        "Sfântul și Dreptul Evdochim",
+        "Înainte-prăznuirea scoaterii Sfintei Cruci (Începutul Postului Adormirii Maicii Domnului)"
+      ],
+      "tip": "post"
+    }
+  },
+  "2026-08": {
+    "2026-08-01": {
+      "zi": 1,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Scoaterea Sfintei Cruci",
+        "Sfinții 7 Mucenici Macabei, cu mama lor Solomoni și dascălul lor Eleazar"
+      ]
+    },
+    "2026-08-02": {
+      "zi": 2,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Aducerea moaștelor Sfântului Întâi Mucenic și Arhidiacon Ștefan",
+        "Binecredinciosul Împărat Justinian cel Mare",
+        "Dreptul Gamaliel",
+        "Duminica a 9-a după Rusalii (Umblarea pe mare – Potolirea furtunii)"
+      ]
+    },
+    "2026-08-03": {
+      "zi": 3,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Cuvios Mărturisitor Iraclie din Basarabia",
+        "Sfânta Salomeea, mironosița",
+        "Sfânta Cuvioasă Teodora din Tesalonic",
+        "Sfântul Cuvios Dalmat",
+        "Sfântul Cuvios Isaachie",
+        "Sfântul Cuvios Faust"
+      ]
+    },
+    "2026-08-04": {
+      "zi": 4,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfinții 7 tineri din Efes",
+        "Sfântul Mucenic Tatuil",
+        "Aducerea moaștelor Sfintei Mucenițe Evdochia"
+      ]
+    },
+    "2026-08-05": {
+      "zi": 5,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Cuvios Ioan Iacob de la Neamț",
+        "Înainte-prăznuirea Schimbării la Față a Domnului",
+        "Sfânta Nona, mama Sfântului Grigorie Teologul",
+        "Sfântul Ierarh Fabian, episcopul Romei",
+        "Sfântul Mucenic Evsignie"
+      ]
+    },
+    "2026-08-06": {
+      "zi": 6,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Schimbarea la Față a Domnului"
+      ],
+      "dezlegări": ["peste"]
+    },
+    "2026-08-07": {
+      "zi": 7,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Cuvios Pafnutie – Pârvu Zugravul",
+        "Sfânta Cuvioasă Teodora de la Sihla",
+        "După-prăznuirea Schimbării la Față a Domnului",
+        "Sfântul Antonie de la Optina",
+        "Sfânta Irina, Împărăteasa",
+        "Sfântul Sfinţit Mucenic Narcis, Patriarhul Ierusalimului",
+        "Sfântul Cuvios Mucenic Dometie Persul",
+        "Sfântul Cuvios Nicanor",
+        "Cinstirea Sfintei Icoane a Maicii Domnului de la Valaam"
+      ]
+    },
+    "2026-08-08": {
+      "zi": 8,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfântul Preot Mucenic Alexandru din Basarabia",
+        "Sfântul Ierarh Calinic al Edessei",
+        "Sfântul Ierarh Emilian Mărturisitorul, Episcopul Cizicului",
+        "Sfântul Ierarh Miron, Episcopul Cretei",
+        "Cinstirea Sfintei Icoane a Maicii Domnului de pe Tolga (Tolgska)"
+      ]
+    },
+    "2026-08-09": {
+      "zi": 9,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Apostol Matia",
+        "Sfântul Mucenic Antonin",
+        "Sfinții 10 Mucenici Mărturisitori pentru icoana lui Hristos",
+        "Duminica a 10-a după Rusalii (Vindecarea lunaticului) "
+      ]
+    },
+    "2026-08-10": {
+      "zi": 10,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Mucenic Ipolit",
+        "Sfântul Sfințit Mucenic Xist, Episcopul Romei",
+        "Sfântul Mucenic Laurențiu Arhidiaconul"
+      ]
+    },
+    "2026-08-11": {
+      "zi": 11,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Ierarh Nifon, Patriarhul Constantinopolului",
+        "Sfântul Mare Mucenic Evplu, Arhidiaconul"
+      ]
+    },
+    "2026-08-12": {
+      "zi": 12,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Mucenic Fotie",
+        "Sfântul Mucenic Anichit",
+        "Sfântul Mucenic Capiton",
+        "Sfântul Mucenic Pamfil",
+        "Sfântul Cuvios Palamon"
+      ]
+    },
+    "2026-08-13": {
+      "zi": 13,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Odovania Praznicului Schimbării la Faţă a Domnului",
+        "Mutarea moaștelor Sfântului Cuvios Maxim Mărturisitorul",
+        "Sfântul Ierarh Tihon din Zadonsk",
+        "Sfântul Cuvios Dositei",
+        "Sfântul Cuvios Dorotei",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „cu șapte săgeţi”",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Minsk",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „a pătimirilor”"
+      ]
+    },
+    "2026-08-14": {
+      "zi": 14,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Înainte-prăznuirea Adormirii Maicii Domnului",
+        "Sfântul Proroc Miheia",
+        "Cinstirea Sfintei Icoane a Maicii Domnului „Sfătuitoarea”",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Narva"
+      ]
+    },
+    "2026-08-15": {
+      "zi": 15,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Adormirea Maicii Domnului",
+        "Cinstirea Sfintei Icoane a Maicii Domnului „Panaghia Soumela”",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Agiasos",
+        "Cinstirea Sfintei Icoane a Maicii Domnului „Neamonitissa” de la Mănăstirea Nea Moni din Chios"
+      ]
+    },
+    "2026-08-16": {
+      "zi": 16,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfinții Martiri Brâncoveni: Constantin Vodă cu cei patru fii ai săi și sfetnicul Ianache",
+        "Sfânta Doamnă Maria Brâncoveanu",
+        "Sfântul Cuvios Iosif de la Văratec",
+        "Sfântul Cuvios Gherasim din Kefalonia",
+        "Aducerea Sfintei Mahrame a Domnului din Edesa la Constantinopol",
+        "Sfântul Mucenic Diomid",
+        "Sfântul Cuvios Ioachim Osogovsky",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Mănăstirea Sfântul Teodor",
+        "Duminica a 11-a după Rusalii (Pilda datornicului nemilostiv) "
+      ]
+    },
+    "2026-08-17": {
+      "zi": 17,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Gheorghe Pelerinul",
+        "Sfânta Cuvioasă Nazaria de la Văratec",
+        "Sfânta Cuvioasă Olimpiada de la Văratec",
+        "Sfânta Cuvioasă Elisabeta (Safta) Brâncoveanu de la Văratec",
+        "Sfântul Alipie, iconarul",
+        "Sfântul Mucenic Ciprian",
+        "Sfântul Mucenic Straton",
+        "Sfântul Mucenic Tirs",
+        "Sfântul Mucenic Miron",
+        "Sfântul Cuvios Atanasie Hamakiotis",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Sven"
+      ]
+    },
+    "2026-08-18": {
+      "zi": 18,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Cuvios Ioan de la Rila",
+        "Sfinții Cuvioși Barnaba și Sofronie",
+        "Sfântul Mucenic Lavru",
+        "Sfântul Mucenic Flor",
+        "Sfântul Mucenic Serapion",
+        "Sfântul Mucenic Ermi",
+        "Sfântul Mucenic Leon",
+        "Sfântul Cuvios Arsenie din Paros",
+        "Sfântul Mucenic Polien",
+        "Cinstirea Sfintei Icoane a Maicii Domnului „Pantanassa” – izbăvitoarea de cancer"
+      ]
+    },
+    "2026-08-19": {
+      "zi": 19,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Mucenic Andrei Stratilat",
+        "Sfântul Sebaldus, ocrotitorul orașului Nürnberg",
+        "Sfântul Mucenic Agapie",
+        "Sfântul Mucenic Timotei",
+        "Sfânta Muceniţă Tecla",
+        "Sfântul Cuvios Teofan cel Nou de la Dohiariu, făcătorul de minuni",
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Don"
+      ]
+    },
+    "2026-08-20": {
+      "zi": 20,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Proroc Samuel",
+        "Sfântul Mucenic Eliodor",
+        "Sfântul Mucenic Sever",
+        "Sfântul Mucenic Teoharie"
+      ]
+    },
+    "2026-08-21": {
+      "zi": 21,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Mucenic Donat diaconul",
+        "Sfântul Mucenic Romul preotul",
+        "Sfântul Mucenic Silvan diaconul",
+        "Sfântul Mucenic Venust",
+        "Sfântul Apostol Tadeu",
+        "Sfânta Muceniță Vasa, cu fiii ei"
+      ]
+    },
+    "2026-08-22": {
+      "zi": 22,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Cinstirea Sfintei Icoane a Maicii Domnului din Georgia",
+        "Sfântul Mucenic Severian",
+        "Sfântul Mucenic Achindin",
+        "Sfântul Mucenic Teoprepie",
+        "Sfântul Mucenic Zinon",
+        "Sfântul Mucenic Or",
+        "Sfânta Muceniță Antuza",
+        "Sfântul Mucenic Irineu",
+        "Sfântul Mucenic Agatonic",
+        "Sfântul Mucenic Zotic"
+      ]
+    },
+    "2026-08-23": {
+      "zi": 23,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Mucenic Lup",
+        "Odovania Praznicului Adormirii Maicii Domnului",
+        "Sfântul Sfințit Mucenic Irineu, Episcopul de Lugdunum",
+        "Cinstirea Sfintei Icoane a Maicii Domnului de la Mega Spileo (Megalospilaiotissa)",
+        "Sfântul Ierarh Calinic, Patriarhul Constantinopolului",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Panaghia Xenia”",
+        "Duminica a 12-a după Rusalii (Tânărul cel bogat) "
+      ]
+    },
+    "2026-08-24": {
+      "zi": 24,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Sfințit Mucenic Cosma Etolul",
+        "Mutarea moaștelor Sfântului Ierarh Dionisie din Zakynthos",
+        "Arătarea Maicii Domnului Sfântului Serghie de Radonej",
+        "Sfântul Mucenic Tation",
+        "Sfântul Sfințit Mucenic Eutihie",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „a Sfântului Petru, Mitropolitul Moscovei”"
+      ]
+    },
+    "2026-08-25": {
+      "zi": 25,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Aducerea moaștelor Sfântului Apostol Bartolomeu",
+        "Sfântul Apostol Tit",
+        "Sfântul Ioan Carpatiul"
+      ]
+    },
+    "2026-08-26": {
+      "zi": 26,
+      "zi_saptamana": "M",
+      "sfinți": [
+        "Sfântul Mucenic Adrian",
+        "Sfânta Muceniță Natalia, soția Sfântului Mucenic Adrian",
+        "Sfântul Mucenic Atic",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului „Cea iubitoare” a Peșterilor din Pskov",
+        "Cinstirea Sfintei Icoanei a Maicii Domnului din Vladimir"
+      ]
+    },
+    "2026-08-27": {
+      "zi": 27,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sfântul Mucenic Fanurie",
+        "Sfântul Cuvios Pimen cel Mare",
+        "Sfântul Ierarh Osie, Episcopul Cordobei",
+        "Sfânta Muceniță Eutalia"
+      ]
+    },
+    "2026-08-28": {
+      "zi": 28,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sfântul Cuvios Iosif Isihastul",
+        "Sfântul Cuvios Moise Etiopianul",
+        "Sfânta Muceniță Suzana, regina Georgiei",
+        "Sfânta Ana Prorocița, fiica lui Fanuel",
+        "Sfântul Mucenic Diomid",
+        "Dreptul Iezechia",
+        "Sfântul Mucenic Lavrentie",
+        "Soborul Sfinților Cuvioși din Lavra Pecerska cu moaște în „Peșterile de Departe”"
+      ]
+    },
+    "2026-08-29": {
+      "zi": 29,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Tăierea Capului Sfântului Proroc Ioan Botezătorul"
+      ],
+      "tip":"post"
+    },
+    "2026-08-30": {
+      "zi": 30,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sfântul Ierarh Ioan de la Râșca și Secu, Episcopul Romanului",
+        "Sfântul Ierarh Varlaam, Mitropolitul Moldovei",
+        "Sfântul Ierarh Alexandru, Patriarhul Constantinopolului",
+        "Sfântul Alexandru din Svir",
+        "Sfântul Alexandru Nevski",
+        "Sfântul Ierarh Pavel cel Nou, Patriarhul Constantinopolului",
+        "Sfântul Ierarh Ioan, Patriarhul Constantinopolului",
+        "Cinstirea Icoanei Maicii Domnului de la Craiova",
+        "Duminica a 13-a după Rusalii (Pilda lucrătorilor celor răi)"
+      ]
+    },
+    "2026-08-31": {
+      "zi": 31,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfântul Cuvios Macarie Protopsaltul",
+        "Așezarea în raclă a brâului Maicii Domnului",
+        "Sfântul Mucenic Iraclie",
+        "Sfântul Mucenic Mina",
+        "Sfântul Mucenic Faust",
+        "Sfântul Mucenic Andrei"
+      ]
+    }
   }
-}
 }

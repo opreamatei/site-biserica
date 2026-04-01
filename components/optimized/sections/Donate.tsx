@@ -143,27 +143,27 @@ export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
   const popOutElement = useRef<HTMLDivElement>(null);
   const paymentSectionRef = useRef<HTMLDivElement>(null);
 
-  useEffect(()=>{
-    const click_event = (ev: MouseEvent)=>{
+  useEffect(() => {
+    const click_event = (ev: MouseEvent) => {
       const el = popOutElement.current;
-      if(!el) return;
-      
-      const {x, y} = {x : ev.clientX, y : ev.clientY};
+      if (!el) return;
+
+      const { x, y } = { x: ev.clientX, y: ev.clientY };
       const { left, right, top, bottom } = el.getBoundingClientRect();
 
-      if (!(x > left && x < right && y > top && y < bottom)){
+      if (!(x > left && x < right && y > top && y < bottom)) {
         setShowPopup(false);
       }
     }
 
     window.addEventListener('mousedown', click_event);
-    return ()=>{
+    return () => {
       window.removeEventListener('mousedown', click_event);
     }
   }, []);
 
   // Disable page scroll when popup is open
-useEffect(() => {
+  useEffect(() => {
     setPortalReady(true);
   }, []);
 
@@ -185,7 +185,7 @@ useEffect(() => {
       body.style.overflow = "";
 
     };
-}, [showPopup]);
+  }, [showPopup]);
 
   useEffect(() => {
     if (!showPopup) {
@@ -487,26 +487,27 @@ useEffect(() => {
     <section
       ref={sectionRef}
       className="relative z-2 w-screen text-lg text-black bg-[#171813] mask-top-fade"
-  
-      >
+
+    >
       <div
         className="sticky top-0 h-screen w-screen overflow-hidden bg-black"
         style={
-          !isMobile ? { height: pinnedHeight ,
-          WebkitMaskImage:
-            "linear-gradient(to top, black 0%, black calc(100% - 200px), transparent 100%)",
-          maskImage:
-            "linear-gradient(to top, black 0%, black calc(100% - 200px), transparent 100%)",
-          WebkitMaskSize: "100% 100%",
-          maskSize: "100% 100%",
+          !isMobile ? {
+            height: pinnedHeight,
+            WebkitMaskImage:
+              "linear-gradient(to top, black 0%, black calc(100% - 200px), transparent 100%)",
+            maskImage:
+              "linear-gradient(to top, black 0%, black calc(100% - 200px), transparent 100%)",
+            WebkitMaskSize: "100% 100%",
+            maskSize: "100% 100%",
 
-        } : {
-          height: pinnedHeight
-        }}
+          } : {
+            height: pinnedHeight
+          }}
 
       >
 
-      {/* <div className="absolute top-0 md:block hidden w-full h-15 overflow-hidden z-1">
+        {/* <div className="absolute top-0 md:block hidden w-full h-15 overflow-hidden z-1">
         <Image
           src="/patterns/top-bar.png"
           alt="top-bar-pattern"
@@ -536,19 +537,19 @@ useEffect(() => {
             alt="background"
           />
           <div>
-          <Image
-            fill
-            sizes="100vw"
-            src="/assets/poza-wide-md.png"
-            priority
-            quality={100}
-            className="object-cover object-top hidden md:block  z-2"
-            alt="background"
-          />
+            <Image
+              fill
+              sizes="100vw"
+              src="/assets/poza-wide-md.png"
+              priority
+              quality={100}
+              className="object-cover object-top hidden md:block  z-2"
+              alt="background"
+            />
             <div className="absolute inset-0 bg-black/50 z-2 hidden md:block " />
 
           </div>
-            
+
           <div className="absolute inset-0 z-0 md:hidden md:scale-250 scale-180 left-1/2 top-2/3 -translate-1/2">
             <Image
               fill
@@ -575,27 +576,27 @@ useEffect(() => {
                 className="max-w-[60vw] text-base sm:text-lg text-white/90 z-13 "
               >
                 <p className="mb-8 text-shadow-xs text-shadow-black">
-                „Foișorul” Smarandei Doamna, numit și al Mavrocordaților, are atâta nevoie
-                de ajutorul tău, privitorule și omule drag, pentru a renaște din negura vremii.
-                  </p>
-                  <motion.div
-                    whileHover={{scale : 1.1}}
-                    onTap={() => setShowPopup(true)}
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}
-                  >
-                    <IconFrame
-                      bgColor="bg-[#786543]"
-                      textColor="text-[#ddd] text-sm w-fit px-2 md:max-w-60 mx-auto active:brightness-90
+                  „Foișorul” Smarandei Doamna, numit și al Mavrocordaților, are atâta nevoie
+                  de ajutorul tău, privitorule și omule drag, pentru a renaște din negura vremii.
+                </p>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  onTap={() => setShowPopup(true)}
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
+                >
+                  <IconFrame
+                    bgColor="bg-[#786543]"
+                    textColor="text-[#ddd] text-sm w-fit px-2 md:max-w-60 mx-auto active:brightness-90
 "
-                      >
-                      <p
-                      className={`py-1 px-2 p-2 z-2 transition-transform duration-150 inline-flex ${isPressed ? "scale-95" : "scale-100"}`} 
-                      >
-                        Detalii pentru donație
-                      </p>
-                    </IconFrame>
-                  </motion.div>
+                  >
+                    <p
+                      className={`py-1 px-2 p-2 z-2 transition-transform duration-150 inline-flex ${isPressed ? "scale-95" : "scale-100"}`}
+                    >
+                      Detalii pentru donație
+                    </p>
+                  </IconFrame>
+                </motion.div>
               </motion.p>
               {/* <motion.p
                 style={{ opacity: subtitleOpacity, y: subtitleY }}
@@ -625,281 +626,183 @@ useEffect(() => {
               style={{ WebkitOverflowScrolling: "touch" }}
               onClick={(e) => e.stopPropagation()} // prevents closing when tapping inside
             >
-            <button
-              onClick={() => setShowPopup(false)}
-              className="absolute z-5 top-3 right-3 w-4 h-4  flex items-center justify-center 
+              <button
+                onClick={() => setShowPopup(false)}
+                className="absolute z-5 top-3 right-3 w-4 h-4  flex items-center justify-center 
   cursor-pointer hover:scale-110 transition z-6"
-            >
-              <Image
-                src="/icons/close-circle.svg"
-                alt="Close"
-                width={24}
-                height={24}
-                className="w-full h-full object-contain"
-              />
-            </button>
+              >
+                <Image
+                  src="/icons/close-circle.svg"
+                  alt="Close"
+                  width={24}
+                  height={24}
+                  className="w-full h-full object-contain"
+                />
+              </button>
 
 
-            <p className="text-base leading-relaxed pt-2">
-              Dacă ai dare
+              <p className="text-base leading-relaxed pt-2">
+                Dacă ai dare
                 de suflet și dare de mână poți ajuta chiar acum, lăsând darul tău
                 <strong> aici </strong>.
                 <br />
                 Pentru depunerile ce le efectuați, contul Bisericii Foișor este
-              <strong className="text-[#C59D30] animate-pulse"> RO77RNCB0069148541980001 </strong> deschis la BCR, CIF 13360648.
-              <br /><br />
-              Pentru sumele ce le depuneți vă rugăm să menționați la detalii:
-              <strong className="text-[#C59D30]"> DONAȚIE </strong>.
-            </p>
+                <strong className="text-[#C59D30] animate-pulse"> RO77RNCB0069148541980001 </strong> deschis la BCR, CIF 13360648.
+                <br /><br />
+                Pentru sumele ce le depuneți vă rugăm să menționați la detalii:
+                <strong className="text-[#C59D30]"> DONAȚIE </strong>.
+              </p>
             <div className="mt-6 flex flex-col gap-4">
-              {!hasActiveSubscription && (
-                <div className="flex flex-col gap-3">
-                <p className="text-xs uppercase tracking-wide text-white/70">Donați rapid</p>
-                <div className="grid grid-cols-2 gap-3">
-                  {DONATION_OPTIONS.map((amount, index) => {
-                    const isLastOdd =
-                      DONATION_OPTIONS.length % 2 === 1 &&
-                      index === DONATION_OPTIONS.length - 1;
-                    return (
-                      <button
-                      key={amount}
-                      type="button"
-                      onClick={() => void handleDonate(amount, "preset")}
-                      disabled={donationLoadingAmount !== null || !stripePromise}
-                      className={`rounded-lg border border-white/20 bg-[#2a2a46] px-3 py-2 text-sm font-semibold text-white transition ${
-                        donationLoadingAmount === amount
-                          ? "opacity-70"
-                          : "hover:bg-[#35355a]"
-                      } ${donationLoadingAmount && donationLoadingAmount !== amount ? "opacity-50" : ""} ${
-                        isLastOdd
-                          ? "col-span-2 mx-auto w-full max-w-[calc((100%-0.75rem)/2)]"
-                          : ""
-                      }`}
-                    >
-                      {donationLoadingAmount === amount
-                        ? "Se încarcă..."
-                        : `Donează ${amount} RON`}
-                      </button>
-                    );
-                  })}
-                </div>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="number"
-                    min={1}
-                    inputMode="numeric"
-                    value={quickCustom}
-                    onChange={(event) => {
-                      setQuickCustom(event.target.value);
-                      setQuickError(null);
-                      setNotice(null);
-                    }}
-                    placeholder="Sumă personalizată (RON)"
-                    className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white placeholder:text-white/40"
-                  />
-                </div>
-                {quickError && (
-                  <p className="text-xs text-red-200">{quickError}</p>
-                )}
-                {quickCustom.trim().length > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => void handleQuickCustomConfirm()}
-                    disabled={donationLoadingAmount !== null || !stripePromise}
-                    className="w-full rounded-lg bg-[#C59D30] px-3 py-2 text-sm font-semibold text-black transition hover:bg-[#d5ad3a] disabled:cursor-not-allowed disabled:opacity-70"
-                  >
-                    {donationLoadingAmount !== null ? "Se încarcă..." : "Confirmă donația"}
-                  </button>
-                )}
-                </div>
-              )}
 
-              <div className="flex flex-col gap-3 border-t border-white/10 pt-4">
-                <p className="text-xs uppercase tracking-wide text-white/70">
-                  Donație recurentă
-                </p>
-                {hasActiveSubscription && (
-                  <p className="text-xs text-white/70">Puteți oricând modifica suma.</p>
-                )}
-                <div className="grid grid-cols-2 gap-3">
-                  {RECURRING_OPTIONS.map((amount, index) => {
-                    const isLastOdd =
-                      RECURRING_OPTIONS.length % 2 === 1 &&
-                      index === RECURRING_OPTIONS.length - 1;
-                    return (
-                      <button
-                      key={amount}
-                      type="button"
-                      onClick={() => {
-                        setRecurringCustom("");
-                        void handleRecurring(amount);
-                      }}
-                      disabled={donationLoadingAmount !== null || !stripePromise}
-                      className={`rounded-lg border border-white/20 bg-[#1f2a3f] px-3 py-2 text-sm font-semibold text-white transition ${
-                        recurringAmount === amount
-                          ? "ring-2 ring-[#C59D30]"
-                          : "hover:bg-[#2a3550]"
-                      } ${
-                        isLastOdd
-                          ? "col-span-2 mx-auto w-full max-w-[calc((100%-0.75rem)/2)]"
-                          : ""
-                      }`}
-                    >
-                      {donationLoadingAmount === amount
-                        ? "Se încarcă..."
-                        : `${amount} RON`}
-                      </button>
-                    );
-                  })}
-                </div>
-                <div className="flex items-center gap-2">
-                  <input
-                    type="number"
-                    min={1}
-                    inputMode="numeric"
-                    value={recurringCustom}
-                    onChange={(event) => {
-                      setRecurringCustom(event.target.value);
-                      setRecurringAmount(null);
-                      setRecurringConfirm(false);
-                      setRecurringError(null);
-                    }}
-                    placeholder="Sumă personalizată (RON)"
-                    className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white placeholder:text-white/40"
-                  />
-                </div>
-                {recurringError && (
-                  <p className="text-xs text-red-200">{recurringError}</p>
-                )}
-                {!hasActiveSubscription && (recurringAmount !== null || recurringCustom.trim().length > 0) ? (
-                  <button
-                    type="button"
-                    onClick={() => void handleRecurringConfirm()}
-                    disabled={donationLoadingAmount !== null || !stripePromise}
-                    className="w-full rounded-lg bg-[#C59D30] px-3 py-2 text-sm font-semibold text-black transition hover:bg-[#d5ad3a] disabled:cursor-not-allowed disabled:opacity-70"
-                  >
-                    Confirmă donația lunară
-                  </button>
-                ) : (
-                  hasActiveSubscription && (
-                    <button
-                      type="button"
-                      onClick={() => void handleUpdateSubscription()}
-                      disabled={donationLoadingAmount !== null}
-                      className="w-full rounded-lg bg-[#C59D30] px-3 py-2 text-sm font-semibold text-black transition hover:bg-[#d5ad3a] disabled:cursor-not-allowed disabled:opacity-70"
-                    >
-                      Modifică suma
-                    </button>
-                  )
-                )}
+  {/* ================= RECURRING FIRST ================= */}
+  {paymentMode !== "one-time" && (
+    <div className="flex flex-col gap-3 border-white/10">
+      <p className="text-xs uppercase tracking-wide text-white/70">
+        Donație recurentă
+      </p>
 
-                {!hasActiveSubscription && !session?.user && recurringConfirm && paymentMode === "recurring" && (
-                  <div className="mt-2 flex flex-col gap-2 rounded-lg border border-white/10 bg-black/20 p-3">
-                    <input
-                      type="email"
-                      value={authEmail}
-                      onChange={(event) => setAuthEmail(event.target.value)}
-                      placeholder="Email"
-                      className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white placeholder:text-white/40"
-                    />
-                    <input
-                      type="password"
-                      value={authPassword}
-                      onChange={(event) => setAuthPassword(event.target.value)}
-                      placeholder="Parola"
-                      className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white placeholder:text-white/40"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => void handleAuthAndSubscribe()}
-                      disabled={authBusy}
-                      className="rounded-lg bg-[#C59D30] px-3 py-2 text-sm font-semibold text-black transition hover:bg-[#d5ad3a] disabled:cursor-not-allowed disabled:opacity-70"
-                    >
-                      {authBusy ? "Se procesează..." : "Continuă"}
-                    </button>
-                  </div>
-                )}
+      <div className="grid grid-cols-2 gap-3">
+        {RECURRING_OPTIONS.map((amount, index) => {
+          const isLastOdd =
+            RECURRING_OPTIONS.length % 2 === 1 &&
+            index === RECURRING_OPTIONS.length - 1;
 
-                {session?.user && subscriptionLoading && (
-                  <p className="text-xs text-white/60">Se verifică...</p>
-                )}
-                {session?.user && hasActiveSubscription && !cancelConfirm && (
-                  <button
-                    type="button"
-                    onClick={() => setCancelConfirm(true)}
-                    className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-xs font-semibold text-white/80 transition hover:bg-white/10"
-                  >
-                    Anulează donația lunară
-                  </button>
-                )}
-                {session?.user && hasActiveSubscription && cancelConfirm && (
-                  <div className="flex flex-col gap-2 rounded-lg border border-white/10 bg-black/20 p-3">
-                    <p className="text-xs text-white/70">Doriți să anulați donația lunară?</p>
-                    <div className="flex gap-2">
-                      <button
-                        type="button"
-                        onClick={() => setCancelConfirm(false)}
-                        className="flex-1 rounded-lg bg-[#C59D30] px-3 py-2 text-xs font-semibold text-black transition hover:bg-[#d5ad3a]"
-                      >
-                        Renunță
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => void handleCancelSubscription()}
-                        className="flex-1 rounded-lg border border-white/20 bg-transparent px-3 py-2 text-xs font-semibold text-white/80 transition hover:bg-white/10"
-                      >
-                        Da, anulez
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
+          return (
+            <button
+              key={amount}
+              type="button"
+              onClick={() => {
+                setRecurringCustom("");
+                setPaymentMode("recurring"); // select recurring
+                void handleRecurring(amount);
+              }}
+              disabled={donationLoadingAmount !== null || !stripePromise}
+              className={`rounded-lg border border-white/20 bg-[#1f2a3f] px-3 py-2 text-sm font-semibold text-white transition ${
+                recurringAmount === amount ? "ring-2 ring-[#C59D30]" : "hover:bg-[#2a3550]"
+              } ${
+                isLastOdd ? "col-span-2 mx-auto w-full max-w-[calc((100%-0.75rem)/2)]" : ""
+              }`}
+            >
+              {donationLoadingAmount === amount ? "Se încarcă..." : `${amount} RON`}
+            </button>
+          );
+        })}
+      </div>
 
-              {!stripePromise && (
-                <p className="text-xs text-red-200">Stripe nu este configurat.</p>
-              )}
-              {notice && (
-                <div
-                  className={`mb-4 rounded-lg border px-4 py-2 text-sm ${
-                    notice.type === "success"
-                      ? "border-emerald-500/50 bg-emerald-500/25 text-emerald-50"
-                      : "border-red-500/50 bg-red-500/25 text-red-50"
-                  }`}
-                >
-                  {notice.text}
-                </div>
-              )}
-              <div ref={paymentSectionRef} />
-              {!hasActiveSubscription && clientSecret && donationAmount !== null && stripePromise && (
-                <Elements
-                  stripe={stripePromise}
-                  options={{ clientSecret, appearance: STRIPE_APPEARANCE, locale: "ro" }}
-                >
-                  <DonationForm
-                    amount={donationAmount}
-                    submitLabel={
-                      paymentMode === "recurring"
-                        ? `Donează ${donationAmount} RON/lună`
-                        : `Plătește ${donationAmount} RON`
-                    }
-                    onSuccess={(message, didSucceed) => {
-                      pushNotice("success", message);
-                      if (didSucceed) {
-                        setClientSecret(null);
-                        setDonationAmount(null);
-                        setPaymentMode(null);
-                        setRecurringConfirm(false);
-                        setRecurringAmount(null);
-                        setRecurringCustom("");
-                        setQuickError(null);
-                        setRecurringError(null);
-                      }
-                    }}
-                    onError={(message) => pushNotice("error", message)}
-                  />
-                </Elements>
-              )}
-            </div>
+      <input
+        type="number"
+        min={1}
+        value={recurringCustom}
+        onChange={(e) => {
+          setRecurringCustom(e.target.value);
+          setRecurringAmount(null);
+        }}
+        placeholder="Sumă personalizată"
+        className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white"
+      />
+
+      {(recurringAmount !== null || recurringCustom.trim().length > 0) && (
+        <button
+          onClick={() => void handleRecurringConfirm()}
+          className="w-full rounded-lg bg-[#C59D30] px-3 py-2 text-black font-semibold"
+        >
+          Confirmă donația lunară
+        </button>
+      )}
+
+      {/* 🔥 STRIPE RECURRING */}
+      {paymentMode === "recurring" && clientSecret && donationAmount && stripePromise && (
+        <Elements stripe={stripePromise} options={{ clientSecret, appearance: STRIPE_APPEARANCE, locale: "ro" }}>
+          <DonationForm
+            amount={donationAmount}
+            submitLabel={`Donează ${donationAmount} RON/lună`}
+            onSuccess={(message, didSucceed) => {
+              pushNotice("success", message);
+              if (didSucceed) {
+                setClientSecret(null);
+                setDonationAmount(null);
+                setPaymentMode(null);
+                setRecurringConfirm(false);
+                setRecurringAmount(null);
+                setRecurringCustom("");
+                setQuickError(null);
+                setRecurringError(null);
+              }
+            }}
+            onError={(message) => pushNotice("error", message)}
+          />
+        </Elements>
+      )}
+    </div>
+  )}
+
+  {/* ================= QUICK DONATION ================= */}
+  {paymentMode !== "recurring" && (
+    <div className="flex flex-col gap-3 border-t border-white/10 pt-4">
+      <p className="text-xs uppercase tracking-wide text-white/70">
+        Donați rapid
+      </p>
+
+      <div className="grid grid-cols-2 gap-3">
+        {DONATION_OPTIONS.map((amount, index) => {
+          const isLastOdd =
+            DONATION_OPTIONS.length % 2 === 1 &&
+            index === DONATION_OPTIONS.length - 1;
+
+          return (
+            <button
+              key={amount}
+              onClick={() => {
+                setPaymentMode("one-time"); // select quick
+                void handleDonate(amount, "preset");
+              }}
+              className={`rounded-lg border border-white/20 bg-[#2a2a46] px-3 py-2 text-white ${
+                isLastOdd ? "col-span-2" : ""
+              }`}
+            >
+              Donează {amount} RON
+            </button>
+          );
+        })}
+      </div>
+
+      <input
+        type="number"
+        value={quickCustom}
+        onChange={(e) => setQuickCustom(e.target.value)}
+        placeholder="Sumă personalizată"
+        className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white"
+      />
+
+      {quickCustom.trim().length > 0 && (
+        <button
+          onClick={() => void handleQuickCustomConfirm()}
+          className="w-full rounded-lg bg-[#C59D30] px-3 py-2 text-black font-semibold"
+        >
+          Confirmă donația
+        </button>
+      )}
+
+      {paymentMode === "one-time" && clientSecret && donationAmount && stripePromise && (
+        <Elements stripe={stripePromise} options={{ clientSecret }}>
+          <DonationForm
+            amount={donationAmount}
+            submitLabel={`Plătește ${donationAmount} RON`}
+            onSuccess={(message, didSucceed) => {
+              pushNotice("success", message);
+              if (didSucceed) {
+                setClientSecret(null);
+                setDonationAmount(null);
+                setPaymentMode(null); // reset modul după succes
+              }
+            }}
+            onError={(message) => pushNotice("error", message)}
+          />
+        </Elements>
+      )}
+    </div>
+  )}
+</div>
             </div>
           </div>,
           document.body,

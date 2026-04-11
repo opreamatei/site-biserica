@@ -629,7 +629,7 @@ export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
               <button
                 onClick={() => setShowPopup(false)}
                 className="absolute z-5 top-3 right-3 w-4 h-4  flex items-center justify-center 
-  cursor-pointer hover:scale-110 transition z-6"
+      cursor-pointer hover:scale-110 transition z-6"
               >
                 <Image
                   src="/icons/close-circle.svg"
@@ -652,157 +652,154 @@ export default function DonatePage({ opacity = 1, x = 0, y = 0 }) {
                 Pentru sumele ce le depuneți vă rugăm să menționați la detalii:
                 <strong className="text-[#C59D30]"> DONAȚIE </strong>.
               </p>
-            <div className="mt-6 flex flex-col gap-4">
+              <div className="mt-6 flex flex-col gap-4">
 
-  {/* ================= RECURRING FIRST ================= */}
-  {paymentMode !== "one-time" && (
-    <div className="flex flex-col gap-3 border-white/10">
-      <p className="text-xs uppercase tracking-wide text-white/70">
-        Donație recurentă
-      </p>
+                {/* ================= RECURRING FIRST ================= */}
+                {paymentMode !== "one-time" && (
+                  <div className="flex flex-col gap-3 border-white/10">
+                    <p className="text-xs uppercase tracking-wide text-white/70">
+                      Donație recurentă
+                    </p>
 
-      <div className="grid grid-cols-2 gap-3">
-        {RECURRING_OPTIONS.map((amount, index) => {
-          const isLastOdd =
-            RECURRING_OPTIONS.length % 2 === 1 &&
-            index === RECURRING_OPTIONS.length - 1;
+                    <div className="grid grid-cols-2 gap-3">
+                      {RECURRING_OPTIONS.map((amount, index) => {
+                        const isLastOdd =
+                          RECURRING_OPTIONS.length % 2 === 1 &&
+                          index === RECURRING_OPTIONS.length - 1;
 
-          return (
-            <button
-              key={amount}
-              type="button"
-              onClick={() => {
-                setRecurringCustom("");
-                setPaymentMode("recurring"); // select recurring
-                void handleRecurring(amount);
-              }}
-              disabled={donationLoadingAmount !== null || !stripePromise}
-              className={`rounded-lg border border-white/20 bg-[#1f2a3f] px-3 py-2 text-sm font-semibold text-white transition ${
-                recurringAmount === amount ? "ring-2 ring-[#C59D30]" : "hover:bg-[#2a3550]"
-              } ${
-                isLastOdd ? "col-span-2 mx-auto w-full max-w-[calc((100%-0.75rem)/2)]" : ""
-              }`}
-            >
-              {donationLoadingAmount === amount ? "Se încarcă..." : `${amount} RON`}
-            </button>
-          );
-        })}
-      </div>
+                        return (
+                          <button
+                            key={amount}
+                            type="button"
+                            onClick={() => {
+                              setRecurringCustom("");
+                              setPaymentMode("recurring"); // select recurring
+                              void handleRecurring(amount);
+                            }}
+                            disabled={donationLoadingAmount !== null || !stripePromise}
+                            className={`rounded-lg border border-white/20 bg-[#1f2a3f] px-3 py-2 text-sm font-semibold text-white transition ${recurringAmount === amount ? "ring-2 ring-[#C59D30]" : "hover:bg-[#2a3550]"
+                              } ${isLastOdd ? "col-span-2 mx-auto w-full max-w-[calc((100%-0.75rem)/2)]" : ""
+                              }`}
+                          >
+                            {donationLoadingAmount === amount ? "Se încarcă..." : `${amount} RON`}
+                          </button>
+                        );
+                      })}
+                    </div>
 
-      <input
-        type="number"
-        min={1}
-        value={recurringCustom}
-        onChange={(e) => {
-          setRecurringCustom(e.target.value);
-          setRecurringAmount(null);
-        }}
-        placeholder="Sumă personalizată"
-        className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white"
-      />
+                    <input
+                      type="number"
+                      min={1}
+                      value={recurringCustom}
+                      onChange={(e) => {
+                        setRecurringCustom(e.target.value);
+                        setRecurringAmount(null);
+                      }}
+                      placeholder="Sumă personalizată"
+                      className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white"
+                    />
 
-      {(recurringAmount !== null || recurringCustom.trim().length > 0) && (
-        <button
-          onClick={() => void handleRecurringConfirm()}
-          className="w-full rounded-lg bg-[#C59D30] px-3 py-2 text-black font-semibold"
-        >
-          Confirmă donația lunară
-        </button>
-      )}
+                    {(recurringAmount !== null || recurringCustom.trim().length > 0) && (
+                      <button
+                        onClick={() => void handleRecurringConfirm()}
+                        className="w-full rounded-lg bg-[#C59D30] px-3 py-2 text-black font-semibold"
+                      >
+                        Confirmă donația lunară
+                      </button>
+                    )}
 
-      {/* 🔥 STRIPE RECURRING */}
-      {paymentMode === "recurring" && clientSecret && donationAmount && stripePromise && (
-        <Elements stripe={stripePromise} options={{ clientSecret, appearance: STRIPE_APPEARANCE, locale: "ro" }}>
-          <DonationForm
-            amount={donationAmount}
-            submitLabel={`Donează ${donationAmount} RON/lună`}
-            onSuccess={(message, didSucceed) => {
-              pushNotice("success", message);
-              if (didSucceed) {
-                setClientSecret(null);
-                setDonationAmount(null);
-                setPaymentMode(null);
-                setRecurringConfirm(false);
-                setRecurringAmount(null);
-                setRecurringCustom("");
-                setQuickError(null);
-                setRecurringError(null);
-              }
-            }}
-            onError={(message) => pushNotice("error", message)}
-          />
-        </Elements>
-      )}
-    </div>
-  )}
+                    {/* 🔥 STRIPE RECURRING */}
+                    {paymentMode === "recurring" && clientSecret && donationAmount && stripePromise && (
+                      <Elements stripe={stripePromise} options={{ clientSecret, appearance: STRIPE_APPEARANCE, locale: "ro" }}>
+                        <DonationForm
+                          amount={donationAmount}
+                          submitLabel={`Donează ${donationAmount} RON/lună`}
+                          onSuccess={(message, didSucceed) => {
+                            pushNotice("success", message);
+                            if (didSucceed) {
+                              setClientSecret(null);
+                              setDonationAmount(null);
+                              setPaymentMode(null);
+                              setRecurringConfirm(false);
+                              setRecurringAmount(null);
+                              setRecurringCustom("");
+                              setQuickError(null);
+                              setRecurringError(null);
+                            }
+                          }}
+                          onError={(message) => pushNotice("error", message)}
+                        />
+                      </Elements>
+                    )}
+                  </div>
+                )}
 
-  {/* ================= QUICK DONATION ================= */}
-  {paymentMode !== "recurring" && (
-    <div className="flex flex-col gap-3 border-t border-white/10 pt-4">
-      <p className="text-xs uppercase tracking-wide text-white/70">
-        Donați rapid
-      </p>
+                {/* ================= QUICK DONATION ================= */}
+                {paymentMode !== "recurring" && (
+                  <div className="flex flex-col gap-3 border-t border-white/10 pt-4">
+                    <p className="text-xs uppercase tracking-wide text-white/70">
+                      Donați rapid
+                    </p>
 
-      <div className="grid grid-cols-2 gap-3">
-        {DONATION_OPTIONS.map((amount, index) => {
-          const isLastOdd =
-            DONATION_OPTIONS.length % 2 === 1 &&
-            index === DONATION_OPTIONS.length - 1;
+                    <div className="grid grid-cols-2 gap-3">
+                      {DONATION_OPTIONS.map((amount, index) => {
+                        const isLastOdd =
+                          DONATION_OPTIONS.length % 2 === 1 &&
+                          index === DONATION_OPTIONS.length - 1;
 
-          return (
-            <button
-              key={amount}
-              onClick={() => {
-                setPaymentMode("one-time"); // select quick
-                void handleDonate(amount, "preset");
-              }}
-              className={`rounded-lg border border-white/20 bg-[#2a2a46] px-3 py-2 text-white ${
-                isLastOdd ? "col-span-2" : ""
-              }`}
-            >
-              Donează {amount} RON
-            </button>
-          );
-        })}
-      </div>
+                        return (
+                          <button
+                            key={amount}
+                            onClick={() => {
+                              setPaymentMode("one-time"); // select quick
+                              void handleDonate(amount, "preset");
+                            }}
+                            className={`rounded-lg border border-white/20 bg-[#2a2a46] px-3 py-2 text-white ${isLastOdd ? "col-span-2" : ""
+                              }`}
+                          >
+                            Donează {amount} RON
+                          </button>
+                        );
+                      })}
+                    </div>
 
-      <input
-        type="number"
-        value={quickCustom}
-        onChange={(e) => setQuickCustom(e.target.value)}
-        placeholder="Sumă personalizată"
-        className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white"
-      />
+                    <input
+                      type="number"
+                      value={quickCustom}
+                      onChange={(e) => setQuickCustom(e.target.value)}
+                      placeholder="Sumă personalizată"
+                      className="w-full rounded-lg border border-white/20 bg-transparent px-3 py-2 text-sm text-white"
+                    />
 
-      {quickCustom.trim().length > 0 && (
-        <button
-          onClick={() => void handleQuickCustomConfirm()}
-          className="w-full rounded-lg bg-[#C59D30] px-3 py-2 text-black font-semibold"
-        >
-          Confirmă donația
-        </button>
-      )}
+                    {quickCustom.trim().length > 0 && (
+                      <button
+                        onClick={() => void handleQuickCustomConfirm()}
+                        className="w-full rounded-lg bg-[#C59D30] px-3 py-2 text-black font-semibold"
+                      >
+                        Confirmă donația
+                      </button>
+                    )}
 
-      {paymentMode === "one-time" && clientSecret && donationAmount && stripePromise && (
-        <Elements stripe={stripePromise} options={{ clientSecret }}>
-          <DonationForm
-            amount={donationAmount}
-            submitLabel={`Plătește ${donationAmount} RON`}
-            onSuccess={(message, didSucceed) => {
-              pushNotice("success", message);
-              if (didSucceed) {
-                setClientSecret(null);
-                setDonationAmount(null);
-                setPaymentMode(null); // reset modul după succes
-              }
-            }}
-            onError={(message) => pushNotice("error", message)}
-          />
-        </Elements>
-      )}
-    </div>
-  )}
-</div>
+                    {paymentMode === "one-time" && clientSecret && donationAmount && stripePromise && (
+                      <Elements stripe={stripePromise} options={{ clientSecret }}>
+                        <DonationForm
+                          amount={donationAmount}
+                          submitLabel={`Plătește ${donationAmount} RON`}
+                          onSuccess={(message, didSucceed) => {
+                            pushNotice("success", message);
+                            if (didSucceed) {
+                              setClientSecret(null);
+                              setDonationAmount(null);
+                              setPaymentMode(null); // reset modul după succes
+                            }
+                          }}
+                          onError={(message) => pushNotice("error", message)}
+                        />
+                      </Elements>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
           </div>,
           document.body,

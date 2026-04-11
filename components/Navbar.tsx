@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { LINKS } from "@/app/constants";
-
-
+import DonateButton from "./DonateButton";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -31,6 +30,34 @@ export default function Navbar() {
           : "bg-[#b1967d00] h-[6rem] z-[60]"
           } transition-all duration-300 fixed`}
       >
+        {/* Logo */}
+        <div
+          className={`inset-x-0 absolute top-0 left-1/2 transition-all duration-300 -translate-x-1/2 h-full select-none ${open ? "" : "pt-2"
+            }`}
+        >
+          <div className="w-full flex justify-center h-4/5">
+            <Link
+              href="/"
+              className={`relative aspect-square h-full transition-all duration-300 ${open ? "invert-100 translate-y-5" : "invert-100"
+                }`}
+              onClick={() => setOpen(false)}
+            >
+              <Image src="/logo_negru_1.webp" alt="logo" fill />
+            </Link>
+          </div>
+        </div>
+
+        {/* Donate Button */}
+        <div
+          className={`absolute top-0 h-full animate-pulse flex items-center z-40
+    left-6 
+    lg:left-auto lg:right-30
+    ${open ? "translate-y-2" : ""}
+  `}
+        >
+          <DonateButton />
+        </div>
+
         {/* Menu Button */}
         <button
           onClick={() => setOpen(!open)}
@@ -55,21 +82,6 @@ export default function Navbar() {
               }`}
           />
         </button>
-
-        <div
-          className={`inset-x-0 absolute top-0 left-1/2 transition-all duration-300 -translate-x-1/2 h-full select-none ${open ? "" : "pt-2"
-            }`}
-        >
-          <div className="w-full flex justify-center h-4/5">
-            <Link
-              href="/"
-              className={`relative aspect-square h-full transition-all duration-300 ${open ? "invert-100 translate-y-5" : "invert-100"}`}
-              onClick={() => setOpen(false)}
-            >
-              <Image src="/logo_negru_1.webp" alt="logo" fill />
-            </Link>
-          </div>
-        </div>
       </div>
 
       <AnimatePresence>
@@ -102,16 +114,17 @@ export default function Navbar() {
                     className="text-2xl md:text-3xl lg:text-4xl hover:underline byzantin text-shadow-white/5 text-shadow-lg"
                   >
                     {label.split(" ").map((word, idx) => (
-                      <span key={idx} className="first-letter:text-[1.4em] byzantin mr-1">
+                      <span
+                        key={idx}
+                        className="first-letter:text-[1.4em] byzantin mr-1"
+                      >
                         {word}
                       </span>
                     ))}
                   </Link>
-
                 </motion.div>
               ))}
             </nav>
-
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,6 +1,11 @@
 [
-  {
-    "title": "Ziua iei",
+  { "title": "Ziua Copilului",
+    "date": "2025-06-01",
+    "location": "Strada Foișorului 119",
+    "slides": []
+},
+ {   
+  "title": "Ziua iei",
     "date": "2025-06-22",
     "location": "Strada Foișorului 119",
     "slides": [

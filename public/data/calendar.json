@@ -3084,7 +3084,9 @@
         "Sfântul Cuvios Ilarion",
         "Sfântul Cuvios Pahomie"
       ],
-      "dezlegări": ["peste"]
+      "dezlegări": [
+        "peste"
+      ]
     },
     "2026-05-07": {
       "zi": 7,
@@ -4171,7 +4173,9 @@
       "sfinți": [
         "Schimbarea la Față a Domnului"
       ],
-      "dezlegări": ["peste"]
+      "dezlegări": [
+        "peste"
+      ]
     },
     "2026-08-07": {
       "zi": 7,
@@ -4445,7 +4449,7 @@
       "sfinți": [
         "Tăierea Capului Sfântului Proroc Ioan Botezătorul"
       ],
-      "tip":"post"
+      "tip": "post"
     },
     "2026-08-30": {
       "zi": 30,
@@ -4472,6 +4476,1020 @@
         "Sfântul Mucenic Mina",
         "Sfântul Mucenic Faust",
         "Sfântul Mucenic Andrei"
+      ]
+    }
+  },
+  "2026-09": {
+    "2026-09-01": {
+      "zi": 1,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "† Începutul anului bisericesc",
+        "† Sf. Cuv. Dionisie Exiguul",
+        "Sf. Cuv. Simeon Stâlpnicul",
+        "Sf. 40 de Mucenițe din Adrianopol",
+        "Dreptul Iosua"
+      ]
+    },
+    "2026-09-02": {
+      "zi": 2,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sf. Mc. Mamant",
+        "Sf. Ier. Ioan Postitorul, patriarhul Constantinopolului"
+      ]
+    },
+    "2026-09-03": {
+      "zi": 3,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "†) Sf. Cuv. Neofit și Meletie de la Mănăstirea Stânișoara",
+        "Sf. Sfințit Mc. Antim, episcopul Nicomidiei",
+        "Sf. Cuv. Teoctist din Palestina"
+      ]
+    },
+    "2026-09-04": {
+      "zi": 4,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Sfințit Mc. Vavila, episcopul Antiohiei",
+        "Sf. Proroc Moise",
+        "Sf. Mc. Petroniu"
+      ]
+    },
+    "2026-09-05": {
+      "zi": 5,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sf. Proroc Zaharia și Dreapta Elisabeta, părinții Sf. Ioan Botezătorul"
+      ]
+    },
+    "2026-09-06": {
+      "zi": 6,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Pomenirea minunii din Colose a Sf. Arhanghel Mihail",
+        "Sf. Mc. Eudoxie"
+      ]
+    },
+    "2026-09-07": {
+      "zi": 7,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Înainte-prăznuirea Nașterii Maicii Domnului",
+        "†) Sf.Cuv. Simeon și Amfilohie de la Pângărați",
+        "Sf. Mc. Sozont",
+        "Sf. Cuv. Casiana Imnografa"
+      ]
+    },
+    "2026-09-08": {
+      "zi": 8,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Nașterea Maicii Domnului"
+      ]
+    },
+    "2026-09-09": {
+      "zi": 9,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sf. și Drepții dumnezeiești Părinți Ioachim și Ana",
+        "†) Sf. Cuv. Chiriac de la Tazlău",
+        "†) Sf. Cuv. Onufrie de la Vorona",
+        "Sf. Mc. Severian",
+        "Sf. Părinți de la Sinodul al III-lea Ecumenic"
+      ]
+    },
+    "2026-09-10": {
+      "zi": 10,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Mc. Minodora, Mitrodora şi Nimfodora",
+        "Sf. Împărăteasă Pulheria"
+      ]
+    },
+    "2026-09-11": {
+      "zi": 11,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Cuv. Teodora din Alexandria",
+        "Sf. Cuv. Eufrosin bucătarul"
+      ]
+    },
+    "2026-09-12": {
+      "zi": 12,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Odovania praznicului Nașterii Maicii Domnului",
+        "Sf. Mc. Avtonom, Macedonie și Teodul"
+      ]
+    },
+    "2026-09-13": {
+      "zi": 13,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Înainte-prăznuirea Înălţării Sfintei Cruci",
+        "† Târnosirea bisericii Învierii din Ierusalim",
+        "†) Sf. Cuv. Ioan de la Prislop",
+        "† Sf. Mc. din Dobrogea: Macrobie, Gordian, Ilie, Zotic, Lucian şi Valerian",
+        "Sf. Mc. Corneliu Sutaşul",
+        "Sf. Sfințit Mc. Ciprian, episcopul Cartaginei"
+      ]
+    },
+    "2026-09-14": {
+      "zi": 14,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Înălțarea Sfintei Cruci"
+      ]
+    },
+    "2026-09-15": {
+      "zi": 15,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "†) Sf. Ier. Iosif cel Nou de la Partoș, mitropolitul Banatului",
+        "† Sf. Mare Mc. Nichita",
+        "† Sf. Ier. Visarion, arhiepiscopul Larisei"
+      ]
+    },
+    "2026-09-16": {
+      "zi": 16,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "†) Sf. Cuv. Mărturisitor Sofian de la Antim",
+        "Sf. Mare Mc. Eufimia",
+        "Sf. Mc. Meletina și Ludmila"
+      ]
+    },
+    "2026-09-17": {
+      "zi": 17,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "†) Sf. Ier. Dionisie, episcopul Cetății Albe – Ismail",
+        "Sf. Mc. Sofia și fiicele ei: Pistis, Elpis și Agapi"
+      ]
+    },
+    "2026-09-18": {
+      "zi": 18,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "†) Sf. Preot Mucenic Ilarion Felea",
+        "Sf. Ier. Eumenie, episcopul Gortinei",
+        "Sf. Mc. Ariadna"
+      ]
+    },
+    "2026-09-19": {
+      "zi": 19,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sf. Mc. Trofim, Savatie și Dorimedont"
+      ]
+    },
+    "2026-09-20": {
+      "zi": 20,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sf. Mari Mc. Eustație şi soţia sa, Teopista, cu cei doi fii ai lor: Agapie şi Teopist",
+        "Duminica după Înălţarea Sfintei Cruci"
+      ]
+    },
+    "2026-09-21": {
+      "zi": 21,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Odovania praznicului Înălțării Sfintei Cruci",
+        "Sf. Ap. Codrat",
+        "Sf. Proroc Iona"
+      ]
+    },
+    "2026-09-22": {
+      "zi": 22,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "†) Sf. Ierarh Mc. Teodosie de la Mănăstirea Brazi, mitropolitul Moldovei",
+        "Sf. Sfințit Mc. Foca, episcop de Sinope"
+      ]
+    },
+    "2026-09-23": {
+      "zi": 23,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Zămislirea Sf. Proroc Ioan Botezătorul",
+        "Sf. Xantipa și Polixenia"
+      ]
+    },
+    "2026-09-24": {
+      "zi": 24,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. întâia Muceniță și întocmai cu Apostolii Tecla",
+        "Sf. Cuv. Siluan Athonitul"
+      ]
+    },
+    "2026-09-25": {
+      "zi": 25,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Cuv. Eufrosina",
+        "Sf. Cuv. Pafnutie Egipteanul",
+        "Sf. Cuv. Serghie de la Radonej"
+      ]
+    },
+    "2026-09-26": {
+      "zi": 26,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "†) Mutarea Sf. Ap. şi Evanghelist Ioan",
+        "†) Sf. Voievod Neagoe Basarab",
+        "Sf. Cuv. Platonida de la Argeș",
+        "Dreptul Ghedeon"
+      ]
+    },
+    "2026-09-27": {
+      "zi": 27,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "†) Sf. Ier. Martir Antim Ivireanul, mitropolitul Ţării Româneşti",
+        "Sf. Mc. Calistrat şi Epiharia"
+      ]
+    },
+    "2026-09-28": {
+      "zi": 28,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "† Sf. Cuv. Hariton Mărturisitorul",
+        "Sf. Proroc Baruh",
+        "Sf. Cuv. Neofit Zăvorâtul din Cipru"
+      ]
+    },
+    "2026-09-29": {
+      "zi": 29,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sf. Cuv. Chiriac Sihastrul",
+        "Sf. Mc. Petronia"
+      ]
+    },
+    "2026-09-30": {
+      "zi": 30,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sf. Ier. Grigorie Luminătorul, arhiepiscopul Armeniei",
+        "Sf. Mc. Ripsimia și Gaiani"
+      ]
+    }
+  },
+  "2026-10": {
+    "2026-10-01": {
+      "zi": 1,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Acoperământul Maicii Domnului",
+        "Sf. Ap. Anania",
+        "†) Sf. Cuv. Iosif și Chiriac de la Bisericani",
+        "Sf. Cuv. Roman Melodul"
+      ]
+    },
+    "2026-10-02": {
+      "zi": 2,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Sfințit Mc. Ciprian",
+        "Sf. Mc. Iustina fecioara"
+      ]
+    },
+    "2026-10-03": {
+      "zi": 3,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sf. Sfințit Mc. Dionisie Areopagitul",
+        "Sf. Mc. Teoctist"
+      ]
+    },
+    "2026-10-04": {
+      "zi": 4,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "†) Sf. Preot Mărturisitor Dumitru Stăniloae",
+        "Sf. Sfinţit Mc. Ierotei, episcopul Atenei Duminica a 19-a după Rusalii"
+      ]
+    },
+    "2026-10-05": {
+      "zi": 5,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "†) Sf. Cuv. Daniil şi Misail de la Mănăstirea Turnu",
+        "Sf. Mc. Haritina"
+      ]
+    },
+    "2026-10-06": {
+      "zi": 6,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sf. Ap. Toma",
+        "Sf. Mc. Erotiida"
+      ]
+    },
+    "2026-10-07": {
+      "zi": 7,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "† Sf. Mari Mc. Serghie și Vah",
+        "Sf. Mc. Iulian preotul, Chesarie diaconul și Polihronie"
+      ]
+    },
+    "2026-10-08": {
+      "zi": 8,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Cuv. Pelaghia și Taisia"
+      ]
+    },
+    "2026-10-09": {
+      "zi": 9,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Ap. Iacob al lui Alfeu",
+        "Sf. Cuv. Andronic și Atanasia"
+      ]
+    },
+    "2026-10-10": {
+      "zi": 10,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sf. Mc. Evlampie și sora sa, Evlampia",
+        "Sf. Cuv. Vasian și Teofil Mărturisitorul"
+      ]
+    },
+    "2026-10-11": {
+      "zi": 11,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sf. Ap. Filip, unul dintre cei 7 diaconi",
+        "Sf. Ier. Teofan Mărturisitorul, episcopul Niceei"
+      ]
+    },
+    "2026-10-12": {
+      "zi": 12,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sf. Mc. Prov, Tarah şi Andronic",
+        "Sf. Ier. Cosma, episcopul Maiumei"
+      ]
+    },
+    "2026-10-13": {
+      "zi": 13,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "† Aducerea moaștelor Sfântului Apostol Andrei la Iași",
+        "Sf. Mc. Carp, Papil, Agatodor, Agatonica și Florentie"
+      ]
+    },
+    "2026-10-14": {
+      "zi": 14,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "†) Sf. Cuv. Parascheva de la Iași",
+        "Sf. Mc. Nazarie, Ghervasie, Protasie și Chelsie"
+      ]
+    },
+    "2026-10-15": {
+      "zi": 15,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "† Sf. Magdalena de la Mălainița",
+        "Sf. Sfinţit Mc. Lucian, preotul din Antiohia"
+      ]
+    },
+    "2026-10-16": {
+      "zi": 16,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Mc. Longhin Sutașul"
+      ]
+    },
+    "2026-10-17": {
+      "zi": 17,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sf. Proroc Oseea",
+        "Sf. Cuv. Mc. Andrei Criteanul"
+      ]
+    },
+    "2026-10-18": {
+      "zi": 18,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sf. Ap. şi Evanghelist Luca",
+        "Sf. Mc. Marin cel Bătrân"
+      ]
+    },
+    "2026-10-19": {
+      "zi": 19,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sf. Proroc Ioil",
+        "Sf. Mc. Uar",
+        "Sf. Cleopatra",
+        "Sf. Cuv. Ioan de la Rila"
+      ]
+    },
+    "2026-10-20": {
+      "zi": 20,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sf. Mare Mc. Artemie",
+        "Sf. Cuv. Gherasim din Chefalonia"
+      ]
+    },
+    "2026-10-21": {
+      "zi": 21,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "†) Sf. Cuv. Mărturisitori: Visarion și Sofronie",
+        "Sf. Mc. Oprea",
+        "Sf. Preoți Mărturisitori: Ioan din Galeș și Moise Măcinic din Sibiel",
+        "Sf. Cuv. Ilarion cel Mare"
+      ]
+    },
+    "2026-10-22": {
+      "zi": 22,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Ier. Averchie, episcopul Ierapolei, cel întocmai cu Apostolii",
+        "Sf. 7 tineri din Efes"
+      ]
+    },
+    "2026-10-23": {
+      "zi": 23,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Ap. Iacob, rudenia Domnului, întâiul episcop al Ierusalimului",
+        "†) Sf. Preot Mucenic Constantin Sârbu",
+        "Sf. Cuv. Macarie Romanul"
+      ]
+    },
+    "2026-10-24": {
+      "zi": 24,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sf. Mare Mucenic Areta",
+        "Sf. Mc. Marcu, Sotirih și Valentin"
+      ]
+    },
+    "2026-10-25": {
+      "zi": 25,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sf. Mc. Marcian şi Martirie",
+        "Sf. Tavita"
+      ]
+    },
+    "2026-10-26": {
+      "zi": 26,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "†) Sf. Mare Mc. Dimitrie, Izvorâtorul de Mir"
+      ]
+    },
+    "2026-10-27": {
+      "zi": 27,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "†) Sf. Cuv. Dimitrie cel Nou, Ocrotitorul Bucureștilor",
+        "Sf. Mc. Nestor"
+      ]
+    },
+    "2026-10-28": {
+      "zi": 28,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "† Sf. Ier. Iachint, mitropolitul Țării Românești",
+        "†) Sf. Cuv. Teofana Basarab",
+        "Sf. Mc. Terentie, soția sa, Neonila și cei 7 fii",
+        "Sf. Cuv. Ștefan Savaitul",
+        "Sf. Ier. Firmilian, episcopul Cezareei Capadociei"
+      ]
+    },
+    "2026-10-29": {
+      "zi": 29,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Cuv. Mc. Anastasia Romana",
+        "Sf. Cuv. Avramie și Maria, nepoata sa"
+      ]
+    },
+    "2026-10-30": {
+      "zi": 30,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Sfințit Mc. Zenovie, episcopul Ciliciei, și sora sa, Zenovia",
+        "Sf. Ap. Cleopa"
+      ]
+    },
+    "2026-10-31": {
+      "zi": 31,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sf. Ap. Apelie, Stahie, Amplie, Urban, Aristobul și Narcis",
+        "Sf. Mc. Epimah"
+      ]
+    }
+  },
+  "2026-11": {
+    "2026-11-01": {
+      "zi": 1,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sf. doctori fără de arginţi Cosma şi Damian, cei din Asia",
+        "Duminica a 22-a după Rusalii"
+      ]
+    },
+    "2026-11-02": {
+      "zi": 2,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sf. Mc. Achindin, Pigasie, Aftonie, Elpidifor și Anempodist"
+      ]
+    },
+    "2026-11-03": {
+      "zi": 3,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sf. Sfințiți Mc. Achepsima, Iosif și Aitala",
+        "Așezarea moaștelor Sf. Mare Mc. Gheorghe în Lida"
+      ]
+    },
+    "2026-11-04": {
+      "zi": 4,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sf. Cuv. Ioanichie cel Mare",
+        "Sf. Mc. Nicandru și Ermeu",
+        "Sf. Cuv. Gheorghe Mărturisitorul din Drama"
+      ]
+    },
+    "2026-11-05": {
+      "zi": 5,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Mc. Galaction și Epistimia"
+      ]
+    },
+    "2026-11-06": {
+      "zi": 6,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Ier. Pavel Mărturisitorul, arhiepiscopul Constantinopolului",
+        "Sf. Cuv. Luca din Sicilia"
+      ]
+    },
+    "2026-11-07": {
+      "zi": 7,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Sfinții 33 de Mucenici din Melitina",
+        "Sf. Cuv. Lazăr din Muntele Galisiei"
+      ]
+    },
+    "2026-11-08": {
+      "zi": 8,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "†) Soborul Sf. Arhangheli Mihail şi Gavriil şi al tuturor cereştilor puteri: Duminica a 24-a după Rusalii"
+      ]
+    },
+    "2026-11-09": {
+      "zi": 9,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "†) Sf. Ier. Nectarie de la Eghina",
+        "Sf. Mc. Claudiu, Castor, Sempronian şi Nicostrat",
+        "Sf. Mc. Onisifor şi Porfirie",
+        "Sf. Cuv. Matrona"
+      ]
+    },
+    "2026-11-10": {
+      "zi": 10,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sf. Ap. Olimp, Rodion, Sosipatru, Erast, Terțiu și Cvart",
+        "†) Sf. Cuv. Mc. Visarion de la Lainici",
+        "Sf. Mc. Orest"
+      ]
+    },
+    "2026-11-11": {
+      "zi": 11,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "† Sf. Mare Mc. Mina",
+        "Sf. Mc. Victor, Vichentie și Ștefanida",
+        "Sf. Cuv. Teodor Studitul"
+      ]
+    },
+    "2026-11-12": {
+      "zi": 12,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "†) Sf. Martiri și Mărturisitori Năsăudeni: Atanasie Todoran din Bichigiu, Vasile din Mocod, Grigorie din Zagra și Vasile din Telciu",
+        "Sf. Ier. Ioan cel Milostiv, patriarhul Alexandriei",
+        "Sf. Cuv. Nil Pustnicul"
+      ]
+    },
+    "2026-11-13": {
+      "zi": 13,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "†) Sf. Ier. Ioan Gură de Aur, arhiepiscopul Constantinopolului, și mama sa, Sf. Antuza"
+      ]
+    },
+    "2026-11-14": {
+      "zi": 14,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "†) Sf. Ap. Filip, unul dintre cei 12 Apostoli",
+        "Sf. Ier. Grigorie Palama, arhiepiscopul Tesalonicului",
+        "Sfinții Palamiți"
+      ]
+    },
+    "2026-11-15": {
+      "zi": 15,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "†) Sf. Cuv. Paisie de la Neamţ",
+        "Sf. Mc. şi Mărturisitori: Gurie, Samona şi Aviv diaconul"
+      ]
+    },
+    "2026-11-16": {
+      "zi": 16,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sf. Ap. și Evanghelist Matei"
+      ]
+    },
+    "2026-11-17": {
+      "zi": 17,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sf. Ier. Grigorie Taumaturgul, episcopul Neocezareei, și Ghenadie, arhiepiscopul Constantinopolului",
+        "Sf. Cuv. Lazăr Zugravul"
+      ]
+    },
+    "2026-11-18": {
+      "zi": 18,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sf. Mc. Platon, Roman și Zaheu"
+      ]
+    },
+    "2026-11-19": {
+      "zi": 19,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Proroc Avdie",
+        "Sf. Mc. Varlaam"
+      ]
+    },
+    "2026-11-20": {
+      "zi": 20,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Înainte-prăznuirea Intrării în biserică a Maicii Domnului",
+        "†) Sf. Cuv. Grigorie Decapolitul",
+        "† Sf. Mc. Dasie",
+        "Sf. Ier. Proclu, arhiepiscopul Constantinopolului"
+      ]
+    },
+    "2026-11-21": {
+      "zi": 21,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "Intrarea în biserică a Maicii Domnului"
+      ]
+    },
+    "2026-11-22": {
+      "zi": 22,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sf. Ap. Filimon, Arhip, Onisim şi Apfia",
+        "Sf. Mc. Cecilia"
+      ]
+    },
+    "2026-11-23": {
+      "zi": 23,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "† Sf. Cuv. Antonie de la Iezerul Vâlcii",
+        "Sf. Ier. Amfilohie, episcopul Iconiei, și Grigorie, episcopul Acragandelor"
+      ]
+    },
+    "2026-11-24": {
+      "zi": 24,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sf. Sfințiți Mc. Clement, episcopul Romei, și Petru, episcopul Alexandriei"
+      ]
+    },
+    "2026-11-25": {
+      "zi": 25,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Odovania praznicului Intrării în biserică a Maicii Domnului",
+        "† Sf. Mare Mc. Ecaterina",
+        "Sf. Mare Mc. Mercurie"
+      ]
+    },
+    "2026-11-26": {
+      "zi": 26,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Cuv. Alipie Stâlpnicul, Nicon și Stelian Paflagonul"
+      ]
+    },
+    "2026-11-27": {
+      "zi": 27,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Mare Mc. Iacob Persul",
+        "Sf. Cuv. Natanael și Pinufrie"
+      ]
+    },
+    "2026-11-28": {
+      "zi": 28,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "†) Sf. Cuv. Mărturisitor Arsenie de la Prislop",
+        "Sf. Cuv. Mc. Ștefan cel Nou",
+        "Sf. Mc. Irinarh"
+      ]
+    },
+    "2026-11-29": {
+      "zi": 29,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Sf. Mc. Paramon şi Filumen",
+        "Sf. Cuv. Pitirun"
+      ]
+    },
+    "2026-11-30": {
+      "zi": 30,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "†) Sf. Ap. Andrei cel întâi chemat, Ocrotitorul României",
+        "†) Sf. Ier. Andrei Şaguna, mitropolitul Transilvaniei",
+        "Sf. Ier. Frumentie, episcopul Etiopiei"
+      ]
+    }
+  },
+  "2026-12": {
+    "2026-12-01": {
+      "zi": 1,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "† Sf. Anastasia, mama Sf. Ier. Andrei Șaguna",
+        "Sf. Proroc Naum",
+        "Sf. Filaret cel Milostiv"
+      ]
+    },
+    "2026-12-02": {
+      "zi": 2,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "†) Sf. Cuv. Paisie și Cleopa de la Sihăstria",
+        "Sf. Proroc Avacum",
+        "Sf. Mc. Miropi",
+        "Sf. Cuv. Porfirie Cavsocalivitul",
+        "Sf. Ier. Solomon, arhiepiscopul Efesului"
+      ]
+    },
+    "2026-12-03": {
+      "zi": 3,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "†) Sf. Cuv. Gheorghe de la Cernica și Căldărușani",
+        "Sf. Proroc Sofonie"
+      ]
+    },
+    "2026-12-04": {
+      "zi": 4,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "† Sf. Mare Mc. Varvara",
+        "Sf. Cuv. Ioan Damaschin"
+      ]
+    },
+    "2026-12-05": {
+      "zi": 5,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "†) Sf. Cuv. Sava cel Sfințit"
+      ]
+    },
+    "2026-12-06": {
+      "zi": 6,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "†) Sf. Ier. Nicolae, arhiepiscopul Mirelor Lichiei, făcătorul de minuni"
+      ]
+    },
+    "2026-12-07": {
+      "zi": 7,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "†) Sf. Mc. Filofteia de la Curtea de Argeş",
+        "Sf. Ier. Ambrozie, episcopul Mediolanului"
+      ]
+    },
+    "2026-12-08": {
+      "zi": 8,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sf. Cuv. Patapie",
+        "Sf. Ap. Cezar, Tihic și Onisifor"
+      ]
+    },
+    "2026-12-09": {
+      "zi": 9,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Zămislirea Sfintei Fecioare Maria de către Sf. Ana",
+        "Sf. Prorociță Ana, mama Prorocului Samuel"
+      ]
+    },
+    "2026-12-10": {
+      "zi": 10,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Mc. Mina, Ermoghen și Evgraf"
+      ]
+    },
+    "2026-12-11": {
+      "zi": 11,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Sf. Cuv. Daniil Stâlpnicul și Luca cel Nou"
+      ]
+    },
+    "2026-12-12": {
+      "zi": 12,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "†) Sf. Ier. Spiridon, episcopul Trimitundei, făcătorul de minuni"
+      ]
+    },
+    "2026-12-13": {
+      "zi": 13,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "†) Sf. Ier. Dosoftei, mitropolitul Moldovei",
+        "† Sf. Mari Mc. Eustratie, Auxentie, Evghenie, Mardarie şi Orest",
+        "Sf. Mc. Lucia din Siracuza"
+      ]
+    },
+    "2026-12-14": {
+      "zi": 14,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sf. Mc. Tirs, Calinic, Filimon şi Apolonie"
+      ]
+    },
+    "2026-12-15": {
+      "zi": 15,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sf. Sfințit Mc. Elefterie, episcopul Iliriei",
+        "Sf. Mc. Antia și Suzana",
+        "Sf. Cuv. Pavel din Latro"
+      ]
+    },
+    "2026-12-16": {
+      "zi": 16,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sf. Proroc Agheu",
+        "Sf. Teofana împărăteasa"
+      ]
+    },
+    "2026-12-17": {
+      "zi": 17,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Proroc Daniel și Sfinții trei tineri: Anania, Azaria și Misail"
+      ]
+    },
+    "2026-12-18": {
+      "zi": 18,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "†) Sf. Cuv. Daniil Sihastrul",
+        "Sf. Mc. Sebastian și Zoe",
+        "Sf. Ier. Modest, arhiepiscopul Ierusalimului"
+      ]
+    },
+    "2026-12-19": {
+      "zi": 19,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "† Sf. Cuv. Muceniță Evloghia de la Samurcășești",
+        "Sf. Mc. Bonifatie",
+        "Sf. Aglaia",
+        "Sf. Ier. Grichentie, episcopul Etiopiei"
+      ]
+    },
+    "2026-12-20": {
+      "zi": 20,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "Înainte-prăznuirea Naşterii Domnului",
+        "Sf. Sfinţit Mc. Ignatie Teoforul, episcopul Antiohiei",
+        "†) Sf. Cuv. Serafim cel Răbdător de la Sâmbăta de Sus"
+      ]
+    },
+    "2026-12-21": {
+      "zi": 21,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sf. Mc. Iuliana din Nicomidia",
+        "Sf. Mc. Temistocle"
+      ]
+    },
+    "2026-12-22": {
+      "zi": 22,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "†) Sf. Ier. Petru Movilă, mitropolitul Kievului",
+        "Sf. Mare Mc. Anastasia"
+      ]
+    },
+    "2026-12-23": {
+      "zi": 23,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "† Sf. Cuv. Antonina de la Tismana",
+        "Sfinţii 10 Mucenici din Creta",
+        "Sf. Ier. Pavel, arhiepiscopul Neocezareei"
+      ]
+    },
+    "2026-12-24": {
+      "zi": 24,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Sf. Cuv. Mc. Eugenia"
+      ]
+    },
+    "2026-12-25": {
+      "zi": 25,
+      "zi_saptamana": "V",
+      "sfinți": [
+        "Nașterea Domnului"
+      ]
+    },
+    "2026-12-26": {
+      "zi": 26,
+      "zi_saptamana": "S",
+      "sfinți": [
+        "†) Soborul Maicii Domnului",
+        "†) Sf. Cuv. Nicodim cel Sfinţit de la Tismana",
+        "†) Sf. Cuv. Mc. Gherasim de la Tismana"
+      ]
+    },
+    "2026-12-27": {
+      "zi": 27,
+      "zi_saptamana": "D",
+      "sfinți": [
+        "† Sf. Ap., întâiul Mc. şi Arhidiacon Ştefan",
+        "Sf. Cuv. Teodor Mărturisitorul"
+      ]
+    },
+    "2026-12-28": {
+      "zi": 28,
+      "zi_saptamana": "L",
+      "sfinți": [
+        "Sfinţii 20.000 de Mucenici din Nicomidia"
+      ]
+    },
+    "2026-12-29": {
+      "zi": 29,
+      "zi_saptamana": "Ma",
+      "sfinți": [
+        "Sfinții 14.000 de prunci uciși din porunca lui Irod",
+        "Sf. Cuv. Marcel și Tadeu"
+      ]
+    },
+    "2026-12-30": {
+      "zi": 30,
+      "zi_saptamana": "Mi",
+      "sfinți": [
+        "Sf. Mc. Anisia fecioara"
+      ]
+    },
+    "2026-12-31": {
+      "zi": 31,
+      "zi_saptamana": "J",
+      "sfinți": [
+        "Odovania praznicului Nașterii Domnului",
+        "† Sf. Mc. Hermes",
+        "Sf. Cuv. Melania Romana"
       ]
     }
   }
